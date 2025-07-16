@@ -6,7 +6,7 @@ Getting the NetGear Stora serial port functioning
 
 I connected up the console of the Stora to my Raspberry Pi.
 
-Following this https://github.com/Dees7/openstora/blob/master/pages/Root_Access_Via_Serial_Console.md
+Following this <a>https://github.com/Dees7/openstora/blob/master/pages/Root_Access_Via_Serial_Console.md</a>
 
 Pin
 
