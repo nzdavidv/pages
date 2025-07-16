@@ -20,16 +20,9 @@ followed these pages
 - <a>https://www.cablecat.dk/sites/openstora/<a>
 - <a>https://github.com/evgkirov/stora-debian-install<a>
 
-Wheezy is way too old but that is what I got.
+Wheezy is way too old but that is what I got from https://github.com/evgkirov/stora-debian-install
 
-If I was doing it again I would probably get the entire tarball from here: 
-<a>https://forum.doozan.com/read.php?2,12096</a>
-Thiss has a reference to a dropbox link..
-<a>https://www.dropbox.com/scl/fi/t2zv6g1sydq019urfnsd6/Debian-5.6.7-kirkwood-tld-1-rootfs-bodhi.tar.bz2?rlkey=1uukhwhpmccvjcv8msnqbqkbd&dl=0</a>
-
-This is an older OS but nowhere near as old as the one I started with.
-
-## Preparing the OS
+## Preparing the USB Debian OS
 
 ```
 My laptop is running Ubuntu. I plugged in a USB drive, and then unmounted it.
@@ -47,13 +40,36 @@ Then transfer the contents of the tarball
 # mount /dev/sda1 /media/david/root
 # chmod 755 /media/david/root
 # cd /media/david/root
-# tar xvf ../Debian-5.6.7-kirkwood-tld-1-rootfs-bodhi.tar.bz2
+# tar xvf ../
 
 # cd /
 # umount /media/david/root
 ```
 root password: root
 
-downloaded the tar file and this formed the basis of the kernel
+## Preparing to USB boot
+If I could go back to old-me I'd say .. hey old me make sure you get and save a clean printenv
+
+```
+CPU : Marvell Feroceon (Rev 1)
+
+Streaming disabled 
+Write allocate disabled
+
+Module 0 is RGMII
+Module 1 is TDM
+
+USB 0: host mode
+PEX 0: interface detected no Link.
+Net:   egiga0, egiga1 [PRIME]
+Hit any key to stop autoboot:  3 
+ 0 
+Marvell>> printenv
+...
+
+Marvell>> setenv bootcmd_usb 'usb reset; ext2load usb 0 0x200000 /boot/uImage; ext2load usb 0 0x800000 /boot/uInitrd'
+Marvell>> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=root rootdelay=8  earlyprintk=serial; run bootcmd_usb; bootm 0x200000 0x800000'
+Marvell>> saveenv
+Marvell>> reset
 
 
