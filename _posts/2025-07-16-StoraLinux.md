@@ -33,13 +33,13 @@ Connecting the two
 - Raspi 28 receive goes to stora port 3 transmit
 - Raspi 6 ground goes to stora 4 ground
 
-###Images of the console connection###
+### Images of the console connection###
 ![pic3 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0424-EDIT.jpg)
 ![pic1 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0425.jpg)
 ![pic2 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0426.jpg)
 
 
-##Preparing the Raspberry Pi
+## Preparing the Raspberry Pi
 We're going to be using UART1, pins 27 and 28, /dev/ttyAMA1
 $ sudo raspi-config
  Interface Options
