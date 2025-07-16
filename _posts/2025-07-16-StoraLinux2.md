@@ -166,3 +166,5 @@ Netgear Stora> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=r
 Netgear Stora> saveenv   
 
 ```
+### recap
+So at the end of two sessions we are left with USB boot of a crappy old OS but we do have a shiney firmware.
