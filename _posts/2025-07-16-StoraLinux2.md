@@ -73,4 +73,6 @@ Marvell>> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=root r
 Marvell>> saveenv
 Marvell>> reset
 
+Full output here ![Debian 2014 usb load](/pages/assets/deb2014.txt)
+assets/deb2014.txt
 
