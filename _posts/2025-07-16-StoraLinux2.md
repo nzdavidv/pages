@@ -73,6 +73,7 @@ Marvell>> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=root r
 Marvell>> saveenv
 Marvell>> reset
 
+```
 Full output here
 - <a href="https://github.com/nzdavidv/pages/blob/main/assets/deb2014.txt">Full console output from Debian 2014</a>
 
