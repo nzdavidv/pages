@@ -28,4 +28,4 @@ Connecting the two
 ###Images of the console connection###
 ![pic1 my very rough connecting Raspi to Stora](/assets/images/IMG_0424-EDIT.jpg)
 ![pic2 my very rough connecting Raspi to Stora](/assets/images/IMG_0425.jpg)
-![pic3 my very rough connecting Raspi to Stora](/assets/images/IMG_0425.jpg)
+![pic3 my very rough connecting Raspi to Stora](/assets/images/IMG_0426.jpg)
