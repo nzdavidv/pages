@@ -45,7 +45,7 @@ $ sudo raspi-config
  Serial Port
  No - to login shell over serial
  Yes - to serial port hardware enable
-
+Then restart
 
 Connecting to the console###
 I used minicom on the Raspberry Pi
