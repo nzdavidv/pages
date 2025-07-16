@@ -75,6 +75,8 @@ Marvell>> reset
 
 ```
 Full output here
-- <a href="https://github.com/nzdavidv/pages/blob/main/assets/deb2014.txt">Full console output from Debian 2014</a>
+- <a href="https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/deb2014.txt">Full console output from Debian 2014</a>
+- [https://github.com/nzdavidv/pages/blob/main/assets/deb2014.txt](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/deb2014.txt)
+
 
 
