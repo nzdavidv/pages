@@ -2,6 +2,13 @@
 title: "NetGear Stora running Debian Linux"
 date: 2025-07-16
 ---
+# Overview
+There are four major pieces to this working.
+1. Connecting to the console
+2. The firmware - U-Boot
+3. The Kernel
+4. The operating system
+
 # Getting the NetGear Stora serial port functioning
 
 I connected up the console of the Stora to my Raspberry Pi.
@@ -29,3 +36,6 @@ Connecting the two
 ![pic1 my very rough connecting Raspi to Stora](/assets/images/IMG_0424-EDIT.jpg)
 ![pic2 my very rough connecting Raspi to Stora](/assets/images/IMG_0425.jpg)
 ![pic3 my very rough connecting Raspi to Stora](/assets/images/IMG_0426.jpg)
+
+###Connecting to the console###
+I used minicom on the Raspberry Pi
