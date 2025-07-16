@@ -48,6 +48,7 @@ $ sudo raspi-config
  Yes - to serial port hardware enable
 Then restart
 
+```
 #vi /boot/firmware/config.txt
 [all]
 enable_uart=1
@@ -58,7 +59,7 @@ dtoverlay=uart3
 dtoverlay=uart4
 
 Then restart
-
+```
 
 Connecting to the console
 I used minicom on the Raspberry Pi
