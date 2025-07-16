@@ -34,9 +34,9 @@ Connecting the two
 - Raspi 6 ground goes to stora 4 ground
 
 ###Images of the console connection###
-![pic1 my very rough connecting Raspi to Stora](/assets/images/IMG_0424-EDIT.jpg)
-![pic2 my very rough connecting Raspi to Stora](/assets/images/IMG_0425.jpg)
-![pic3 my very rough connecting Raspi to Stora](/assets/images/IMG_0426.jpg)
+![pic1 my very rough connecting Raspi to Stora](../assets/images/IMG_0424-EDIT.jpg)
+![pic2 my very rough connecting Raspi to Stora](../assets/images/IMG_0425.jpg)
+![pic3 my very rough connecting Raspi to Stora](../assets/images/IMG_0426.jpg)
 
 ##Preparing the Raspberry Pi
 We're going to be using UART1, pins 27 and 28, /dev/ttyAMA1
