@@ -33,7 +33,7 @@ Connecting the two
 - Raspi 28 receive goes to stora port 3 transmit
 - Raspi 6 ground goes to stora 4 ground
 
-### Images of the console connection###
+### Images of the console connection
 ![pic3 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0424-EDIT.jpg)
 ![pic1 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0425.jpg)
 ![pic2 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0426.jpg)
@@ -48,5 +48,17 @@ $ sudo raspi-config
  Yes - to serial port hardware enable
 Then restart
 
-Connecting to the console###
+#vi /boot/firmware/config.txt
+[all]
+enable_uart=1
+dtoverlay=disable-bt
+dtoverlay=uart1
+dtoverlay=uart2
+dtoverlay=uart3
+dtoverlay=uart4
+
+Then restart
+
+
+Connecting to the console
 I used minicom on the Raspberry Pi
