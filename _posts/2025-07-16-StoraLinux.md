@@ -1,5 +1,5 @@
 ---
-title: "NetGear Stora running Debian Linux"
+title: "NetGear Stora running Debian Linux Part1"
 date: 2025-07-16
 ---
 # Overview
@@ -64,6 +64,58 @@ dtoverlay=uart4
 
 Then restart
 ```
+## Connect with minicom
+```
+root@raspi:~# minicom -b 115200 -o -D /dev/ttyAMA1
 
-Connecting to the console
-I used minicom on the Raspberry Pi
+                                                                                                              
+                                                                                                              
+         __  __                      _ _                                                                      
+        |  \/  | __ _ _ ____   _____| | |                                                                     
+        | |\/| |/ _` | '__\ \ / / _ \ | |                                                                     
+        | |  | | (_| | |   \ V /  __/ | |                                                                     
+        |_|  |_|\__,_|_|    \_/ \___|_|_|                                                                     
+ _   _     ____              _                                                                                
+| | | |   | __ )  ___   ___ | |_ 
+| | | |___|  _ \ / _ \ / _ \| __| 
+| |_| |___| |_) | (_) | (_) | |_ 
+ \___/    |____/ \___/ \___/ \__| 
+ ** MARVELL BOARD: RD-88F6281A LE 
+
+U-Boot 1.1.4 (Sep  4 2009 - 09:36:11) Marvell version: 3.4.14
+
+U-Boot code: 00600000 -> 0067FFF0  BSS: -> 006CEE60
+
+Soc: MV88F6281 Rev 3 (DDR2)
+CPU running @ 1000Mhz L2 running @ 333Mhz
+SysClock = 333Mhz , TClock = 200Mhz 
+
+DRAM CAS Latency = 5 tRP = 5 tRAS = 18 tRCD=6
+DRAM CS[0] base 0x00000000   size  64MB 
+DRAM CS[1] base 0x04000000   size  64MB 
+DRAM Total size 128MB  16bit width
+Flash:  0 kB
+Addresses 8M - 0M are saved for the U-Boot usage.
+Mem malloc Initialization (8M - 7M): Done
+NAND:256 MB
+CRC in Flash: 8e6fbb12, Calculated CRC: 8e6fbb12
+
+CPU : Marvell Feroceon (Rev 1)
+
+Streaming disabled 
+Write allocate disabled
+
+Module 0 is RGMII
+Module 1 is TDM
+
+USB 0: host mode
+PEX 0: interface detected no Link.
+Net:   egiga0, egiga1 [PRIME]
+Hit any key to stop autoboot:  3 
+ 0 
+Marvell>> 
+
+Marvell>> 
+
+```
+Happy Days!
