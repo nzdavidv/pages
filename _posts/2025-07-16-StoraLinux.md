@@ -25,4 +25,7 @@ Connecting the two
 - Raspi 28 receive goes to stora port 3 transmit
 - Raspi 6 ground goes to stora 4 ground
 
-![pics of my very rough connecting Raspi to Stora](/assets/images/IMG_0424-EDIT.jpg)
+###Images of the console connection###
+![pic1 my very rough connecting Raspi to Stora](/assets/images/IMG_0424-EDIT.jpg)
+![pic2 my very rough connecting Raspi to Stora](/assets/images/IMG_0425.jpg)
+![pic3 my very rough connecting Raspi to Stora](/assets/images/IMG_0425.jpg)
