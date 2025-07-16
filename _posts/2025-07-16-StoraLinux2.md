@@ -74,6 +74,6 @@ Marvell>> saveenv
 Marvell>> reset
 
 Full output here
-![Debian 2014 usb load](/pages/assets/deb2014.txt)
-<a>assets/deb2014.txt</a>
+<a>https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/deb2014.txt</a>
+
 
