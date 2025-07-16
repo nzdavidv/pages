@@ -41,6 +41,10 @@ Connecting the two
 ##Preparing the Raspberry Pi
 We're going to be using UART1, pins 27 and 28, /dev/ttyAMA1
 $ sudo raspi-config
+ Interface Options
+ Serial Port
+ No - to login shell over serial
+ Yes - to serial port hardware enable
 
 
 Connecting to the console###
