@@ -40,15 +40,16 @@ Then transfer the contents of the tarball
 # mount /dev/sda1 /media/david/root
 # chmod 755 /media/david/root
 # cd /media/david/root
-# tar xvf ../
+# tar xvf ../stora-debian-rootfs_20140114.tar.gz
 
 # cd /
 # umount /media/david/root
 ```
-root password: root
+root password: 111222
 
 ## Preparing to USB boot
-If I could go back to old-me I'd say .. hey old me make sure you get and save a clean printenv
+If I could go back to old-me I'd say .. hey old me make sure you get and save a clean printenv.
+Ah well.
 
 ```
 CPU : Marvell Feroceon (Rev 1)
@@ -65,7 +66,7 @@ Net:   egiga0, egiga1 [PRIME]
 Hit any key to stop autoboot:  3 
  0 
 Marvell>> printenv
-...
+...imagination...
 
 Marvell>> setenv bootcmd_usb 'usb reset; ext2load usb 0 0x200000 /boot/uImage; ext2load usb 0 0x800000 /boot/uInitrd'
 Marvell>> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=root rootdelay=8  earlyprintk=serial; run bootcmd_usb; bootm 0x200000 0x800000'
