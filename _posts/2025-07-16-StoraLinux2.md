@@ -148,7 +148,7 @@ then did this
 and
 # nandwrite /dev/mtd0 uboot.2017.07-tld-1.netgear_ms2110.mtd0.kwb
 
-after restart I thought it might be curtains but was good.
+after restart I thought it might be curtains when I saw the bad CRC message but it was ok.
 
 U-Boot 2017.07-tld-1 (Sep 05 2017 - 00:38:05 -0700)                                                              
 Netgear Stora MS2110                                                                                             
@@ -165,4 +165,4 @@ Netgear Stora> setenv bootcmd_usb 'usb reset; ext2load usb 0 0x200000 /boot/uIma
 Netgear Stora> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=root rootdelay=8  earlyprintk=serial; run bootcmd_usb; bootm 0x200000 0x800000'
 Netgear Stora> saveenv   
 
-
+```
