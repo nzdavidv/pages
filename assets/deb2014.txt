@@ -1,0 +1,260 @@
+resetting USB...
+USB0:   USB EHCI 1.00
+scanning bus 0 for devices... 2 USB Device(s) found
+       scanning usb for storage devices... 
+Use USB retry period from the environment: 15 second(s)
+1 Storage Device(s) found
+1927896 bytes read in 573 ms (3.2 MiB/s)
+7338563 bytes read in 764 ms (9.2 MiB/s)
+## Booting kernel from Legacy Image at 00200000 ...
+   Image Name:   Linux-3.10.26-stora
+   Created:      2014-01-13  20:27:45 UTC
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    1927832 Bytes = 1.8 MiB
+   Load Address: 00008000
+   Entry Point:  00008000
+   Verifying Checksum ... OK
+## Loading init Ramdisk from Legacy Image at 00800000 ...
+   Image Name:   initramfs-3.10.26-stora
+   Created:      2014-01-13  20:27:54 UTC
+   Image Type:   ARM Linux RAMDisk Image (gzip compressed)
+   Data Size:    7338499 Bytes = 7 MiB
+   Load Address: 00000000
+   Entry Point:  00000000
+   Verifying Checksum ... OK
+   Loading Kernel Image ... OK
+   Loading Ramdisk to 03900000, end 03fffa03 ... OK
+
+Starting kernel ...
+
+Uncompressing Linux... done, booting the kernel.
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.26-stora (root@Brick) (gcc version 4.7.3 (Ubuntu/Linaro 4.7.3-1ubuntu1) ) #2 Tue Jan 14 004
+[    0.000000] CPU: Feroceon 88FR131 [56251311] revision 1 (ARMv5TE), cr=00053977
+[    0.000000] CPU: VIVT data cache, VIVT instruction cache
+[    0.000000] Machine: Netgear MS2110
+[    0.000000] bootconsole [earlycon0] enabled
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 32512
+[    0.000000] Kernel command line: console=ttyS0,115200 root=LABEL=root rootdelay=8 earlyprintk=serial
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] allocated 262144 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] Memory: 128MB = 128MB total
+[    0.000000] Memory: 116632k/116632k available, 14440k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xc8800000 - 0xff000000   ( 872 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xc8000000   ( 128 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc04d20d8   (4905 kB)
+[    0.000000]       .init : 0xc04d3000 - 0xc050181c   ( 187 kB)
+[    0.000000]       .data : 0xc0502000 - 0xc054f5c0   ( 310 kB)
+[    0.000000]        .bss : 0xc054f5c0 - 0xc05b5fa4   ( 411 kB)
+[    0.000000] NR_IRQS:114
+[    0.000000] sched_clock: 32 bits at 200MHz, resolution 5ns, wraps every 21474ms
+[    0.000000] Console: colour dummy device 80x30
+[    4.697433] Calibrating delay loop... 990.41 BogoMIPS (lpj=4952064)
+[    4.735479] pid_max: default: 32768 minimum: 301
+[    4.740301] Security Framework initialized
+[    4.744548] Yama: becoming mindful.
+[    4.748218] Mount-cache hash table entries: 512
+[    4.753536] Initializing cgroup subsys memory
+[    4.758055] Initializing cgroup subsys devices
+[    4.762614] Initializing cgroup subsys freezer
+[    4.767202] Initializing cgroup subsys net_cls
+[    4.771759] Initializing cgroup subsys blkio
+[    4.776159] Initializing cgroup subsys perf_event
+[    4.781083] CPU: Testing write buffer coherency: ok
+[    4.786510] Setting up static identity map for 0xc0374648 - 0xc0374684
+[    4.795003] devtmpfs: initialized
+[    4.800902] pinctrl core: initialized pinctrl subsystem
+[    4.806704] regulator-dummy: no parameters
+[    4.811226] NET: Registered protocol family 16
+[    4.816253] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    4.824190] Kirkwood: MV88F6281-A1, TCLK=200000000.
+[    4.829195] Feroceon L2: Enabling L2
+[    4.832945] Feroceon L2: Cache support initialised.
+[    4.839398] Kirkwood PCIe port 0: link down
+[    4.843728] PCI: bus0 uses PCIe port 0
+[    4.847744] PCI host bridge to bus 0000:00
+[    4.851959] pci_bus 0000:00: root bus resource [mem 0xe0000000-0xe7ffffff]
+[    4.858971] pci_bus 0000:00: root bus resource [io  0x1000-0xffff]
+[    4.865278] pci_bus 0000:00: No busn resource found for root bus, will use [bus 00-ff]
+[    4.873595] PCI: bus0: Fast back to back transfers disabled
+[    4.881756] bio: create slab <bio-0> at 0
+[    4.886429] vgaarb: loaded
+[    4.889398] usbcore: registered new interface driver usbfs
+[    4.895085] usbcore: registered new interface driver hub
+[    4.900601] usbcore: registered new device driver usb
+[    4.906481] Switching to clocksource orion_clocksource
+[    4.929124] NET: Registered protocol family 2
+[    4.934317] TCP established hash table entries: 1024 (order: 1, 8192 bytes)
+[    4.941425] TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+[    4.947937] TCP: Hash tables configured (established 1024 bind 1024)
+[    4.954537] TCP: reno registered
+[    4.957877] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    4.963861] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    4.970462] NET: Registered protocol family 1
+[    4.975188] Unpacking initramfs...
+[    5.777307] Freeing initrd memory: 7164K (c3900000 - c3fff000)
+[    5.783344] NetWinder Floating Point Emulator V0.97 (double precision)
+[    5.790669] audit: initializing netlink socket (disabled)
+[    5.796240] type=2000 audit(1.090:1): initialized
+[    5.802061] VFS: Disk quotas dquot_6.5.2
+[    5.806133] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    5.812966] jffs2: version 2.2. (NAND) (SUMMARY)  Â© 2001-2006 Red Hat, Inc.
+[    5.820369] msgmni has been set to 241
+[    5.826311] alg: No test for stdrng (krng)
+[    5.830593] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    5.838277] io scheduler noop registered
+[    5.842325] io scheduler deadline registered
+[    5.846727] io scheduler cfq registered (default)
+[    5.851688] mv_xor mv_xor.0: Marvell shared XOR driver
+[    5.891805] mv_xor mv_xor.0: Marvell XOR: ( xor cpy )
+[    5.931803] mv_xor mv_xor.0: Marvell XOR: ( xor fill cpy )
+[    5.937548] mv_xor mv_xor.1: Marvell shared XOR driver
+[    5.981802] mv_xor mv_xor.1: Marvell XOR: ( xor cpy )
+[    6.021802] mv_xor mv_xor.1: Marvell XOR: ( xor fill cpy )
+[    6.027740] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    6.054939] serial8250.0: ttyS0 at MMIO 0xf1012000 (irq = 33) is a 16550A
+[    6.061880] console [ttyS0] enabled, bootconsole disabled
+[    6.061880] console [ttyS0] enabled, bootconsole disabled
+[    6.074033] NAND device: Manufacturer ID: 0xec, Chip ID: 0xda (Samsung NAND 256MiB 3,3V 8-bit), 256MiB, page size: 2048, 4
+[    6.086123] Scanning device for bad blocks
+[    6.095165] Bad eraseblock 65 at 0x000000820000
+[    6.189918] Bad eraseblock 1269 at 0x000009ea0000
+[    6.225918] Bad eraseblock 1687 at 0x00000d2e0000
+[    6.252563] Bad eraseblock 1980 at 0x00000f780000
+[    6.262326] Creating 3 MTD partitions on "orion_nand":
+[    6.267502] 0x000000000000-0x000000100000 : "u-boot"
+[    6.273510] 0x000000100000-0x000000700000 : "uImage"
+[    6.279454] 0x000000700000-0x000010000000 : "root"
+[    6.285715] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    6.292298] ehci-pci: EHCI PCI platform driver
+[    6.296815] ehci-orion: EHCI orion driver
+[    6.300908] orion-ehci orion-ehci.0: EHCI Host Controller
+[    6.306375] orion-ehci orion-ehci.0: new USB bus registered, assigned bus number 1
+[    6.314115] orion-ehci orion-ehci.0: irq 19, io mem 0xf1050000
+[    6.331780] orion-ehci orion-ehci.0: USB 2.0 started, EHCI 1.00
+[    6.337819] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    6.344659] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    6.351933] usb usb1: Product: EHCI Host Controller
+[    6.356836] usb usb1: Manufacturer: Linux 3.10.26-stora ehci_hcd
+[    6.362884] usb usb1: SerialNumber: orion-ehci.0
+[    6.368122] hub 1-0:1.0: USB hub found
+[    6.371940] hub 1-0:1.0: 1 port detected
+[    6.376612] mousedev: PS/2 mouse device common for all mice
+[    6.691776] usb 1-1: new high-speed USB device number 2 using orion-ehci
+[    6.843877] usb 1-1: New USB device found, idVendor=174c, idProduct=1153
+[    6.850629] usb 1-1: New USB device strings: Mfr=2, Product=3, SerialNumber=1
+[    6.857829] usb 1-1: Product: AS2115
+[    6.861420] usb 1-1: Manufacturer: ASMedia
+[    6.865550] usb 1-1: SerialNumber: 00000000000000000000
+[    7.391769] rtc-mv rtc-mv: internal RTC not ticking
+[    7.396779] i2c /dev entries driver
+[    7.400996] cpuidle: using governor ladder
+[    7.405136] cpuidle: using governor menu
+[    7.409271] leds-gpio leds-gpio: pins are not configured from the driver
+[    7.416518] drop_monitor: Initializing network drop monitor service
+[    7.423176] TCP: cubic registered
+[    7.426562] NET: Registered protocol family 10
+[    7.431785] mip6: Mobile IPv6
+[    7.434770] NET: Registered protocol family 17
+[    7.439783] registered taskstats version 1
+[    7.444857] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    7.452136] Freeing unused kernel memory: 184K (c04d3000 - c0501000)
+Loading, please wait...
+[    7.522413] udevd[48]: starting version 175
+[    7.697581] mv643xx_eth: MV-643xx 10/100/1000 ethernet driver version 1.4
+[    7.756772] SCSI subsystem initialized
+[    7.771234] libphy: orion_mdio_bus: probed
+[    7.812611] mv643xx_eth_port mv643xx_eth_port.0 eth0: port 0 with MAC address 52:3b:20:9c:11:51
+[    7.826696] usb-storage 1-1:1.0: USB Mass Storage device detected
+[    7.853386] sata_mv sata_mv.0: cannot get optional clkdev
+[    7.858904] sata_mv sata_mv.0: slots 32 ports 2
+[    7.895491] scsi0 : usb-storage 1-1:1.0
+[    7.899831] usbcore: registered new interface driver usb-storage
+[    7.931625] scsi1 : sata_mv
+[    7.940026] scsi2 : sata_mv
+[    7.943171] ata1: SATA max UDMA/133 irq 21
+[    7.947287] ata2: SATA max UDMA/133 irq 21
+[    8.451792] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl F300)
+[    8.892871] scsi 0:0:0:0: Direct-Access     ASMT     2115             0    PQ: 0 ANSI: 6
+[    8.919069] sd 0:0:0:0: [sda] 976773168 512-byte logical blocks: (500 GB/465 GiB)
+[    8.928041] sd 0:0:0:0: [sda] Write Protect is off
+[    8.933785] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    8.971843] ata1.00: ATA-8: WDC WD10EALX-089BA0, 15.01H15, max UDMA/100
+[    8.978498] ata1.00: 1953525168 sectors, multi 0: LBA48 NCQ (depth 31/32)
+[    9.000353]  sda: sda1
+[    9.006662] sd 0:0:0:0: [sda] Attached SCSI disk
+[    9.041823] ata1.00: configured for UDMA/100
+[    9.046530] scsi 1:0:0:0: Direct-Access     ATA      WDC WD10EALX-089 15.0 PQ: 0 ANSI: 5
+[    9.055937] sd 1:0:0:0: [sdb] 1953525168 512-byte logical blocks: (1.00 TB/931 GiB)
+[    9.064873] sd 1:0:0:0: [sdb] Write Protect is off
+[    9.069820] sd 1:0:0:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    9.090571]  sdb: sdb1 sdb2
+[    9.095530] sd 1:0:0:0: [sdb] Attached SCSI disk
+[    9.411785] ata2: SATA link down (SStatus 0 SControl F300)
+[    9.449234] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    9.462418] sd 1:0:0:0: Attached scsi generic sg1 type 0
+Begin: Loading essential drivers ... done.
+Begin: Running /scripts/init-premount ... done.
+Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.
+Begin: Running /scripts/local-premount ... done.
+Begin: Running /scripts/local-bottom ... done.
+done.
+Begin: Running /scripts/init-bottom ... done.
+INIT: version 2.88 booting
+[info] Using makefile-style concurrent boot in runlevel S.
+[....] Starting the hotplug events dispatcher: udevd[   21.521884] udevd[260]: starting version 175
+. ok 
+[ ok ] Synthesizing the initial hotplug events...done.
+[   22.080657] rtc-pcf8563 0-0051: chip found, driver version 0.4.3
+[   22.119764] rtc-pcf8563 0-0051: rtc core: registered rtc-pcf8563 as rtc0
+[....] Waiting for /dev to be fully populated...[   22.337712] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[   22.368211] orion_wdt: Initial timeout 21 sec
+done.
+[ ok ] Activating swap...done.
+[ ok ] Cleaning up temporary files... /tmp /run/shm.
+[ ok ] Activating lvm and md swap...done.
+[....] Checking file systems...fsck from util-linux 2.20.1
+done.
+[ ok ] Mounting local filesystems...done.
+[ ok ] Activating swapfile swap...done.
+[ ok ] Cleaning up temporary files....
+[ ok ] Setting kernel variables ...done.
+[....] Configuring network interfaces...Internet Systems Consortium DHCP Client 4.2.2
+Copyright 2004-2011 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+[   29.465378] mv643xx_eth_port mv643xx_eth_port.0 eth0: link down
+[   29.471486] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Listening on LPF/eth0/52:3b:20:9c:11:51
+Sending on   LPF/eth0/52:3b:20:9c:11:51
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 5
+[   32.655807] mv643xx_eth_port mv643xx_eth_port.0 eth0: link up, 1000 Mb/s, full duplex, flow control disabled
+[   32.665734] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 10
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPOFFER from 192.168.10.1
+DHCPACK from 192.168.10.1
+bound to 192.168.10.127 -- renewal in 1073741824 seconds.
+done.
+[ ok ] Cleaning up temporary files....
+INIT: Entering runlevel: 2
+[info] Using makefile-style concurrent boot in runlevel 2.
+[ ok ] Starting OpenBSD Secure Shell server: sshd.
+
+Debian GNU/Linux 7 stora ttyS0
+
+stora login: 
+
