@@ -105,6 +105,19 @@ N: Skipping acquire of configured file 'main/binary-armel/Packages' as repositor
 
 # apt-get upgrade
 # apt dist-upgrade
+# shutdown -r now
+
+root@stora:~# cat /etc/os-release 
+PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+NAME="Debian GNU/Linux"
+VERSION_ID="11"
+VERSION="11 (bullseye)"
+VERSION_CODENAME=bullseye
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
 ```
 ### take a backup at this point
 Shutdown to the firmware level, and disconnect the USB drive and then attach to a computer to take a backup.
