@@ -15,8 +15,9 @@ At the end of the last one we had a crappy OS but an ok firmware.
 
 ## first we need a little better OS 
 
+This updates the OS to Debian stretch
+
 ```
-This updates to stretch
 
 # vi /etc/apt/sources.list
 deb http://snapshot.debian.org/archive/debian/20230101T091029Z stretch main
@@ -57,31 +58,98 @@ stora123
 # shutdown -r now
 ```
 Full output here
-- [https://github.com/nzdavidv/pages/blob/main/assets/deb2014.txt](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/deb-stretch.txt)
+- [https://github.com/nzdavidv/pages/blob/main/assets/deb-stretch.txt](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/deb-stretch.txt)
 
-after this reboot and it gives a baseline OS to do the next step. 
+After this reboot and it gives a baseline OS to do the next step. 
+```
+root@stora:~# cat /etc/os-release 
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+VERSION_CODENAME=stretch
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+root@stora:~# uname -r
+3.10.26-stora
+```
 
 Following <a>https://forum.doozan.com/read.php?2,12096</a>
 
 Downloaded linux-6.15.2-kirkwood-tld-1-bodhi.tar.bz2 on my laptop and bunzip'd it before transferring to the stora 
+```
 [ on my laptop ]
 $ bunzip2 linux-6.15.2-kirkwood-tld-1-bodhi.tar.bz2
 $ scp linux-6.15.2-kirkwood-tld-1-bodhi.tar root@stora:
 
 [ on the stora ]
 # tar xvf linux-6.15.2-kirkwood-tld-1-bodhi.tar
-# dpkg -i ./linux-image-6.15.2-kirkwood-tld-1_1_armel.deb 
+
+root@stora:~# dpkg -i ./linux-image-6.15.2-kirkwood-tld-1_1_armel.deb
 Selecting previously unselected package linux-image-6.15.2-kirkwood-tld-1.
-(Reading database ... 27997 files and directories currently installed.)
+(Reading database ... 26948 files and directories currently installed.)
 Preparing to unpack .../linux-image-6.15.2-kirkwood-tld-1_1_armel.deb ...
 Unpacking linux-image-6.15.2-kirkwood-tld-1 (1) ...
-
-root@stora:/home/david# dpkg -i ./linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb
-
-tar xf ~david/linux-6.15.2-kirkwood-tld-1-bodhi.tar
-tar xf  linux-dtb-6.15.2-kirkwood-tld-1.tar
+Setting up linux-image-6.15.2-kirkwood-tld-1 (1) ...
+update-initramfs: Generating /boot/initrd.img-6.15.2-kirkwood-tld-1
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/btrfs/btrfs.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/ext2/ext2.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/cdrom/cdrom.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/isofs/isofs.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/nls/nls_ucs2_utils.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/jfs/jfs.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/lib/crc-itu-t.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/udf/udf.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/xfs/xfs.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/scsi/scsi_transport_fc.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptbase.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptscsih.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptfc.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/scsi/scsi_transport_sas.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptsas.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/scsi/scsi_transport_spi.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptspi.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-core.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-ohci.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-sbp2.ko.xz not found.
+modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/crypto/blake2b_generic.ko.xz not found.
+root@stora:~# dpkg -i ./linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb
+Selecting previously unselected package linux-headers-6.15.2-kirkwood-tld-1.
+(Reading database ... 29940 files and directories currently installed.)
+Preparing to unpack .../linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb ...
+Unpacking linux-headers-6.15.2-kirkwood-tld-1 (1) ...
+Setting up linux-headers-6.15.2-kirkwood-tld-1 (1) ...
 
 # cd /boot
+# tar xf /root/linux-dtb-6.15.2-kirkwood-tld-1.tar
+
+# tar xvf /root/linux-6.15.2-kirkwood-tld-1-bodhi.tar zImage-6.15.2-kirkwood-tld-1
+zImage-6.15.2-kirkwood-tld-1
+
+# mv uImage uImage.3.10.26
+# mv uInitrd uInitrd.3.10.26
+# cp -a zImage-6.15.2-kirkwood-tld-1  zImage.fdt
+# cat dts/kirkwood-netgear_stora_ms2000.dtb  >> zImage.fdt
+# mkimage -A arm -O linux -T kernel -C none -a 0x00008000 -e 0x00008000 -n Linux-6.15.2-kirkwood-tld-1 -d zImage.fdt  uImage
+Image Name:   Linux-6.15.2-kirkwood-tld-1
+Created:      Thu Jul 17 06:39:48 2025
+Image Type:   ARM Linux Kernel Image (uncompressed)
+Data Size:    6027251 Bytes = 5885.99 kB = 5.75 MB
+Load Address: 00008000
+Entry Point:  00008000
+
+# mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00000000 -e 0x00000000 -n initramfs-6.15.2-kirkwood-tld-1 -d initrd.img-6.15.2-kirkwood-tld-1 uInitrd
+Image Name:   initramfs-6.15.2-kirkwood-tld-1
+Created:      Thu Jul 17 06:40:18 2025
+Image Type:   ARM Linux RAMDisk Image (gzip compressed)
+Data Size:    3328726 Bytes = 3250.71 kB = 3.17 MB
+Load Address: 00000000
+Entry Point:  00000000
+
+# shutdown -r now
+```
 
 
 
