@@ -85,9 +85,18 @@ $ bunzip2 linux-6.15.2-kirkwood-tld-1-bodhi.tar.bz2
 $ scp linux-6.15.2-kirkwood-tld-1-bodhi.tar root@stora:
 
 [ on the stora ]
-# tar xvf linux-6.15.2-kirkwood-tld-1-bodhi.tar
 
-root@stora:~# dpkg -i ./linux-image-6.15.2-kirkwood-tld-1_1_armel.deb
+
+# cd /boot
+# tar xvf /root/linux-6.15.2-kirkwood-tld-1-bodhi.tar
+linux-image-6.15.2-kirkwood-tld-1_1_armel.deb
+linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb
+config-6.15.2-kirkwood-tld-1
+zImage-6.15.2-kirkwood-tld-1
+linux-dtb-6.15.2-kirkwood-tld-1.tar
+linux-6.15.2-kirkwood-tld-1.patch
+
+# dpkg -i ./linux-image-6.15.2-kirkwood-tld-1_1_armel.deb
 Selecting previously unselected package linux-image-6.15.2-kirkwood-tld-1.
 (Reading database ... 26948 files and directories currently installed.)
 Preparing to unpack .../linux-image-6.15.2-kirkwood-tld-1_1_armel.deb ...
@@ -115,17 +124,15 @@ modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewir
 modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-ohci.ko.xz not found.
 modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-sbp2.ko.xz not found.
 modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/crypto/blake2b_generic.ko.xz not found.
-root@stora:~# dpkg -i ./linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb
+
+# dpkg -i ./linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb
 Selecting previously unselected package linux-headers-6.15.2-kirkwood-tld-1.
 (Reading database ... 29940 files and directories currently installed.)
 Preparing to unpack .../linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb ...
 Unpacking linux-headers-6.15.2-kirkwood-tld-1 (1) ...
 Setting up linux-headers-6.15.2-kirkwood-tld-1 (1) ...
 
-# cd /boot
-# tar xf /root/linux-dtb-6.15.2-kirkwood-tld-1.tar
-
-# tar xvf /root/linux-6.15.2-kirkwood-tld-1-bodhi.tar
+# tar xf linux-dtb-6.15.2-kirkwood-tld-1.tar
 
 # mv uImage uImage.3.10.26
 # mv uInitrd uInitrd.3.10.26
