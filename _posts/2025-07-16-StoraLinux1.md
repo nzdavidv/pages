@@ -34,9 +34,9 @@ Connecting the two
 - Raspi 6 ground goes to stora 4 ground
 
 ### Images of the console connection
-![pic3 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0424-EDIT.jpg)
-![pic1 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0425.jpg)
-![pic2 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0426.jpg)
+![pic3 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0424-EDIT.jpg height="300px")
+![pic1 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0425.jpg height="300px")
+![pic2 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0426.jpg height="300px")
 
 
 ## Preparing the Raspberry Pi
