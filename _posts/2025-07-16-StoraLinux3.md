@@ -130,7 +130,8 @@ root@david-msi:/media/david/root# tar cvf ../stora-os-bullseye.tar *
 root@david-msi:~# umount /media/david/root
 ```
 Now if it all goes bad there is a recovery point.
-
+user stora password is stora123
+user root password is still 111222
 
 ## then the kernel update
 
