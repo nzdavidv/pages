@@ -240,6 +240,8 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 
 ```
 
-Wohoooo!!!!!
+## Wohoooo a decent kernel !!
+<img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
+
 
 Next blog post is <a href="StoraLinux4.html">Blog Part4</a>
