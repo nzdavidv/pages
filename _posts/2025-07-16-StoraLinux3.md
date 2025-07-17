@@ -13,7 +13,7 @@ There are four major pieces to this working.
 
 At the end of the last one we had a crappy OS but an ok firmware.
 
-## first we need a little better OS 
+## first we need a little better OS - stretch
 
 This updates the OS to Debian stretch
 
@@ -76,6 +76,18 @@ root@stora:~# uname -r
 3.10.26-stora
 ```
 
+## now upgrade to buster
+```
+# vi /etc/apt/sources.list
+deb http://snapshot.debian.org/archive/debian/20230101T091029Z buster main
+deb-src http://snapshot.debian.org/archive/debian/20230101T091029Z buster main
+
+# apt-get update
+# apt-get upgrade
+# apt-get dist-upgrade
+```
+
+
 Following <a>https://forum.doozan.com/read.php?2,12096</a>
 
 Downloaded linux-6.15.2-kirkwood-tld-1-bodhi.tar.bz2 on my laptop and bunzip'd it before transferring to the stora 
@@ -86,6 +98,7 @@ $ scp linux-6.15.2-kirkwood-tld-1-bodhi.tar root@stora:
 
 [ on the stora ]
 
+# apt-get install systemd
 
 # cd /boot
 # tar xvf /root/linux-6.15.2-kirkwood-tld-1-bodhi.tar
@@ -95,6 +108,9 @@ config-6.15.2-kirkwood-tld-1
 zImage-6.15.2-kirkwood-tld-1
 linux-dtb-6.15.2-kirkwood-tld-1.tar
 linux-6.15.2-kirkwood-tld-1.patch
+
+root@stora:/boot# cp -p uImage uImage.3.10.26
+root@stora:/boot# cp -p uInitrd uInitrd.3.10.26
 
 # dpkg -i ./linux-image-6.15.2-kirkwood-tld-1_1_armel.deb
 Selecting previously unselected package linux-image-6.15.2-kirkwood-tld-1.
@@ -134,8 +150,6 @@ Setting up linux-headers-6.15.2-kirkwood-tld-1 (1) ...
 
 # tar xf linux-dtb-6.15.2-kirkwood-tld-1.tar
 
-# mv uImage uImage.3.10.26
-# mv uInitrd uInitrd.3.10.26
 # cp -a zImage-6.15.2-kirkwood-tld-1  zImage.fdt
 # cat dts/kirkwood-netgear_stora_ms2000.dtb  >> zImage.fdt
 # mkimage -A arm -O linux -T kernel -C none -a 0x00008000 -e 0x00008000 -n Linux-6.15.2-kirkwood-tld-1 -d zImage.fdt  uImage
