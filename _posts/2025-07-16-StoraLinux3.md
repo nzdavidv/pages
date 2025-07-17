@@ -13,7 +13,9 @@ There are four major pieces to this working.
 
 At the end of the last one we had a crappy OS but an ok firmware.
 
-## first we need a little better OS - stretch
+We've got to jump through a few operating system upgrades before the kernel work.
+
+## first to Debian stretch
 
 This updates the OS to Debian stretch
 
@@ -76,7 +78,7 @@ root@stora:~# uname -r
 3.10.26-stora
 ```
 
-## now upgrade to buster
+## then upgrade to buster
 ```
 # vi /etc/apt/sources.list
 deb http://snapshot.debian.org/archive/debian/20230101T091029Z buster main
@@ -90,6 +92,31 @@ deb-src http://snapshot.debian.org/archive/debian/20230101T091029Z buster main
 
 Full output here
 - [https://github.com/nzdavidv/pages/blob/main/assets/deb-buster.txt](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/deb-buster.txt)
+
+## then bullseye
+```
+# vi /etc/apt/sources.list
+deb http://deb.debian.org/debian bullseye main
+deb http://security.debian.org/debian-security bullseye-security main
+deb http://deb.debian.org/debian bullseye-updates main
+
+# apt-get update
+N: Skipping acquire of configured file 'main/binary-armel/Packages' as repository 'http://security.debian.org/debian-security bullseye-security InRelease' doesn't support architecture 'armel'
+
+# apt-get upgrade
+# apt dist-upgrade
+```
+### take a backup at this point
+Shutdown to the firmware level, and disconnect the USB drive and then attach to a computer to take a backup.
+[ on my laptop ] 
+```
+root@david-msi:~# mkdir /media/david/root
+root@david-msi:~# mount /dev/sda1 /media/david/root
+root@david-msi:~# cd /media/david/root
+root@david-msi:/media/david/root# tar cvf ../stora-os-bullseye.tar *
+root@david-msi:~# umount /media/david/root
+```
+Now if it all goes bad there is a recovery point.
 
 
 ## then the kernel update
