@@ -166,27 +166,7 @@ Preparing to unpack .../linux-image-6.15.2-kirkwood-tld-1_1_armel.deb ...
 Unpacking linux-image-6.15.2-kirkwood-tld-1 (1) ...
 Setting up linux-image-6.15.2-kirkwood-tld-1 (1) ...
 update-initramfs: Generating /boot/initrd.img-6.15.2-kirkwood-tld-1
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/btrfs/btrfs.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/ext2/ext2.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/cdrom/cdrom.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/isofs/isofs.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/nls/nls_ucs2_utils.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/jfs/jfs.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/lib/crc-itu-t.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/udf/udf.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/fs/xfs/xfs.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/scsi/scsi_transport_fc.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptbase.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptscsih.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptfc.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/scsi/scsi_transport_sas.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptsas.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/scsi/scsi_transport_spi.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/message/fusion/mptspi.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-core.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-ohci.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/drivers/firewire/firewire-sbp2.ko.xz not found.
-modinfo: ERROR: Module /lib/modules/6.15.2-kirkwood-tld-1/kernel/crypto/blake2b_generic.ko.xz not found.
+
 
 # dpkg -i ./linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb
 Selecting previously unselected package linux-headers-6.15.2-kirkwood-tld-1.
