@@ -125,8 +125,7 @@ Setting up linux-headers-6.15.2-kirkwood-tld-1 (1) ...
 # cd /boot
 # tar xf /root/linux-dtb-6.15.2-kirkwood-tld-1.tar
 
-# tar xvf /root/linux-6.15.2-kirkwood-tld-1-bodhi.tar zImage-6.15.2-kirkwood-tld-1
-zImage-6.15.2-kirkwood-tld-1
+# tar xvf /root/linux-6.15.2-kirkwood-tld-1-bodhi.tar
 
 # mv uImage uImage.3.10.26
 # mv uInitrd uInitrd.3.10.26
