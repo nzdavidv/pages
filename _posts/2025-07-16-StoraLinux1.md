@@ -123,5 +123,5 @@ Marvell>>
 Happy Days!
 
 Next blog post is 
-[blog Part2]({% link /pages/_posts/2025-07-16-StoraLinux2.md %})
+[blog Part2]({% link _posts/2025-07-16-StoraLinux2.md %})
 
