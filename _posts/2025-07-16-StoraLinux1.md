@@ -35,7 +35,9 @@ Connecting the two
 
 ### Images of the console connection
 ![pic3 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0424-EDIT.jpg){:width="400px"}
+
 ![pic1 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0425.jpg){:width="400px"}
+
 ![pic2 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0426.jpg){:width="400px"}
 
 
@@ -121,5 +123,5 @@ Marvell>>
 Happy Days!
 
 Next blog post is 
-[Part2]({% link _posts/2025-07-16-StoraLinux2.md %})
+[blog Part2]({% link /pages/_posts/2025-07-16-StoraLinux2.md %})
 
