@@ -122,4 +122,4 @@ Marvell>>
 ```
 Happy Days!
 
-Next blog post is <a href="2025-07-16-StoraLinux2.html">Blog Part2</a>
+Next blog post is <a href="StoraLinux2.html">Blog Part2</a>
