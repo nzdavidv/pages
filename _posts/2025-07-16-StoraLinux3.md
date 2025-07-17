@@ -181,23 +181,65 @@ Setting up linux-headers-6.15.2-kirkwood-tld-1 (1) ...
 # cat dts/kirkwood-netgear_stora_ms2000.dtb  >> zImage.fdt
 # mkimage -A arm -O linux -T kernel -C none -a 0x00008000 -e 0x00008000 -n Linux-6.15.2-kirkwood-tld-1 -d zImage.fdt  uImage
 Image Name:   Linux-6.15.2-kirkwood-tld-1
-Created:      Thu Jul 17 06:39:48 2025
+Created:      Thu Jul 17 09:07:49 2025
 Image Type:   ARM Linux Kernel Image (uncompressed)
-Data Size:    6027251 Bytes = 5885.99 kB = 5.75 MB
+Data Size:    6027251 Bytes = 5885.99 KiB = 5.75 MiB
 Load Address: 00008000
 Entry Point:  00008000
 
 # mkimage -A arm -O linux -T ramdisk -C gzip -a 0x00000000 -e 0x00000000 -n initramfs-6.15.2-kirkwood-tld-1 -d initrd.img-6.15.2-kirkwood-tld-1 uInitrd
 Image Name:   initramfs-6.15.2-kirkwood-tld-1
-Created:      Thu Jul 17 06:40:18 2025
+Created:      Thu Jul 17 09:08:43 2025
 Image Type:   ARM Linux RAMDisk Image (gzip compressed)
-Data Size:    3328726 Bytes = 3250.71 kB = 3.17 MB
+Data Size:    8939735 Bytes = 8730.21 KiB = 8.53 MiB
 Load Address: 00000000
 Entry Point:  00000000
 
+root@stora:/boot# ls -altr
+total 109572
+-rwxr-xr-x  1 root root  1927832 Jan 13  2014 vmlinuz-3.10.26-stora
+-rw-r--r--  1 root root   123716 Jan 13  2014 config-3.10.26-stora
+-rw-r--r--  1 root root  1442389 Jan 13  2014 System.map-3.10.26-stora
+-rw-r--r--  1 root root  1927896 Jan 13  2014 uImage.3.10.26
+-rw-r--r--  1 root root  7338563 Jan 13  2014 uInitrd.3.10.26
+drwxr-xr-x  2 root root     4096 May 31 23:02 dts
+-rwxr-xr-x  1 root root  6015536 Jun 17 23:06 vmlinuz-6.15.2-kirkwood-tld-1
+-rw-r--r--  1 root root   199045 Jun 17 23:06 config-6.15.2-kirkwood-tld-1
+-rw-r--r--  1 root root  4417083 Jun 17 23:06 System.map-6.15.2-kirkwood-tld-1
+-rwxr-xr-x  1 root root  6015536 Jun 18 00:42 zImage-6.15.2-kirkwood-tld-1
+-rw-r--r--  1 root root  8709420 Jun 18 00:51 linux-headers-6.15.2-kirkwood-tld-1_1_armel.deb
+-rw-r--r--  1 root root 31736076 Jun 18 00:52 linux-image-6.15.2-kirkwood-tld-1_1_armel.deb
+-rw-r--r--  1 root root  1525760 Jun 18 01:06 linux-dtb-6.15.2-kirkwood-tld-1.tar
+-rw-r--r--  1 root root   184041 Jun 23 22:26 linux-6.15.2-kirkwood-tld-1.patch
+drwxr-xr-x 21 root root     4096 Jul 17 07:50 ..
+-rw-r--r--  1 root root 10449432 Jul 17 08:49 initrd.img-3.10.26-stora
+-rw-r--r--  1 root root  8939735 Jul 17 09:06 initrd.img-6.15.2-kirkwood-tld-1
+drwxr-xr-x  3 root root     4096 Jul 17 09:07 .
+-rwxr-xr-x  1 root root  6027251 Jul 17 09:07 zImage.fdt
+-rw-r--r--  1 root root  6027315 Jul 17 09:07 uImage
+-rw-r--r--  1 root root  8939799 Jul 17 09:08 uInitrd
+
 # shutdown -r now
+
+..after restart
+
+stora@stora:~$ su -
+Password: 
+root@stora:~# uname -r
+6.15.2-kirkwood-tld-1
+root@stora:~# cat /etc/os-release 
+PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+NAME="Debian GNU/Linux"
+VERSION_ID="11"
+VERSION="11 (bullseye)"
+VERSION_CODENAME=bullseye
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
 ```
 
-
+Wohoooo!!!!!
 
 Next blog post is <a href="StoraLinux4.html">Blog Part4</a>
