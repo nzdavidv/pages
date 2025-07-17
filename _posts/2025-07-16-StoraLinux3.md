@@ -89,7 +89,7 @@ deb-src http://snapshot.debian.org/archive/debian/20230101T091029Z buster main
 ```
 After the upgrade change the /etc/apt/sources.list to a newer source and then update again
 ```
-root@stora:~# cat /etc/apt/sources.list
+# vi /etc/apt/sources.list
 deb http://archive.debian.org/debian buster main
 deb-src http://archive.debian.org/debian buster main
 # apt-get update
@@ -97,6 +97,9 @@ deb-src http://archive.debian.org/debian buster main
 # apt dist-upgrade
 
 ```
+Full output here
+- [https://github.com/nzdavidv/pages/blob/main/assets/deb-buster.txt](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/deb-buster.txt)
+
 
 ## then the kernel update
 
