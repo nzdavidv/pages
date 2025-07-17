@@ -85,6 +85,17 @@ deb-src http://snapshot.debian.org/archive/debian/20230101T091029Z buster main
 # apt-get update
 # apt-get upgrade
 # apt-get dist-upgrade
+# shutdown -r now
+```
+After the upgrade change the /etc/apt/sources.list to a newer source and then update again
+```
+root@stora:~# cat /etc/apt/sources.list
+deb http://archive.debian.org/debian buster main
+deb-src http://archive.debian.org/debian buster main
+# apt-get update
+# apt-get upgrade
+# apt dist-upgrade
+
 ```
 
 ## then the kernel update
