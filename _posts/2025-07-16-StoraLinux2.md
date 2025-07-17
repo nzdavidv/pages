@@ -168,3 +168,6 @@ Netgear Stora> saveenv
 ```
 ### recap
 So at the end of two sessions we are left with USB boot of a crappy old OS but we do have a shiney firmware.
+
+Next blog post is 
+[blog Part3]({% link /pages/_posts/2025-07-16-StoraLinux3.md %})
