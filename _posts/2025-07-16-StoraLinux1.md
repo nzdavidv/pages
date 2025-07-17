@@ -120,4 +120,5 @@ Marvell>>
 ```
 Happy Days!
 
-Next post is {% post_url 2025-07-16-StoraLinux1 %}
+Next post is 
+[Link text]({% post_url 2025-07-16-StoraLinux2 %})
