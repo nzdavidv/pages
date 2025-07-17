@@ -87,6 +87,7 @@ deb-src http://snapshot.debian.org/archive/debian/20230101T091029Z buster main
 # apt-get dist-upgrade
 ```
 
+## then the kernel update
 
 Following <a>https://forum.doozan.com/read.php?2,12096</a>
 
