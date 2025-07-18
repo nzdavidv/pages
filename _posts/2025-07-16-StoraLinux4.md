@@ -211,16 +211,6 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 1:1 0x800000 /boot/uI
 ```
 
 
-## switching to IDE / hard drive instead of USB
-
-```
-Netgear Stora> ide reset
-Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 0:1 0x800000 /boot/uImage; ext2load ide 0:1 0x2100000 /boot/uInitrd'
-Netgear Stora> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=introot rootdelay=10 earlyprintk=serial; run bootcmd_ide; bootm 0x800000 0x2100000'
-Netgear Stora> saveenv
-Netgear Stora> reset
-```
-
 ## issues
 none really, just /run is too small and there is too much wasted memory in buffer cace
 
