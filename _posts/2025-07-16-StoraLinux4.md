@@ -212,7 +212,7 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 1:1 0x800000 /boot/uI
 
 
 ## issues
-none really, just /run is too small and there is too much wasted memory in buffer cache
+none really, just /run is too small 
 
 ```
 root@stora:~# df -h
@@ -241,6 +241,13 @@ ts.
 
 # dmesg
 ..had no real dramas on restart
+
+root@stora:~# vi /etc/fstab 
+# UNCONFIGURED FSTAB FOR BASE SYSTEM
+LABEL=introot / ext4 rw,discard,noatime,errors=remount-ro 0 1
+/dev/sda2 swap swap defaults 0 0
+tmpfs /run tmpfs defaults,size=20M 0 0
+
 ```
-## still more to be refined but ultimately 
-# success! 
+## still more to be refined but ultimately..
+# Success! 
