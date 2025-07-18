@@ -15,6 +15,9 @@ At the end of the last one we had a crappy OS but an ok firmware.
 
 We've got to jump through a few operating system upgrades before the kernel work.
 
+You might reasonably ask 'why not just do the kernel update from Debian stretch?'.. well the answer is for me when I tried that the loading of linux-image-6.15.2-kirkwood-tld-1_1_armel.deb generated some kernel load errors and then on boot the OS decided it didn't know how to read the filesystem.
+Yoinks. needed that. 
+
 ## first to Debian stretch
 
 This updates the OS to Debian stretch
