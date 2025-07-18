@@ -212,7 +212,7 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 1:1 0x800000 /boot/uI
 
 
 ## issues
-none really, just /run is too small and there is too much wasted memory in buffer cace
+none really, just /run is too small and there is too much wasted memory in buffer cache
 
 ```
 root@stora:~# df -h
