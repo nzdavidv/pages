@@ -248,6 +248,16 @@ LABEL=introot / ext4 rw,discard,noatime,errors=remount-ro 0 1
 /dev/sda2 swap swap defaults 0 0
 tmpfs /run tmpfs defaults,size=20M 0 0
 
+after another restart..
+stora@stora:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev             49M     0   49M   0% /dev
+tmpfs            20M  664K   20M   4% /run
+/dev/sda1       915G  828M  867G   1% /
+tmpfs            54M     0   54M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs            11M     0   11M   0% /run/user/1000
+
 ```
 ## still more to be refined but ultimately..
 # Success! 
