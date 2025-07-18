@@ -42,7 +42,7 @@ Connecting the two
 
 
 ## Preparing the Raspberry Pi
-We're going to be using UART1, pins 27 and 28, /dev/ttyAMA1
+I used UART1, pins 27 and 28, /dev/ttyAMA1
 Enabling serial port
 ```
 $ sudo raspi-config
@@ -120,6 +120,6 @@ Marvell>>
 Marvell>> 
 
 ```
-Happy Days!
+### Happy Days! console connected
 
 Next blog post is <a href="StoraLinux2.html">Blog Part2</a>
