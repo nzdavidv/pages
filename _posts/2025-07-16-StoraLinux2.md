@@ -11,8 +11,8 @@ There are four major pieces to this working.
 
 # Section 2 - The firmware - uBoot
 
-Maybe I could have done this running the stock OS but I didn't know what I was doing so the first step for me was to download and install an OS.
-..so we're skipping to step4 - the operating system, kind-of. It's a crappy old operating system.
+Maybe I could have done this running the stock OS but first step for me was to download and install an OS.
+It's an old operating system.
 
 followed these pages 
 - <a>https://forum.doozan.com/read.php?2,133873,133904,quote=1</a>
@@ -20,12 +20,12 @@ followed these pages
 - <a>https://www.cablecat.dk/sites/openstora/<a>
 - <a>https://github.com/evgkirov/stora-debian-install<a>
 
-Wheezy is way too old but that is what I got from https://github.com/evgkirov/stora-debian-install
+Wheezy is in fact way too old but that is what I got from https://github.com/evgkirov/stora-debian-install
 
 ## Preparing the USB Debian OS
 
 ```
-My laptop is running Ubuntu. I plugged in a USB drive, and then unmounted it.
+My laptop is running Ubuntu. I plugged in a USB hard drive. I have done booted with a USB stick and it worked ok as well.
 
 # umount /media/david/root1
 # mkfs.ext2 /dev/sda1
@@ -45,7 +45,7 @@ Then transfer the contents of the tarball
 # cd /
 # umount /media/david/root
 ```
-root password: 111222
+root password that came with it: 111222
 
 ## Preparing to USB boot
 If I could go back to old-me I'd say .. hey old me make sure you get and save a clean printenv.
@@ -66,7 +66,7 @@ Net:   egiga0, egiga1 [PRIME]
 Hit any key to stop autoboot:  3 
  0 
 Marvell>> printenv
-...imagination...
+...use imagination...
 
 Marvell>> setenv bootcmd_usb 'usb reset; ext2load usb 0 0x200000 /boot/uImage; ext2load usb 0 0x800000 /boot/uInitrd'
 Marvell>> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=root rootdelay=8  earlyprintk=serial; run bootcmd_usb; bootm 0x200000 0x800000'
@@ -159,7 +159,7 @@ WARNING: Caches not enabled
 NAND:  256 MiB                                                                                                   
 *** Warning - bad CRC, using default environment                                                                 
                                                    
-Then and set the variables again
+Then and I set the USB bbot variables again
                                                                               
 Netgear Stora> setenv bootcmd_usb 'usb reset; ext2load usb 0 0x200000 /boot/uImage; ext2load usb 0 0x800000 /boot/uInitrd'
 Netgear Stora> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=root rootdelay=8  earlyprintk=serial; run bootcmd_usb; bootm 0x200000 0x800000'
@@ -167,6 +167,6 @@ Netgear Stora> saveenv
 
 ```
 ### recap
-So at the end of two sessions we are left with USB boot of a crappy old OS but we do have a shiney firmware.
+So at the end of two sessions we are left with USB boot of a crappy old OS but we do have an ok firmware.
 
 Next blog post is <a href="StoraLinux3.html">Blog Part3</a>
