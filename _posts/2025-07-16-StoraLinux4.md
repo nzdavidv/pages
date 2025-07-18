@@ -221,18 +221,36 @@ Netgear Stora> saveenv
 Netgear Stora> reset
 ```
 
-issues
+## issues
+none really, just /run is too small and there is too much wasted memory in buffer cace
 
 ```
+root@stora:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev             49M     0   49M   0% /dev
+tmpfs            11M  660K   11M   6% /run
+/dev/sda1       915G  828M  867G   1% /
+tmpfs            54M     0   54M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs            11M     0   11M   0% /run/user/1000
+root@stora:~# free
+               total        used        free      shared  buff/cache   available
+Mem:          110072       55412       13680         640       55984       54660
+Swap:        1762004         608     1761396
+
+
 Reload daemon failed: Refusing to reload, not enough space available on /run/systemd. Currently, 10.3M are free, but a safety buffer of 16.0M is enfor
 ced.
 Warning: The unit file, source configuration file or drop-ins of udev.service changed on disk. Run 'systemctl daemon-reload' to reload units.
 Reload daemon failed: Refusing to reload, not enough space available on /run/systemd. Currently, 10.3M are free, but a safety buffer of 16.0M is enfor
 ced.
-Setting up libsystemd-shared:armel (252.38-1~deb12u1) ...
-Setting up systemd (252.38-1~deb12u1) ...
 Reexecute daemon failed: Refusing to reexecute, not enough space available on /run/systemd. Currently, 10.3M are free, but a safety buffer of 16.0M is
  enforced.
 Warning: The unit file, source configuration file or drop-ins of systemd-networkd.service changed on disk. Run 'systemctl daemon-reload' to reload uni
 ts.
+
+# dmesg
+..had no real dramas on restart
 ```
+## still more to be refined but ultimately 
+# success! 
