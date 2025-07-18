@@ -190,15 +190,19 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 0:1 0x800000 /boot/uI
 Netgear Stora> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=introot rootdelay=10 earlyprintk=serial; run bootcmd_ide; bootm 0x800000 0x2100000'
 Netgear Stora> saveenv
 Netgear Stora> reset
+
+that is for disk 0. for disk 1 would be..
+Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 1:1 0x800000 /boot/uImage; ext2load ide 1:1 0x2100000 /boot/uInitrd'
 ```
 
 ### after reboot
 ```
+# dhclient etho
 # apt update
 # apt upgrade
 # apt install network-manager
 
-# vi /etc/fstab
+# tasksel install minimal
 
 
 
@@ -215,4 +219,20 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 0:1 0x800000 /boot/uI
 Netgear Stora> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=introot rootdelay=10 earlyprintk=serial; run bootcmd_ide; bootm 0x800000 0x2100000'
 Netgear Stora> saveenv
 Netgear Stora> reset
+```
+
+issues
+
+```
+Reload daemon failed: Refusing to reload, not enough space available on /run/systemd. Currently, 10.3M are free, but a safety buffer of 16.0M is enfor
+ced.
+Warning: The unit file, source configuration file or drop-ins of udev.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+Reload daemon failed: Refusing to reload, not enough space available on /run/systemd. Currently, 10.3M are free, but a safety buffer of 16.0M is enfor
+ced.
+Setting up libsystemd-shared:armel (252.38-1~deb12u1) ...
+Setting up systemd (252.38-1~deb12u1) ...
+Reexecute daemon failed: Refusing to reexecute, not enough space available on /run/systemd. Currently, 10.3M are free, but a safety buffer of 16.0M is
+ enforced.
+Warning: The unit file, source configuration file or drop-ins of systemd-networkd.service changed on disk. Run 'systemctl daemon-reload' to reload uni
+ts.
 ```
