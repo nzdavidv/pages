@@ -1,9 +1,9 @@
 ---
-title: "NetGear Stora running Debian Linux Part4"
+title: "AWS website using Lambda, API-Gateway, and S3 - part1"
 date: 2025-07-19
 ---
 # Overview
-This is a repost from my www.nzvink.com website which I intend on pulling down now I have the github pages thing going on.
+This is a repost from my www.nzvink.com website although I refreshed and re-tested the content.
 **Web hosting using API gateway, Lambda, S3, all fronted by Cloudflare**
 
 ## Tasks overview
