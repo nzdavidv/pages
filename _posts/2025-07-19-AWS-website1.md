@@ -30,8 +30,10 @@ In Lambda click Permissions, then click on the role name to launch IAM
 
 Add permissions, Create inline policy
 
-Click JSON, and paste the code below <a>https://github.com/nzdavidv/api-s3-website/blob/main/IAM-s3-read-all</a>. 
-I named it 's3-read-all' and then clicked Create. TO-DO: refine the S3 permissions just to the bucket it needs.
+Click JSON, and paste the code below 
+<a>https://github.com/nzdavidv/api-s3-website/blob/main/IAM-s3-read-all</a>. 
+I named it 's3-read-all' and then clicked Create. 
+TO-DO: refine the S3 permissions just to the bucket it needs.
 
 ```
 {
