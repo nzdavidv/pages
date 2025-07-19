@@ -17,10 +17,10 @@ This is a repost from my www.nzvink.com website although I refreshed and re-test
 
 # Lambda Python shell
 Create Function, Author from Scratch, Python 3.13.
-![aws-www-1](/pages/assets/images/aws-www-1.png){:width="600px"}
+![aws-www-1](/pages/assets/images/aws-www-1.png){:width="800px"}
 
 Configuration, General Configuration. Edit. Change the memory from 128 MB to 256 MB, save.
-![aws-www-2](/pages/assets/images/aws-www-2.png){:width="600px"}
+![aws-www-2](/pages/assets/images/aws-www-2.png){:width="800px"}
 
 ## Modify IAM permissions
 In Lambda click Permissions, then click on the role name to launch IAM
