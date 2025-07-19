@@ -47,6 +47,7 @@ Open API Gateway, Custom domain names, then Create. The cert should be able to b
 Then click 'Create Domain Name'.
 
 ![aws-www-15](/pages/assets/images/aws-www-15.png){:width="800px"}
+
 ![aws-www-16](/pages/assets/images/aws-www-16.png){:width="800px"}
 
 Under API Gateway, Custom domain names, click API mappings, and then Configure API mappings.
