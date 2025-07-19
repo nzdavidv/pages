@@ -22,8 +22,11 @@ Create Function, Author from Scratch, Python 3.13.
 Configuration, General Configuration. Edit. Change the memory from 128 MB to 256 MB, save.
 ![aws-www-2](/pages/assets/images/aws-www-2.png){:width="800px"}
 
+![aws-www-3](/pages/assets/images/aws-www-3.png){:width="600px"}
+
 ## Modify IAM permissions
 In Lambda click Permissions, then click on the role name to launch IAM
+![aws-www-4](/pages/assets/images/aws-www-4.png){:width="700px"}
 
 Add permissions, Create inline policy
 
@@ -52,14 +55,20 @@ Now the shell of the Lambda is complete.
 
 # API gateway
 API gateway, Create API, HTTP API, Build.
+![aws-www-5](/pages/assets/images/aws-www-5.png){:width="800px"}
 
 Add integration, Lambda, select the Lambda function, add a name for the API gateway, click Next
 
 Change the Method to GET, enter /{proxy+} as the Resource path and click Next.
 /{proxy+} tells the gateway to pass all requests through to the Lambda.
+![aws-www-6](/pages/assets/images/aws-www-6.png){:width="800px"}
 
 Leave auto-deploy on and $default stage name, Next, then Create.
 
 ### API gateway to Lambda testing
 Click on Stages under Deploy then $default, then the invoke URL link and if it worked you should get a website with "Hello from Lambda!"
-aws-www-8
+![aws-www-7](/pages/assets/images/aws-www-7.png){:width="800px"}
+
+![aws-www-8](/pages/assets/images/aws-www-8.png){:width="800px"}
+
+
