@@ -115,3 +115,4 @@ You should be able to also see the test image that was uploaded (by changing the
 - Add an API gateway custom domain, API mappings
 - Cloudflare: setup the website, DNS, SSL
 
+Next blog post is <a href="AWS-website2.html">AWS WWW blog Part2</a>
