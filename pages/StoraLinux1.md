@@ -34,11 +34,11 @@ Connecting the two
 - Raspi 6 ground goes to stora 4 ground
 
 ### Images of the console connection
-<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/IMG_0424-EDIT.jpg" alt="pic3 my very rough connecting Raspi to Stora" style="width:400px;border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/IMG_0424-EDIT.jpg" alt="pic3 my very rough connecting Raspi to Stora" style="width:600px;border: 1px solid grey;">
 
-![pic1 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0425.jpg){:width="400px"}
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/IMG_0425.jpg" alt="pic3 my very rough connecting Raspi to Stora" style="width:600px;border: 1px solid grey;">
 
-![pic2 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0426.jpg){:width="400px"}
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/IMG_0426.jpg" alt="pic3 my very rough connecting Raspi to Stora" style="width:400px;border: 1px solid grey;">
 
 
 ## Preparing the Raspberry Pi
@@ -122,4 +122,4 @@ Marvell>>
 ```
 ### Happy Days! console connected
 
-Next blog post is <a href="StoraLinux2.html">Blog Part2</a>
+Next blog post is <a href="StoraLinux2.md">Blog Part2</a>
