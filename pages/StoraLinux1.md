@@ -1,5 +1,5 @@
 ---
-NetGear Stora running Debian Linux Part1
+"NetGear Stora running Debian Linux Part1"
 ---
 # Overview
 There are four major pieces to this working.
