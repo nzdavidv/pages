@@ -1,6 +1,5 @@
 ---
-title: "NetGear Stora running Debian Linux Part1"
-date: 2025-07-16
+NetGear Stora running Debian Linux Part1
 ---
 # Overview
 There are four major pieces to this working.
