@@ -1,7 +1,7 @@
 ---
-title: "NetGear Stora running Debian Linux Part4"
-date: 2025-07-16
+NetGear Stora running Debian Linux Part4
 ---
+
 # Overview
 There are four major pieces to this working.
 1. Connecting to the console
@@ -260,4 +260,12 @@ tmpfs            11M     0   11M   0% /run/user/1000
 
 ```
 ## still more to be refined but ultimately..
-# Success! 
+# Success!
+
+## Post-script
+I got some Plug to Plug Servo Leads from Jaycar to replace my bodgy console cables to the Raspberry Pi.
+<a>https://www.jaycar.co.nz/30cm-plug-to-plug-servo-leads-pack-of-5/p/WC6040)</a>
+$5.90 for a pack of 5 and they were 30cm long.
+
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/IMG_0431.jpg" alt="connecting Raspi to Stora" style="width:500px;border: 1px solid grey;">
+
