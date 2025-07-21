@@ -1,7 +1,7 @@
 ---
-title: "NetGear Stora running Debian Linux Part3"
-date: 2025-07-16
+NetGear Stora running Debian Linux Part3
 ---
+
 # Overview
 There are four major pieces to this working.
 1. Connecting to the console
@@ -247,4 +247,4 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 <img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
 
 
-Next blog post is <a href="StoraLinux4.html">Blog Part4</a>
+Next blog post is <a href="StoraLinux4.md">Blog Part4</a>
