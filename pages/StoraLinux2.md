@@ -1,7 +1,7 @@
 ---
-title: "NetGear Stora running Debian Linux Part2"
-date: 2025-07-16
+NetGear Stora running Debian Linux Part2
 ---
+
 # Overview
 There are four major pieces to this working.
 1. Connecting to the console
@@ -169,4 +169,4 @@ Netgear Stora> saveenv
 ### recap
 So at the end of two sessions we are left with USB boot of a crappy old OS but we do have an ok firmware.
 
-Next blog post is <a href="StoraLinux3.html">Blog Part3</a>
+Next blog post is <a href="StoraLinux3.md">Blog Part3</a>
