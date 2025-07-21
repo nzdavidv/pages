@@ -34,7 +34,7 @@ Connecting the two
 - Raspi 6 ground goes to stora 4 ground
 
 ### Images of the console connection
-<img src= "./images/IMG_0424-EDIT.jpg" alt="pic3 my very rough connecting Raspi to Stora" style="width:400px;border: 1px solid grey;">
+<img src= "/refs/heads/main/images/IMG_0424-EDIT.jpg" alt="pic3 my very rough connecting Raspi to Stora" style="width:400px;border: 1px solid grey;">
 
 ![pic1 my very rough connecting Raspi to Stora](/pages/assets/images/IMG_0425.jpg){:width="400px"}
 
