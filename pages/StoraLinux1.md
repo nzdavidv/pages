@@ -1,6 +1,8 @@
 ---
-"NetGear Stora running Debian Linux Part1"
+NetGear Stora running Debian Linux Part1
 ---
+
+
 # Overview
 There are four major pieces to this working.
 1. Connecting to the console
