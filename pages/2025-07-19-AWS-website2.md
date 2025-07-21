@@ -1,0 +1,65 @@
+---
+title: "AWS website using Lambda, API-Gateway, and S3 - part2"
+date: 2025-07-19
+---
+# Overview
+This is a repost from my www.nzvink.com website although I refreshed and re-tested the content.
+**Web hosting using API gateway, Lambda, S3, all fronted by Cloudflare**
+
+This continues the setup of API gateway, Lambda, S3, all fronted by Cloudflare started earlier. 
+I left off with test.html being served via API gateway to Lambda which was accessing files in the S3 bucket.
+Still a few things to be done..
+
+- Clone and modify some html code and images, upload to the buckets
+- Create a custom domain for the API gateway, and API mappings
+- Cloudflare: setup the website, DNS, SSL
+
+## Source and modify some html templates
+I sourced some html templates from html codex <a href="https://htmlcodex.com">html codex</a> and downloaded them locally for editing with VSCode.
+For the test website I downloaded construction-company-website-template-free.
+
+I uploaded the base html files using s3 'upload file' and then for the folders img etc I used 'upload folders'.
+Upload all of the images, .css, and .js files as-is to the s3 bucket
+
+https://glnw9kbzgb.execute-api.us-east-1.amazonaws.com/
+
+It seemed to work.
+
+## Cloudflare initial setup
+
+**note: 2025-07-29 - I haven't re-validated the setup below for cloudflare, AWS certs,  AWS custom domain name..
+
+I followed Cloudflare instructions to setup site with a free plan.
+I changed my DNS to use Cloudflare Nameservers with my Registrar.
+The next step was to create a Cloudflare certificate.
+Under SSL/TLS, Origin Server, 'Create Certificate', I created the cert and downloaded the cert and private key. It was important to get the RSA PEM origin root cert for the cert chain in the import.
+
+![aws-www-13](/pages/assets/images/aws-www-13.png){:width="800px"}
+
+### AWS Certificate manager
+In AWS open Certificate manager then 'Import'. Paste the cert and private key.
+It needs to say Imported and issued when done.
+
+![aws-www-14](/pages/assets/images/aws-www-14.png){:width="800px"}
+
+### API gateway custom domain
+Open API Gateway, Custom domain names, then Create. The cert should be able to be selected in the Create Domain Name, ACM Certificate section.
+Then click 'Create Domain Name'.
+
+![aws-www-15](/pages/assets/images/aws-www-15.png){:width="800px"}
+
+![aws-www-16](/pages/assets/images/aws-www-16.png){:width="800px"}
+
+Under API Gateway, Custom domain names, click API mappings, and then Configure API mappings.
+Add new mapping. Select the API, Stage, and Save. I also like to set Throttling to ensure I don't get hit with an unexpected bill but this would not be appropriate for a high volume website. Now the API gateway is setup to handle the new domain, but nothing has told DNS to direct traffic to it.. Copy the invoke URL domain part (without the https://)
+
+![aws-www-17](/pages/assets/images/aws-www-17.png){:width="800px"}
+
+### Cloudflare DNS
+In Cloudflare click the website, then DNS.
+Click 'Add record'. The type is CNAME and add the name and target.
+Under SSL/TLS Overview, the encryption mode needs to be set to Full.
+
+### Final testing
+It's alive and works..
+
