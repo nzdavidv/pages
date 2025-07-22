@@ -34,26 +34,26 @@ I changed my DNS to use Cloudflare Nameservers with my Registrar.
 The next step was to create a Cloudflare certificate.
 Under SSL/TLS, Origin Server, 'Create Certificate', I created the cert and downloaded the cert and private key. It was important to get the RSA PEM origin root cert for the cert chain in the import.
 
-![aws-www-13](/pages/assets/images/aws-www-13.png){:width="800px"}
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-13.png" alt="aws-www-13"  width="800px"></kbd>
 
 ### AWS Certificate manager
 In AWS open Certificate manager then 'Import'. Paste the cert and private key.
 It needs to say Imported and issued when done.
 
-![aws-www-14](/pages/assets/images/aws-www-14.png){:width="800px"}
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-14.png" alt="aws-www-14"  width="800px"></kbd>
 
 ### API gateway custom domain
 Open API Gateway, Custom domain names, then Create. The cert should be able to be selected in the Create Domain Name, ACM Certificate section.
 Then click 'Create Domain Name'.
 
-![aws-www-15](/pages/assets/images/aws-www-15.png){:width="800px"}
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-15.png" alt="aws-www-15"  width="800px"></kbd>
 
-![aws-www-16](/pages/assets/images/aws-www-16.png){:width="800px"}
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-16.png" alt="aws-www-16"  width="800px"></kbd>
 
 Under API Gateway, Custom domain names, click API mappings, and then Configure API mappings.
 Add new mapping. Select the API, Stage, and Save. I also like to set Throttling to ensure I don't get hit with an unexpected bill but this would not be appropriate for a high volume website. Now the API gateway is setup to handle the new domain, but nothing has told DNS to direct traffic to it.. Copy the invoke URL domain part (without the https://)
 
-![aws-www-17](/pages/assets/images/aws-www-17.png){:width="800px"}
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-17.png" alt="aws-www-17"  width="800px"></kbd>
 
 ### Cloudflare DNS
 In Cloudflare click the website, then DNS.
