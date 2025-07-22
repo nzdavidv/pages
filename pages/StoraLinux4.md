@@ -186,7 +186,7 @@ root@stora:/# exit
 exit
 ```
 ### back in normal OS
-Prepare for reboot
+Prepare for reboot, then reboot
 ```
 
 # umount /media/debian/proc
@@ -196,6 +196,7 @@ Prepare for reboot
 # umount /media/debian/
 
 # shutdown -r now
+
 ```
 ### change the boot to IDE
 Interrupt the boot and change the boot to IDE
@@ -221,7 +222,6 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 1:1 0x800000 /boot/uI
 
 ..not actually sure this did anything but I was hoping it would install a base set of packages.
 # tasksel install minimal
-
 
 ```
 
@@ -255,9 +255,11 @@ Warning: The unit file, source configuration file or drop-ins of systemd-network
 ts.
 
 # dmesg
-..had no real dramas on restart
+```
+..dmesg had no real dramas on restart
 
 To fix /run too small I added an entry into fstab:
+```
 root@stora:~# vi /etc/fstab 
 # UNCONFIGURED FSTAB FOR BASE SYSTEM
 LABEL=introot / ext4 rw,discard,noatime,errors=remount-ro 0 1
