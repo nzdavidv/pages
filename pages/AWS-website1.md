@@ -22,7 +22,7 @@ Create Function, Author from Scratch, Python 3.13.
 Configuration, General Configuration. Edit. Change the memory from 128 MB to 256 MB, save.
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-2.png" alt="aws-www-2" width="1000px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-3.png" alt="aws-www-3" width="500px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-3.png" alt="aws-www-3" width="400px"></kbd>
 
 ## Modify IAM permissions
 In Lambda click Permissions, then click on the role name to launch IAM
@@ -57,7 +57,7 @@ Now the shell of the Lambda is complete.
 
 # API gateway
 API gateway, Create API, HTTP API, Build.
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-5.png" alt="aws-www-5" width="800px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-5.png" alt="aws-www-5" width="1000px"></kbd>
 
 Add integration, Lambda, select the Lambda function, add a name for the API gateway, click Next
 
@@ -70,8 +70,11 @@ Leave auto-deploy on and $default stage name, Next, then Create.
 
 ### API gateway to Lambda testing
 Click on Stages under Deploy then $default, then the invoke URL link and if it worked you should get a website with "Hello from Lambda!"
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-7.png" alt="aws-www-7"  width="800px"></kbd>
+
 **Success!**
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-8.png" alt="aws-www-8"  width="800px"></kbd>
 
 # S3 bucket
@@ -93,7 +96,8 @@ Return body is what sends the html.
 This part 'def lambda_handler(event, context):' is invoked with every Lambda call and the event contains lots of data you can use. The code I've written can be found on 
 <a>https://github.com/nzdavidv/api-s3-website/blob/main/www-s3-lambda.py</a>
 In Lambda, Copy and paste the new code into Code, lambda_function. Then click Deploy.
-<img src= "/pages/assets/images/aws-www-10.png" alt="aws-www-10"  style="border: 1px solid grey;">
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-10.png" alt="aws-www-10"  width="800px"></kbd>
 
 ### Set the Lambda environment variable for the bucket name
 
@@ -101,13 +105,14 @@ Click, Configuration, Environment Variables, then Edit
 Click Add environment variable
 The key is BUCKETNAME and the value is whatever your bucket name is, then click Save
 
-<img src= "/pages/assets/images/aws-www-11.png" alt="aws-www-11"  style="border: 1px solid grey;">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-11.png" alt="aws-www-11"  width="800px"></kbd>
 
 ### retesting
 API gateway to Lambda re-testing
 Appending test.html to the previous test website should now be able to access the uploaded test.html file. 
 For me this was: https://glnw9kbzgb.execute-api.us-east-1.amazonaws.com/test.html
-![aws-www-12](/pages/assets/images/aws-www-12.png){:width="800px"}
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-12.png" alt="aws-www-12"  width="800px"></kbd>
 
 You should be able to also see the test image that was uploaded (by changing the URL).
 
