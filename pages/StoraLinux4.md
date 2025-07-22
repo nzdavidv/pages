@@ -19,8 +19,8 @@ I decided on balance to go with the clean install, onto the IDE disk in my Stora
 
 ## prepare the disk
 
-```
 I'm going to create 2 partitions on the disk, one is a small swap partition.
+```
 # fdisk /dev/sda
 
 Welcome to fdisk (util-linux 2.36.1).
@@ -70,8 +70,9 @@ Command (m for help): w
 The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.
-
+```
 Now format with ext4 this time.. because we can.
+```
 # mkfs -t ext4 /dev/sda1
 mke2fs 1.46.2 (28-Feb-2021)
 /dev/sda1 contains a linux_raid_member file system
@@ -88,12 +89,17 @@ Writing inode tables: done
 Creating journal (262144 blocks): done
 Writing superblocks and filesystem accounting information: done
 
-Label it introot
+```
+Label it introot, mount it
+```
 # e2label /dev/sda1 introot
 # mkdir /media/debian
 # mount /dev/sda1 /media/debian/
 # chmod 755 /media/debian/
 
+```
+Setup swap partition
+```
 # mkswap /dev/sda2
 Setting up swapspace version 1, size = 1.7 GiB (1804292096 bytes)
 no label, UUID=d04b4851-b48e-4b67-8f2c-bb66f52f2a53
@@ -101,14 +107,21 @@ no label, UUID=d04b4851-b48e-4b67-8f2c-bb66f52f2a53
 ```
 
 ## bootstrap
+Bootstrap takes quite a while.
 ```
 # apt-get install debootstrap
 # debootstrap --verbose --arch=armel stable /media/debian/ http://deb.debian.org/debian/
 
 # cp -p /etc/inittab /media/debian/etc
-now I copy over the entire /boot directory..
-# cp -Rp /boot /media/debian/
 
+```
+now I copy over the entire /boot directory..
+
+```
+# cp -Rp /boot /media/debian/
+```
+Setup chroot
+```
 # mount proc /media/debian/proc -t proc
 # mount sysfs /media/debian/sys -t sysfs
 # mount devpts /media/debian/dev/pts -t devpts
@@ -117,6 +130,7 @@ root@stora:/#
 ```
 ### in chroot
 
+Add key packages, set root passwd, add new user 'stora'
 ```
 # apt install /boot/linux-image-6.15.2-kirkwood-tld-1_1_armel.deb
 Reading package lists... Done
@@ -148,7 +162,10 @@ Setting up linux-image-6.15.2-kirkwood-tld-1 (1) ...
 # passwd root
 # useradd -m -s /bin/bash stora
 # passwd stora
+```
 
+Now setup apt sources, config locales, hostname, add an fstab (because without it the system kept mounting '/' as read-only).
+```
 # cat <<END > /etc/apt/sources.list
 deb http://deb.debian.org/debian bookworm main
 deb http://deb.debian.org/debian bookworm-updates main
@@ -169,6 +186,7 @@ root@stora:/# exit
 exit
 ```
 ### back in normal OS
+Prepare for reboot
 ```
 
 # umount /media/debian/proc
@@ -180,11 +198,10 @@ exit
 # shutdown -r now
 ```
 ### change the boot to IDE
-
-```
 Interrupt the boot and change the boot to IDE
 
-IDE boot
+```
+
 Netgear Stora> ide reset
 Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 0:1 0x800000 /boot/uImage; ext2load ide 0:1 0x2100000 /boot/uInitrd'
 Netgear Stora> setenv bootcmd 'setenv bootargs console=ttyS0,115200 root=LABEL=introot rootdelay=10 earlyprintk=serial; run bootcmd_ide; bootm 0x800000 0x2100000'
@@ -202,10 +219,8 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 1:1 0x800000 /boot/uI
 # apt upgrade
 # apt install network-manager
 
+..not actually sure this did anything but I was hoping it would install a base set of packages.
 # tasksel install minimal
-
-
-
 
 
 ```
@@ -242,6 +257,7 @@ ts.
 # dmesg
 ..had no real dramas on restart
 
+To fix /run too small I added an entry into fstab:
 root@stora:~# vi /etc/fstab 
 # UNCONFIGURED FSTAB FOR BASE SYSTEM
 LABEL=introot / ext4 rw,discard,noatime,errors=remount-ro 0 1
