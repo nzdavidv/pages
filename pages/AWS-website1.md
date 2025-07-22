@@ -3,7 +3,7 @@ title: "AWS website using Lambda, API-Gateway, and S3 - part1"
 date: 2025-07-19
 ---
 # Overview
-This is a repost from my www.nzvink.com website although I refreshed and re-tested the content.
+This is a repost from my www.nzvink.com website although I refreshed and re-tested most of the content.
 **Web hosting using API gateway, Lambda, S3, all fronted by Cloudflare**
 
 ## Tasks overview
@@ -17,16 +17,16 @@ This is a repost from my www.nzvink.com website although I refreshed and re-test
 
 # Lambda Python shell
 Create Function, Author from Scratch, Python 3.13.
-<img src= "/pages/assets/images/aws-www-1.png" alt="aws-www-1" style="width:1000px;border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-1.png" alt="aws-www-1" style="width:1000px;border: 1px solid grey;">
 
 Configuration, General Configuration. Edit. Change the memory from 128 MB to 256 MB, save.
-<img src= "/pages/assets/images/aws-www-2.png" alt="aws-www-2" style="width:1000px;border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-2.png" alt="aws-www-2" style="width:1000px;border: 1px solid grey;">
 
-<img src= "/pages/assets/images/aws-www-3.png" alt="aws-www-3" style="width:500px;border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-3.png" alt="aws-www-3" style="width:500px;border: 1px solid grey;">
 
 ## Modify IAM permissions
 In Lambda click Permissions, then click on the role name to launch IAM
-<img src= "/pages/assets/images/aws-www-4.png" alt="aws-www-4" style="width:500px;border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-4.png" alt="aws-www-4" style="width:500px;border: 1px solid grey;">
 
 Add permissions, Create inline policy
 
@@ -57,7 +57,7 @@ Now the shell of the Lambda is complete.
 
 # API gateway
 API gateway, Create API, HTTP API, Build.
-<img src= "/pages/assets/images/aws-www-5.png" alt="aws-www-5" style="width:800px;border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-5.png" alt="aws-www-5" style="width:800px;border: 1px solid grey;">
 
 Add integration, Lambda, select the Lambda function, add a name for the API gateway, click Next
 
