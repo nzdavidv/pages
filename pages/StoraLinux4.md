@@ -15,7 +15,7 @@ So now the hard choice.. do I simply upgrade the OS (yet again) to bookworm, or,
 The downside of the upgrade is you're left with the original thing from 2014 upgraded 37 times and I'm not 100% sure I know everything that was on the original image.
 
 The downside of the new clean install.. it may not entirely work. it might be slower.
-I decided on balance to go with the clean install, onto the IDE disk in my Stora.
+I decided on balance to go with the clean install (although copying over /boot from the USB), onto the IDE disk in my Stora.
 
 ## prepare the disk
 
