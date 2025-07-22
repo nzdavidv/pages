@@ -227,7 +227,8 @@ Netgear Stora> setenv bootcmd_ide 'ide reset; ext2load ide 1:1 0x800000 /boot/uI
 
 
 ## issues
-none really, just /run is too small 
+The first time I did this without /etc/fstab the '/' partition kept coming up read only but now with /etc/fstab it's pretty good.
+The only residual issue is /run is too small.
 
 ```
 root@stora:~# df -h
