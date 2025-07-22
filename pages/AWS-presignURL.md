@@ -93,43 +93,43 @@ Click Next.
 Give it a name. I called mine aws-presign-s3
 Create policy.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-06.png" alt="aws-presign-06" width="400px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-07.png" alt="aws-presign-07" width="400px"></kbd>
 
 # Setup cloudwatch log group
 In Cloudwatch, Create log group with name of lambda function. Mine was /aws/lambda/www-nzvink-presignurl-test
 I set the retention to 3 days because I like saving money. Then 'create'.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-07.png" alt="aws-presign-07" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-08.png" alt="aws-presign-08" width="700px"></kbd>
 
 # Setup API gateway
 Create API, HTTP API 'build', Click 'Add integration' and select Lambda in the dropdown. Start typing the name of the lambda (for me www-nzvink-presignurl-test).
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-08.png" alt="aws-presign-08" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-09.png" alt="aws-presign-09" width="700px"></kbd>
 
 Give it a name, for me 'apigw-presignurl-test'. Next
 The resource path must be /{proxy+}
 Next
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-09.png" alt="aws-presign-09" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-10.png" alt="aws-presign-10" width="700px"></kbd>
 
 Default stages (auto-deploy). Next
 Create
 
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-10.png" alt="aws-presign-10" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-11.png" alt="aws-presign-11" width="700px"></kbd>
 
 Now if you click Stages, then tick the default radio selector you can see the invoke URL.
 Mine is https://5bgcawrxwf.execute-api.us-east-1.amazonaws.com/
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-11.png" alt="aws-presign-11" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-12.png" alt="aws-presign-12" width="700px"></kbd>
 
 # Testing..
 Yay, it works.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-12.png" alt="aws-presign-12" width="700px"></kbd>
-
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-13.png" alt="aws-presign-13" width="700px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-14.png" alt="aws-presign-14" width="700px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-presign-15.png" alt="aws-presign-15" width="700px"></kbd>
 
 I kinda have to turn it off now it is done though as it has no security and people could randomly fill up my S3 bucket.
