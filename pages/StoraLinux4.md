@@ -71,7 +71,7 @@ The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
-Now format with ext4 this time.. because we can.
+Now format with ext4 this time (rather than ext2).. because we can. Faster better stronger.
 ```
 # mkfs -t ext4 /dev/sda1
 mke2fs 1.46.2 (28-Feb-2021)
