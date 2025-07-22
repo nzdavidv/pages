@@ -17,10 +17,10 @@ This is a repost from my www.nzvink.com website although I refreshed and re-test
 
 # Lambda Python shell
 Create Function, Author from Scratch, Python 3.13.
-<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-1.png" alt="aws-www-1" border: 1px solid #555; width:1000px;border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-1.png" alt="aws-www-1" border="1px solid grey" width="1000px">
 
 Configuration, General Configuration. Edit. Change the memory from 128 MB to 256 MB, save.
-<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-2.png" alt="aws-www-2" border="1px solid grey" width="1000px" >
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-2.png" alt="aws-www-2" border="1px solid grey" width="1000px">
 
 <img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-3.png" alt="aws-www-3" style="width:500px;border: 1px solid grey;">
 
