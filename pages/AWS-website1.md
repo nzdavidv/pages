@@ -3,6 +3,8 @@ title: "AWS website using Lambda, API-Gateway, and S3 - part1"
 date: 2025-07-19
 ---
 # Overview
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-0.png" alt="aws-www-1" width="700px"></kbd>
+
 This is a repost from my www.nzvink.com website although I refreshed and re-tested most of the content.
 **Web hosting using API gateway, Lambda, S3, all fronted by Cloudflare**
 
