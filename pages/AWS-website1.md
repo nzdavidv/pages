@@ -57,29 +57,29 @@ Now the shell of the Lambda is complete.
 
 # API gateway
 API gateway, Create API, HTTP API, Build.
-<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-5.png" alt="aws-www-5" style="width:800px;border: 1px solid grey;">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-5.png" alt="aws-www-5" width="800px"></kbd>
 
 Add integration, Lambda, select the Lambda function, add a name for the API gateway, click Next
 
 Change the Method to GET, enter /{proxy+} as the Resource path and click Next.
 
 /{proxy+} tells the gateway to pass all requests through to the Lambda.
-<img src= "/pages/assets/images/aws-www-6.png" alt="aws-www-6" style="border: 1px solid grey;">
+<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-6.png" alt="aws-www-6" width="800px"></kbd>
 
 Leave auto-deploy on and $default stage name, Next, then Create.
 
 ### API gateway to Lambda testing
 Click on Stages under Deploy then $default, then the invoke URL link and if it worked you should get a website with "Hello from Lambda!"
-<img src= "/pages/assets/images/aws-www-7.png" alt="aws-www-7"  style="border: 1px solid grey;">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-7.png" alt="aws-www-7"  width="800px"></kbd>
 **Success!**
-<img src= "/pages/assets/images/aws-www-8.png" alt="aws-www-8"  style="border: 1px solid grey;">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-8.png" alt="aws-www-8"  width="800px"></kbd>
 
 # S3 bucket
 Create bucket, give it a Bucket name and other options are defaults.
 It might seem odd that Block all public access is left off, but this is because access is controlled via Lambda rather than provided to this bucket directly.
 
 
-<img src= "/pages/assets/images/aws-www-9.png" alt="aws-www-9"  style="border: 1px solid grey;">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-9.png" alt="aws-www-9"  width="800px"></kbd>
 
 Upload a basic html test file. One provided at  
 <a>https://github.com/nzdavidv/api-s3-website/blob/main/test.html</a>
