@@ -20,13 +20,13 @@ Create Function, Author from Scratch, Python 3.13.
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-1.png" alt="aws-www-1" width="1000px"></kbd>
 
 Configuration, General Configuration. Edit. Change the memory from 128 MB to 256 MB, save.
-<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-2.png" alt="aws-www-2" border="1px solid" width="1000px">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-2.png" alt="aws-www-2" width="1000px"></kbd>
 
-<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-3.png" alt="aws-www-3" style="width:500px;border: 1px solid grey;">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-3.png" alt="aws-www-3" width="500px"></kbd>
 
 ## Modify IAM permissions
 In Lambda click Permissions, then click on the role name to launch IAM
-<img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-4.png" alt="aws-www-4" style="width:500px;border: 1px solid grey;">
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-4.png" alt="aws-www-4" width="500px"></kbd>
 
 Add permissions, Create inline policy
 
