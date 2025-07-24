@@ -4,6 +4,9 @@ date: 2025-07-24
 ---
 # Overview
 This is my self-notes for setting up a Cisco 3560 switch someone gave me.
+- VMware host 192.168.30.176
+- stora 192.168.30.117
+
 
 ## Serial console setup
 To setup I connected my MSI laptop running windows with USB serial port into a Cisco serial to console cable.
@@ -134,3 +137,60 @@ After all that plugged into the main switch and
 Could telnet to 192.168.30.188
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/cisco2.png" alt="aws-cisco-2" width="500px"></kbd>
+
+## configure ports
+
+Next I setup a port for stora
+```
+Switch>enable
+Switch#conf terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 99
+Switch(config-if)#no shutdown
+Switch(config-if)#exit
+Switch(config)#exit
+Switch#copy running-config startup
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+```
+
+raspberry pi port 0/17 VLAN 10
+```
+Switch>enable
+Switch#conf terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)# interface FastEthernet0/17
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+Switch(config)#exit
+Switch#copy running-config startup
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+raspberry pi port 0/17 VLAN 10
+```
+Switch>enable
+Switch#conf terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface fastEthernet 0/18
+Switch(config-if)#switchport trunk encapsulation dot1q
+Switch(config-if)#switchport mode trunk               
+Switch(config-if)#switchport trunk allowed vlan 10,20,99
+Switch(config-if)#no shutdown
+Switch(config-if)#exit
+Switch(config)#exit
+Switch#copy running-config startup
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+# Then set VMWare host 
+change management VLAN to 99
+
+images 16 17
+
+unsurprisingly then lost connection. Changed ESXi host to plug into switchport 18.
