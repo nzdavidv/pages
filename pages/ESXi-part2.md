@@ -25,7 +25,7 @@ I physically changed ESXi host to plug into switchport 0/18 (the trunk port).
 
 Yay - it came back.
 
-# VM setup
+# Test VM ACCT-VM1 setup
 in ESXi server changed ACCT-VM1 VLAN from 10 to 99 so I could connect to the web for some apt installs.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi17b.png" alt="esxi17b" width="600px"></kbd>
@@ -45,7 +45,7 @@ deb http://deb.debian.org/debian-security bookworm-security main
 # apt install openssh-server net-tools
 ```
 
-## VMware tools install
+## VMware tools install on ACCT-VM1
 In VMware installed VMware tools on guest debian VM (had to eject CDROM first). yay can SSH in at least to the OS.
 
 ```
@@ -76,7 +76,7 @@ drwxrwxrwt 10 root root     4096 Jul 25 17:54 ..
 root@acctvm1:/tmp/vmware-tools# ./run_upgrader.sh 
 root@acctvm1:/tmp/vmware-tools# 
 ```
-## install and configure basic DHCP server
+## install and configure basic DHCP server on ACCT-VM1
 ```
 # apt install isc-dhcp-server
 ```
