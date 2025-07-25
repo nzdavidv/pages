@@ -6,8 +6,8 @@ date: 2025-07-24
 Some continued config of VMWare running natively on my laptop following earlier blog. 
 
 ### recap where I am at
-- ESXi is installed on my laptop but it is plugged into my home router switch not the Cisco
-- The Cisco switch now has ports configured, one of them is a trunk port carrying VLANs 10,20,99
+- ESXi is installed on my laptop <a href="ESXi-laptop.md">ESXi laptop</a> but it is plugged into my home router switch not the Cisco 
+- The Cisco switch now has ports configured <a href="Cisco-3560.md">Cisco switch config</a>, and one of them is a trunk port carrying VLANs 10,20,99
 - Raspberry pi and Debian-stora plugged into the Cisco switch
 
 
@@ -110,3 +110,4 @@ After startup I can now see the Raspberry Pi which is on the same VLAN (port 0/1
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi18.png" alt="esxi18" width="500px"></kbd>
 
+Next steps - GNS3 setup <a href="GNS3.md">GNS3 VM install and config</a>
