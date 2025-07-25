@@ -8,10 +8,11 @@ Some continued config of VMWare running natively on my laptop following earlier 
 ### recap where I am at
 - ESXi is installed on my laptop but it is plugged into my home router switch not the Cisco
 - The Cisco switch now has ports configured, one of them is a trunk port carrying VLANs 10,20,99
+- Raspberry pi and Debian-stora plugged into the Cisco switch
 
 
 ## make some changes in ESXi host networking 
-Now I need to change management VLAN to 99 before unplugging the ESXi laptop from the home WiFI router and into the Cisco switch trunk port 0/18.
+Now I need to change management VLAN in VMWare to 99 before unplugging the ESXi laptop from the home WiFI router and into the Cisco switch trunk port 0/18.
 
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi16.png" alt="esxi16" width="500px"></kbd>
