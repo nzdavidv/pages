@@ -4,7 +4,7 @@ date: 2025-07-24
 ---
 # Overview
 This is my notes for setting up a Cisco 3560 switch someone gave me.
-I've mentioned before but will reiterate I'm not a network engineer, have never been a network engineer and may be doing things incorrectly / there may be better ways to do this.
+I'm not a network engineer, have never been a network engineer.. and may be doing things incorrectly / there may be better ways to do this.
 
 
 ## Serial console setup
@@ -20,7 +20,7 @@ Putty COM3 9600
 I know I could use minicom and Ubuntu but honestly again Windows is just easier for some things. (In my Netgear stora blog I use minicom on the raspberry pi to connect to the stora console out of necessity).
 
 ## Factory reset the switch 
-Probably I'm using the wrong words.. I've never been a network engineer.. but first step was to wipe the config on the switch to start clean.
+Probably I'm using the wrong words..  but first step was to wipe the config on the switch to start clean.
 
 ```
 Loading "flash:c3560-ipbase-mz.122-35.SE5/c3560-ipbase-mz.122-35.SE5.bin"...@@@@                                 	@
