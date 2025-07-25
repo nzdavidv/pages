@@ -7,15 +7,16 @@ This is my self-notes for setting up a Cisco 3560 switch someone gave me.
 
 
 ## Serial console setup
-To setup I connected my MSI laptop running windows with USB serial port into a Cisco serial to console cable.
+To setup I connected my daily laptop running windows with USB serial port into a Cisco serial to console cable.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/cisco0.jpg" alt="cisco-0" width="500px"></kbd>
 
- 
 Had a look in device manager and saw the USB serial port was com3.
 Putty COM3 9600
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/cisco1.png" alt="cisco-1" width="500px"></kbd>
+
+I know I could use minicom and Ubuntu but honestly again Windows is just easier for some things. (In my Netgear stora blog I use minicom on the raspberry pi to connect to the stora console out of necessity).
 
 ## Factory reset the switch 
 Probably I'm using the wrong words.. I've never been a network engineer.. but first step was to wipe the config on the switch to start clean.
