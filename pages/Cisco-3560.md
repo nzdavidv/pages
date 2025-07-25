@@ -198,7 +198,10 @@ Then unsurprisingly then lost connection. I physically changed ESXi host to plug
 Yay - all works.
 
 # VM setup
-in VM installed some basics using console
+in ESXi server changed ACCT-VM1 VLAN from 10 to 99 so I could connect to the web for some apt installs.
+In the VM on the console I altered /etc/network/interfaces to be an IP on the admin network and restarted, after making a copy of /etc/network/interfaces to /etc/network/interfaces.orig
+
+Then in VM installed some basics using console
 ```
 # vi /etc/apt/sources.list
 deb http://deb.debian.org/debian bookworm main
@@ -238,4 +241,29 @@ drwxrwxrwt 10 root root     4096 Jul 25 17:54 ..
 root@acctvm1:/tmp/vmware-tools# ./run_upgrader.sh 
 root@acctvm1:/tmp/vmware-tools# 
 ```
+## install and configure basic DHCP server
+```
+# apt install isc-dhcp-server
+..it failed on install
+# vi /etc/default/isc-dhcp-server
+INTERFACESv4="ens192"
+
+# vi /etc/dhcp/dhcpd.conf
+option domain-name "nzvink.com";
+option domain-name-servers 8.8.8.8, 8.8.4.4; 
+default-lease-time 600;
+max-lease-time 7200;
+ddns-update-style none;
+authoritative;
+subnet 10.1.10.0 netmask 255.255.255.0 {
+  range 10.1.10.10 10.1.10.100; # IP address range for clients
+  option routers 10.1.10.1; # Default gateway
+  option broadcast-address 10.1.10.255;
+}
+
+I put back /etc/network/interfaces.orig to /etc/network/interfaces. Then
+# shutdown -h now
+```
+
+Now change back the VLAN from 99 to 10.
 
