@@ -173,6 +173,7 @@ Switch#copy running-config startup
 Destination filename [startup-config]? 
 Building configuration...
 [OK]
+```
 
 Then the trunk port [ port 0/18 - VLANs 10,20,99 ]
 ```
@@ -190,6 +191,7 @@ Switch# copy running-config startup
 Destination filename [startup-config]? 
 Building configuration...
 [OK]
+```
 
 ## make some changes in ESXi host networking 
 change management VLAN to 99
