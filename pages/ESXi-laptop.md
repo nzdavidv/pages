@@ -74,7 +74,7 @@ Then add the port groups for the VLANs below. 4095 is all-VLANs.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13.png" alt="esxi13" width="600px"></kbd>
 
-### Create a VM guest
+### Upload the OS ISO
 
 To upload the ISO  for the OS deploy, click storage on the left, then the storage itself (nvme1 for me), then Datastore browser.
 In there you can upload the ISO.
@@ -83,11 +83,13 @@ In there you can upload the ISO.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13b.png" alt="esxi13b" width="600px"></kbd>
 
+### Create a VM guest
+
+This first guest is ACCT-VM1 on VLAN ACCT-VLAN10.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi14.png" alt="esxi14" width="900px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi15.png" alt="esxi15" width="900px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi16.png" alt="esxi16" width="900px"></kbd>
 
 
