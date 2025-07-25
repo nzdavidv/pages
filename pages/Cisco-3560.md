@@ -193,4 +193,16 @@ Building configuration...
 [OK]
 ```
 
+## plugging devices into the switch
+- Plugged stora into 0/2 (and can connect to it)
+- Plugged raspberry pi into 0/17 (and can't connect to it)
+
+### recap where I am at
+- installed ESXi onto the laptop.
+- Laptop is stil plugged into home WiFi router.
+- Cisco switch is configured
+
+Next blog post is <a href="ESXi-part2.md">Revisit VMware before moving on to GNS3</a>
+
+
 
