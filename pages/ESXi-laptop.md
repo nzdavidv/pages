@@ -36,6 +36,7 @@ I didn't initialise the disk as part of the install. This is because I wanted to
 Eventually the host came up and picked up an IP via DHCP.. a good sign the network is fine.
 
 ## Configure ESXi
+Once it was up and running I could connect to the web interface.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi3.png" alt="esxi3" width="900px"></kbd>
 
