@@ -189,12 +189,12 @@ Destination filename [startup-config]?
 Building configuration...
 [OK]
 
-# Then set VMWare host 
+## make some changes in ESXi host networking 
 change management VLAN to 99
 
 images 16 17
 
-unsurprisingly then lost connection. Changed ESXi host to plug into switchport 18.
+Then unsurprisingly then lost connection. I physically changed ESXi host to plug into switchport 18.
 Yay - all works.
 
 # VM setup
