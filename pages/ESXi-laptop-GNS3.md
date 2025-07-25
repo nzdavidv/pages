@@ -16,12 +16,14 @@ There are 3 main pieces to this.
 
 3. Setup GNS3
 
+## Lab setup
+
 The environment consists of 
 
 - Cisco Switch connected to Ethernet router Ethernet port 0/1
 
 VLAN 99
-- VMware ESXi laptop host 192.168.30.176. Ethernet port 0/18  
+- VMware ESXi physical laptop 192.168.30.176. Ethernet port 0/18  
 - stora 192.168.30.117. Ethernet port 0/2
 - switch management IP 192.168.30.188 (assigned to VLAN)
 
