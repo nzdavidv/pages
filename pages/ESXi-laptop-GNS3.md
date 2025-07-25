@@ -49,7 +49,11 @@ The Cisco switch physical connections:
 and then...
 - The Cisco switch management IP assigned to VLAN 99 - IP 192.168.30.188. (physically using port 0/1 - access port 99).
 - The ESXi management IP assigned (in VMWare) to VLAN 99 - IP 192.168.30.176. (physically using port 0/18 - trunk port). 
-- Virtual Machine ACCT-VM assigned (in VMWare) to VLAN 10 - IP 10.1.10.101 (physically using port 0/18 - trunk port)
+- Virtual Machine ACCT-VM running Debian assigned (in VMWare) to VLAN 10 - IP 10.1.10.101 (physically using port 0/18 - trunk port)
+
+But that's the end result. To get there wasn't quite that simple. The laptop for example had to be built and configured plugged directly into the home WiFi switch until the Cisco one was ready.
+The Cisco switch needed to be built using the console cable.
+Even the virtual machine needed changing VLANs to admin and internet network briefly to get some apt packages installed.
 
 
   
