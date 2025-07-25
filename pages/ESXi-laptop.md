@@ -54,8 +54,11 @@ Click New datastore, give it a name, use full disk.
 ### Configure networks
 Networking on the left, Port groups, Add port group.
 Then add the port groups for 
-|Name|VLAN ID|
-|ACCT-VLAN10|10|
+
+---
+Name: "ACCT-VLAN10"
+VLAN ID: 10
+---
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi9.png" alt="esxi9" width="900px"></kbd>
 
