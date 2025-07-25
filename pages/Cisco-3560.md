@@ -4,9 +4,6 @@ date: 2025-07-24
 ---
 # Overview
 This is my self-notes for setting up a Cisco 3560 switch someone gave me.
-- VMware host 192.168.30.176
-- stora 192.168.30.117
-- switch management IP 192.168.30.188
 
 
 ## Serial console setup
