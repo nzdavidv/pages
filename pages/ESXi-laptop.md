@@ -38,6 +38,7 @@ Eventually the host came up and picked up an IP via DHCP.
 
 ### configure storage
 In storage on the left and then devices, click on the storage, Actions, clear partition table.
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi4.png" alt="esxi4" width="900px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi5.png" alt="esxi5" width="900px"></kbd>
@@ -45,13 +46,18 @@ In storage on the left and then devices, click on the storage, Actions, clear pa
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi6.png" alt="esxi6" width="900px"></kbd>
 
 Click New datastore, give it a name, use full disk.
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi7.png" alt="esxi7" width="600px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi8.png" alt="esxi8" width="900px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi8.png" alt="esxi8" width="700px"></kbd>
+
+### Configure networks
+Networking on the left, Port groups, Add port group.
+
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi9.png" alt="esxi9" width="900px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi0.png" alt="esxi10" width="900px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi10.png" alt="esxi10" width="900px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi11.png" alt="esxi11" width="900px"></kbd>
 
