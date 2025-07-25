@@ -53,7 +53,7 @@ Click New datastore, give it a name, use full disk.
 
 ### Configure networks
 Networking on the left, Port groups, Add port group.
-Then add the port groups for 
+Then add the port groups for the VLANs below. 4095 is all-VLANs.
 
 
 
@@ -76,4 +76,18 @@ Then add the port groups for
 
 ### Create a VM guest
 
+To upload the ISO  for the OS deploy, click storage on the left, then the storage itself (nvme1 for me), then Datastore browser.
+In there you can upload the ISO.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13a.png" alt="esxi13a" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13b.png" alt="esxi13b" width="600px"></kbd>
+
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi14.png" alt="esxi14" width="900px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi15.png" alt="esxi15" width="900px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi16.png" alt="esxi16" width="900px"></kbd>
+
+
