@@ -79,7 +79,9 @@ root@acctvm1:/tmp/vmware-tools#
 ## install and configure basic DHCP server
 ```
 # apt install isc-dhcp-server
-..it failed on install
+```
+..note it failed on install but I guessed this was because it didn't have a valid config so carried on 
+```
 # vi /etc/default/isc-dhcp-server
 INTERFACESv4="ens192"
 
@@ -96,7 +98,7 @@ subnet 10.1.10.0 netmask 255.255.255.0 {
   option broadcast-address 10.1.10.255;
 }
 
-I put back /etc/network/interfaces.orig to /etc/network/interfaces. Then
+I put back /etc/network/interfaces.orig to /etc/network/interfaces. Then rebooted
 # shutdown -h now
 ```
 
