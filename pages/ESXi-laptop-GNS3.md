@@ -10,7 +10,7 @@ To run a virtual Cisco router using GNS3 on a virtual machine for low cost, for 
 My wife would say I'm 'nerding'.
 My Cisco switch was a freebee, the ESXi software was a free download from broadcom (although tricky site to navigate) and the laptop was fairly low cost.
 
-
+### Steps overview
 There are 3 main pieces to this.
 1. Setup the Cisco physical switch
 
