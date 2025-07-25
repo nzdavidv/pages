@@ -55,10 +55,14 @@ Click New datastore, give it a name, use full disk.
 Networking on the left, Port groups, Add port group.
 Then add the port groups for 
 
----
-Name: "ACCT-VLAN10"
-"VLAN ID": 10
----
+
+
+| VLAN Name | VLAN |
+|---|---|
+| ACCT-VLAN10 | 10 |
+| SALES-VLAN20 | 20 |
+| TRUNK | 4095 |
+| MGMT-VLAN99| 99|
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi9.png" alt="esxi9" width="900px"></kbd>
 
@@ -68,6 +72,8 @@ Name: "ACCT-VLAN10"
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi12.png" alt="esxi12" width="600px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13.png" alt="esxi13" width="900px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13.png" alt="esxi13" width="600px"></kbd>
+
+### Create a VM guest
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi14.png" alt="esxi14" width="900px"></kbd>
