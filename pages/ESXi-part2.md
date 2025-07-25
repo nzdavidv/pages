@@ -27,9 +27,12 @@ Yay - it came back.
 
 # VM setup
 in ESXi server changed ACCT-VM1 VLAN from 10 to 99 so I could connect to the web for some apt installs.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi17b.png" alt="esxi17b" width="600px"></kbd>
+
 I need a simple dhcp server to give the raspberry pi an IP address. 
 
-In the VM on the console after the restart (and now it is on VLAN 99) I altered /etc/network/interfaces to be an IP on the home Wifi / admin network and restarted, after making a copy of /etc/network/interfaces to /etc/network/interfaces.orig
+In the VM on the console after the restart (now it is on VLAN 99) I altered /etc/network/interfaces to be an IP on the home Wifi / admin network and restarted, after making a copy of /etc/network/interfaces to /etc/network/interfaces.orig
 
 Then in VM installed some basics using console
 ```
@@ -48,7 +51,9 @@ In VMware installed VMware tools on guest debian VM (had to eject CDROM first). 
 ```
 root@acctvm1:~# eject
 ```
-then in ESXi console in the VM under guest OS, install VMware tools.
+then in ESXi console in the VM under Actions, guest OS, is an option to install VMware tools.
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi17c.png" alt="esxi17c" width="400px"></kbd>
+
 
 Now in OS install VMware tools:
 ```
