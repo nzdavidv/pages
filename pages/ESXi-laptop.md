@@ -47,9 +47,9 @@ In storage on the left and then devices, click on the storage, Actions, clear pa
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi5.png" alt="esxi5" width="900px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi6.png" alt="esxi6" width="900px"></kbd>
-
 Click New datastore, give it a name, use full disk.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi6.png" alt="esxi6" width="900px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi7.png" alt="esxi7" width="600px"></kbd>
 
@@ -78,9 +78,9 @@ Then add the port groups for the VLANs below. 4095 is all-VLANs.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13.png" alt="esxi13" width="600px"></kbd>
 
-### Upload the OS ISO
+### Upload the Guest OS ISO
 
-To upload the ISO  for the OS deploy, click storage on the left, then the storage itself (nvme1 for me), then Datastore browser.
+To upload the ISO for the Guest VM OS deploy, click storage on the left, then the storage itself (nvme1 for me), then Datastore browser.
 In there you can upload the ISO.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13a.png" alt="esxi13a" width="600px"></kbd>
