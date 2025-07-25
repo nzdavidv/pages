@@ -95,5 +95,11 @@ This first guest is ACCT-VM1 on VLAN ACCT-VLAN10.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi15.png" alt="esxi15" width="900px"></kbd>
 
+After this I booted it, installed Debian. 
+Later on will I revisit the host and temporarily connect it to VLAN 99 to install simple dhcp server. I also install VMware tools later as well.
+
+Next blog post is <a href="Cisco-3560.md">Configuring the Cisco switch</a>
+
+
 
 
