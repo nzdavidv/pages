@@ -192,7 +192,10 @@ Building configuration...
 ## make some changes in ESXi host networking 
 change management VLAN to 99
 
-images 16 17
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi16.png" alt="esxi16" width="500px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi17.png" alt="esxi17" width="500px"></kbd>
 
 Then unsurprisingly then lost connection. I physically changed ESXi host to plug into switchport 18.
 Yay - all works.
@@ -266,4 +269,9 @@ I put back /etc/network/interfaces.orig to /etc/network/interfaces. Then
 ```
 
 Now change back the VLAN from 99 to 10.
+
+After startup I can now see the Raspberry Pi which is on the same VLAN (port 0/17) in dhcp leases file.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi19.png" alt="esxi19" width="500px"></kbd>
+
 
