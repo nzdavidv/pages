@@ -57,7 +57,7 @@ Then add the port groups for
 
 ---
 Name: "ACCT-VLAN10"
-VLAN ID: 10
+"VLAN ID": 10
 ---
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi9.png" alt="esxi9" width="900px"></kbd>
