@@ -100,7 +100,7 @@ subnet 10.1.10.0 netmask 255.255.255.0 {
   option broadcast-address 10.1.10.255;
 }
 
-I put back /etc/network/interfaces.orig to /etc/network/interfaces. Then rebooted
+I put back /etc/network/interfaces.orig to /etc/network/interfaces so that on restart the host would have an IP on ACCT VLAN 10 network agin, then rebooted
 # shutdown -h now
 ```
 
