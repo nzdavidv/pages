@@ -30,7 +30,7 @@ in ESXi server changed ACCT-VM1 VLAN from 10 to 99 so I could connect to the web
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi17b.png" alt="esxi17b" width="600px"></kbd>
 
-I need a simple dhcp server to give the raspberry pi an IP address. 
+I need a simple dhcp server to give the raspberry pi (on VLAN10 which is isolated) an IP address. 
 
 In the VM on the console after the restart (now it is on VLAN 99) I altered /etc/network/interfaces to be an IP on the home Wifi / admin network and restarted, after making a copy of /etc/network/interfaces to /etc/network/interfaces.orig
 
