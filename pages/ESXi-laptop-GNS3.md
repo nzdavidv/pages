@@ -12,13 +12,14 @@ My Cisco switch was a freebee, the ESXi software was a free download from broadc
 
 ### Steps overview
 There are 3 main pieces to this.
-1. Setup the Cisco physical switch
 
- - <a href="Cisco-3560.md">Setting up the Cisco 3560 switch</a>
-
-2. Setup the ESXi laptop
+1. Setup the ESXi laptop
  
  - <a href="ESXi-laptop.md">Setting up ESXi on HP Elitebook G5 laptop</a>
+
+2. Setup the Cisco physical switch
+
+ - <a href="Cisco-3560.md">Setting up the Cisco 3560 switch</a>
 
 3. Setup GNS3
 
@@ -51,9 +52,10 @@ and then...
 - The ESXi management IP assigned (in VMWare) to VLAN 99 - IP 192.168.30.176. (physically using port 0/18 - trunk port). 
 - Virtual Machine ACCT-VM running Debian assigned (in VMWare) to VLAN 10 - IP 10.1.10.101 (physically using port 0/18 - trunk port)
 
-But that's the end result. To get there wasn't quite that simple. The laptop for example had to be built and configured plugged directly into the home WiFi switch until the Cisco one was ready.
-The Cisco switch needed to be built using the console cable.
-Even the virtual machine needed changing VLANs to admin and internet network briefly to get some apt packages installed.
-
+But that's the end result. To get there wasn't quite that simple. 
+- The laptop for example had to be built and configured plugged directly into the home WiFi switch until the Cisco one was ready.
+- The Cisco switch needed to be built using the console cable.
+- The ACCT-VM virtual machine needed changing VLANs to admin and internet network briefly to get some apt packages installed.
+- GNS3 ESXi appliance needed some trial and error to get working in ESXi 8.
 
   
