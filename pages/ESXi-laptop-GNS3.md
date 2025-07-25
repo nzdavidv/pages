@@ -39,7 +39,7 @@ To-Do: physical diagram and logical diagram.
 
 
 The lab environment consists of:
-- VLAN 99: admin and internet network. Network is 192.168.30.0/24
+- VLAN 99: admin and internet network. Network is the same as my home WiFi network - 192.168.30.0/24
 - VLAN 10: 'ACCT' network (short for accounting I guess, I used the label from an old lab I did years ago). Network is 10.1.10.0/24
 
 The Cisco switch physical connections:
