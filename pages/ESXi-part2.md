@@ -80,7 +80,9 @@ root@acctvm1:/tmp/vmware-tools#
 ```
 # apt install isc-dhcp-server
 ```
-..note it failed on install but I guessed this was because it didn't have a valid config so carried on 
+..note it failed on install but I guessed this was because it didn't have a valid config so carried on.
+Here I'm configuring a basic DHCP server for the ACCT VLAN 10 - 10.1.10.0/24
+
 ```
 # vi /etc/default/isc-dhcp-server
 INTERFACESv4="ens192"
