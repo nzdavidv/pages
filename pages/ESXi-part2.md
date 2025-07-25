@@ -28,7 +28,7 @@ Yay - it came back.
 in ESXi server changed ACCT-VM1 VLAN from 10 to 99 so I could connect to the web for some apt installs.
 I need a simple dhcp server to give the raspberry pi an IP address. 
 
-In the VM on the console after the restart (and now it is on VLAN 99) I altered /etc/network/interfaces to be an IP on the homw Wifi / admin network and restarted, after making a copy of /etc/network/interfaces to /etc/network/interfaces.orig
+In the VM on the console after the restart (and now it is on VLAN 99) I altered /etc/network/interfaces to be an IP on the home Wifi / admin network and restarted, after making a copy of /etc/network/interfaces to /etc/network/interfaces.orig
 
 Then in VM installed some basics using console
 ```
