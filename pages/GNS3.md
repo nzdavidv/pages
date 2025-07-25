@@ -21,87 +21,30 @@ https://docs.gns3.com/docs/getting-started/installation/windows
 ```
 
 R1#enable
-R1#conf term
 R1#conf terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
 R1(config)#hostname 3725-01
 3725-01(config)#line console 0
-3725-01(config-line)#logging sync
 3725-01(config-line)#logging synchronous
 3725-01(config-line)#end
 3725-01#
 *Mar  1 00:01:54.275: %SYS-5-CONFIG_I: Configured from console by console
-3725-01#copy running-
-3725-01#copy running-config start
 3725-01#copy running-config startup-config
 Destination filename [startup-config]?
 Building configuration...
 [OK]
-3725-01#conf term
+
 3725-01#conf terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
-3725-01(config)#inter
-3725-01(config)#interface fas
 3725-01(config)#interface fastEthernet 0/0.10
-3725-01(config-subif)#enc
 3725-01(config-subif)#encapsulation dot1Q 10
-3725-01(config-subif)#ip addre
 3725-01(config-subif)#ip address 10.1.10.1 255.255.255.0
-3725-01(config-subif)#no shut
 3725-01(config-subif)#no shutdown
-3725-01(config-subif)#inter
-3725-01(config-subif)#interf
 3725-01(config-subif)#exit
-3725-01(config)#interf
-3725-01(config)#interface fas
-3725-01(config)#interface fastEthernet 0/0.99
-3725-01(config-subif)#enc
-3725-01(config-subif)#encapsulation do
-3725-01(config-subif)#encapsulation dot1Q 99
-3725-01(config-subif)#no shut
-3725-01(config-subif)#exit
-3725-01(config)#inter
-3725-01(config)#interfac
-3725-01(config)#interface fas
 3725-01(config)#interface fastEthernet 0/0.99
 3725-01(config-subif)#encapsulation dot1Q 99
-3725-01(config-subif)#ip add
 3725-01(config-subif)#ip address 192.168.30.5 255.255.255.0
-3725-01(config-subif)#no shut
 3725-01(config-subif)#no shutdown
-3725-01(config-subif)#exit
-3725-01(config)#copy running-config startup-config
-                  ^
-% Invalid input detected at '^' marker.
-
-3725-01(config)#exit
-3725-01#copy running-config startup-config
-Destination filename [startup-config]?
-*Mar  1 00:08:38.815: %SYS-5-CONFIG_I: Configured from console by console
-
-Building configuration...
-[OK]
-3725-01#show ip
-% Incomplete command.
-
-3725-01#show ip interface brief
-Interface                  IP-Address      OK? Method Status                Protocol
-FastEthernet0/0            unassigned      YES unset  administratively down down
-FastEthernet0/0.10         10.1.10.1       YES manual administratively down down
-FastEthernet0/0.99         192.168.30.5    YES manual administratively down down
-FastEthernet0/1            unassigned      YES unset  administratively down down
-3725-01#no shut
-           ^
-% Invalid input detected at '^' marker.
-
-3725-01#conf te
-3725-01#conf terminal
-Enter configuration commands, one per line.  End with CNTL/Z.
-3725-01(config)#no shut
-% Incomplete command.
-
-3725-01(config)#interface fastEthernet 0/0.99
-3725-01(config-subif)#no shut
 3725-01(config-subif)#exit
 3725-01(config)#interface fastEthernet 0/0
 3725-01(config-if)#no shut
@@ -109,15 +52,11 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 3725-01(config)#interface fastEthernet 0/0
 *Mar  1 00:14:18.007: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
 *Mar  1 00:14:19.007: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
-3725-01(config)#copy running-config startup-config
-                  ^
-% Invalid input detected at '^' marker.
-
-3725-01(config)#copy running-config startup-config
-                  ^
-% Invalid input detected at '^' marker.
-
 3725-01(config)#exit
+3725-01(config)#exit
+3725-01#copy running-config startup-config
+Destination filename [startup-config]?
+*Mar  1 00:07:06.675: %SYS-5-CONFIG_I: Configured from console by console
 3725-01#show ip
 *Mar  1 00:14:32.431: %SYS-5-CONFIG_I: Configured from console by console
 3725-01#show ip interface brief
