@@ -6,7 +6,7 @@ date: 2025-07-24
 Some continued config of VMWare running natively on my laptop following earlier blog. 
 
 ### recap where I am at
-- ESXi is installed on my laptop <a href="ESXi-laptop.md">ESXi laptop</a> but it is plugged into my home router switch not the Cisco 
+- ESXi is installed on my laptop <a href="ESXi-laptop.md">ESXi laptop</a> but it is plugged into my home router switch not the Cisco. There is a VM guest on ACCT VLAN 10.
 - The Cisco switch now has ports configured <a href="Cisco-3560.md">Cisco switch config</a>, and one of them is a trunk port carrying VLANs 10,20,99
 - Raspberry pi and Debian-stora plugged into the Cisco switch
 
