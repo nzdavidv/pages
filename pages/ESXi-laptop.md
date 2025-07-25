@@ -36,13 +36,16 @@ Eventually the host came up and picked up an IP via DHCP.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi3.png" alt="esxi3" width="900px"></kbd>
 
+### configure storage
+In storage on the left and then devices, click on the storage, Actions, clear partition table.
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi4.png" alt="esxi4" width="900px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi5.png" alt="esxi5" width="900px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi6.png" alt="esxi6" width="900px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi7.png" alt="esxi7" width="900px"></kbd>
+Click New datastore, give it a name, use full disk.
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi7.png" alt="esxi7" width="600px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi8.png" alt="esxi8" width="900px"></kbd>
 
