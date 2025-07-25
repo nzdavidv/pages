@@ -17,11 +17,8 @@ Putty COM3 9600
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/cisco1.png" alt="cisco-1" width="500px"></kbd>
 
-## Setting up for telnet
-
-VLAN 99 is connecting to my home internet router.
-
-First wipe the switch.
+## Factory reset the switch 
+Probably I'm using the wrong words.. I've never been a network engineer.. but first step was to wipe the config on the switch to start clean.
 
 ```
 Loading "flash:c3560-ipbase-mz.122-35.SE5/c3560-ipbase-mz.122-35.SE5.bin"...@@@@                                 	@
@@ -58,11 +55,7 @@ Delete flash:vlan.dat? [confirm]y
 %Error deleting flash:vlan.dat (No such file or directory)
 Switch#
 Switch#reload
-```
 
-Next setup passwords and VLAN 99 
-
- ```
 System configuration has been modified. Save? [yes/no]: yes
 Building configuration...
 [OK]
@@ -71,6 +64,14 @@ Proceed with reload? [confirm]
 ...done Initializing Flash.
 Boot Sector Filesystem (bs) installed, fsid: 3
 done.
+```
+
+## Setting up for telnet
+[ VLAN 99 is connecting to my home internet router. ] 
+
+Next setup passwords and configure VLAN 99 
+
+ ```
 Switch>enable
 Switch#conf terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
@@ -125,7 +126,6 @@ VLAN Type  SAID   	MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
 Switch#conf terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
 Switch(config)#enable secret secretpassword
-Switch(config)#copy running-con
 Switch(config)#exit
 Switch#copy running-config startup
 Destination filename [startup-config]?
@@ -139,9 +139,9 @@ Could telnet to 192.168.30.188
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/cisco2.png" alt="aws-cisco-2" width="500px"></kbd>
 
-## configure ports
+## configure switch ports
 
-Next I setup a port for stora
+Next I setup a port for stora [VLAN 99]
 ```
 Switch>enable
 Switch#conf terminal
@@ -158,7 +158,7 @@ Building configuration...
 [OK]
 ```
 
-raspberry pi port 0/17 VLAN 10
+then raspberry pi port 0/17 [VLAN 10]
 ```
 Switch>enable
 Switch#conf terminal
