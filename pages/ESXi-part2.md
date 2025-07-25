@@ -110,4 +110,13 @@ After startup I can now see the Raspberry Pi which is on the same VLAN (port 0/1
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi18.png" alt="esxi18" width="500px"></kbd>
 
+Success!
+
+### Recap where things are at
+- Cisco switch fully configured for the lab. management IP 192.168.30.188
+- ESXi laptop is plugged into the trunk port 0/18 and admin network configured to VLAN 99. Management IP 192.168.30.176
+- Test VM is on ACCT VLAN 10 with a fixed IP 10.1.10.101, running a DHCP server
+- Raspberry pi is on the VLAN 10 plugged into switchport 0/17 VLAN 10. It now has an IP 10.1.10.10
+- Debian stora is plugged into port 0/2 on VLAN 99 IP 192.168.30.117
+
 Next steps - GNS3 setup <a href="GNS3.md">GNS3 VM install and config</a>
