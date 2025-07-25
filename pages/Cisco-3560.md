@@ -272,6 +272,6 @@ Now change back the VLAN from 99 to 10.
 
 After startup I can now see the Raspberry Pi which is on the same VLAN (port 0/17) in dhcp leases file.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi19.png" alt="esxi19" width="500px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi18.png" alt="esxi18" width="500px"></kbd>
 
 
