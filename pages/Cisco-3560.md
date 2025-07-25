@@ -141,7 +141,7 @@ Could telnet to 192.168.30.188
 
 ## configure switch ports
 
-Next I setup a port for stora [VLAN 99]
+Next I setup a port for stora [port 0/2 - VLAN 99]
 ```
 Switch>enable
 Switch#conf terminal
@@ -158,7 +158,7 @@ Building configuration...
 [OK]
 ```
 
-then raspberry pi port 0/17 [VLAN 10]
+then raspberry pi [port 0/17 - VLAN 10]
 ```
 Switch>enable
 Switch#conf terminal
@@ -172,7 +172,7 @@ Destination filename [startup-config]?
 Building configuration...
 [OK]
 
-raspberry pi port 0/17 VLAN 10
+Then the trunk port [ port 0/18 - VLANs 10,20,99 ]
 ```
 Switch>enable
 Switch#conf terminal
