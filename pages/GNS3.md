@@ -11,3 +11,5 @@ Archive:  GNS3.VM.VMware.ESXI.2.2.54.zip
   inflating: GNS3 VM.ova
 ```
 
+switching to windows to install the client
+https://docs.gns3.com/docs/getting-started/installation/windows
