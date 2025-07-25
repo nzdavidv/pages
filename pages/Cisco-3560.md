@@ -6,6 +6,7 @@ date: 2025-07-24
 This is my self-notes for setting up a Cisco 3560 switch someone gave me.
 - VMware host 192.168.30.176
 - stora 192.168.30.117
+- switch management IP 192.168.30.188
 
 
 ## Serial console setup
@@ -183,7 +184,7 @@ Switch(config-if)#switchport trunk allowed vlan 10,20,99
 Switch(config-if)#no shutdown
 Switch(config-if)#exit
 Switch(config)#exit
-Switch#copy running-config startup
+Switch# copy running-config startup
 Destination filename [startup-config]? 
 Building configuration...
 [OK]
@@ -194,3 +195,33 @@ change management VLAN to 99
 images 16 17
 
 unsurprisingly then lost connection. Changed ESXi host to plug into switchport 18.
+Yay - all works.
+
+## VMware tools install
+In VMware installed VMware tools on guest debian VM (had to eject CDROM first)
+
+```
+root@acctvm1:~# eject
+```
+then in ESXi console in the VM under guest OS, install VMware tools.
+
+```
+root@acctvm1:~# mount /dev/cdrom /mnt
+mount: /mnt: WARNING: source write-protected, mounted read-only.
+root@acctvm1:~# cd /mnt
+root@acctvm1:/mnt# mkdir /tmp/vmware-tools
+root@acctvm1:/mnt# cp -p * /tmp/vmware-tools/
+root@acctvm1:/mnt# cd /tmp/vmware-tools/
+root@acctvm1:/tmp/vmware-tools# eject
+root@acctvm1:/tmp/vmware-tools# ls -al
+total 54524
+drwxr-xr-x  2 root root     4096 Jul 25 17:54 .
+drwxrwxrwt 10 root root     4096 Jul 25 17:54 ..
+-r-xr-xr-x  1 root root     1941 Jun 20  2023 manifest.txt
+-r-xr-xr-x  1 root root     4943 Jun 20  2023 run_upgrader.sh
+-r--r--r--  1 root root 53957174 Jun 20  2023 VMwareTools-10.3.26-21953278.tar.gz
+-r-xr-xr-x  1 root root   917188 Jun 20  2023 vmware-tools-upgrader-32
+-r-xr-xr-x  1 root root   930632 Jun 20  2023 vmware-tools-upgrader-64
+root@acctvm1:/tmp/vmware-tools# ./run_upgrader.sh 
+root@acctvm1:/tmp/vmware-tools# 
+```
