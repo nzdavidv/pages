@@ -7,8 +7,9 @@ This is a multi-part series into running a Cisco router lab using GNS3 on VMware
 
 ### Lab objective
 To run a virtual Cisco router using GNS3 on a virtual machine for low cost, for no other reason really other than for the challenge itself.
-My wife would say I'm 'nerding'.
-My Cisco switch was a freebee, the ESXi software was a free download from broadcom (although tricky site to navigate) and the laptop was fairly low cost.
+My wife would say I'm 'nerding'. Sometimes I like techy projects to help keep the nerdy side of my brain happy. 
+
+In terms of low-cost.. my Cisco switch was a freebee, the ESXi software was a free download from broadcom (although tricky site to navigate) and the laptop was fairly low cost.
 
 ### Steps overview
 There are 3 main pieces to this.
