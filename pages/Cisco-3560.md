@@ -197,14 +197,27 @@ images 16 17
 unsurprisingly then lost connection. Changed ESXi host to plug into switchport 18.
 Yay - all works.
 
+# VM setup
+in VM installed some basics using console
+```
+# vi /etc/apt/sources.list
+deb http://deb.debian.org/debian bookworm main
+deb http://deb.debian.org/debian bookworm-updates main
+deb http://deb.debian.org/debian-security bookworm-security main
+# apt update
+# apt upgrade
+# apt install openssh-server net-tools
+```
+
 ## VMware tools install
-In VMware installed VMware tools on guest debian VM (had to eject CDROM first)
+In VMware installed VMware tools on guest debian VM (had to eject CDROM first). yay can SSH in at least to the OS.
 
 ```
 root@acctvm1:~# eject
 ```
 then in ESXi console in the VM under guest OS, install VMware tools.
 
+Now in OS install VMware tools:
 ```
 root@acctvm1:~# mount /dev/cdrom /mnt
 mount: /mnt: WARNING: source write-protected, mounted read-only.
@@ -225,3 +238,4 @@ drwxrwxrwt 10 root root     4096 Jul 25 17:54 ..
 root@acctvm1:/tmp/vmware-tools# ./run_upgrader.sh 
 root@acctvm1:/tmp/vmware-tools# 
 ```
+
