@@ -3,7 +3,8 @@ title: "Cisco 3560 switch setup"
 date: 2025-07-24
 ---
 # Overview
-This is my self-notes for setting up a Cisco 3560 switch someone gave me.
+This is my notes for setting up a Cisco 3560 switch someone gave me.
+I've mentioned before but will reiterate I'm not a network engineer, have never been a network engineer and may be doing things incorrectly / there may be better ways to do this.
 
 
 ## Serial console setup
