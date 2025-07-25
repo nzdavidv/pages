@@ -18,7 +18,7 @@ Now I need to change management VLAN to 99 before unplugging the ESXi laptop fro
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi17.png" alt="esxi17" width="500px"></kbd>
 
-Then unsurprisingly then I lost connection. 
+Then unsurprisingly when I clicked Save I lost connection. 
 
 I physically changed ESXi host to plug into switchport 0/18 (the trunk port).
 
