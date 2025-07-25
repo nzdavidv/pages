@@ -18,8 +18,9 @@ Side note.. I have tried setting up ISOs in Ubuntu and while it looks successful
 The Ubuntu people may throw shade at will... (or David)
 
 ## Boot the laptop machine from the USB drive
-Here is my booting my laptop from the USB drive.
-Note.. I installed to the same drive that I booted from (you can do that..)
+Here is my booting my laptop from the USB drive and installing ESXi
+Note.. I installed to the same drive that I booted from (you can do that..).
+I didn't take photos of all the screens because it's a logical installer with no real surprises.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi1.jpg" alt="esxi1" width="900px"></kbd>
 
@@ -31,9 +32,8 @@ Note.. I installed to the same drive that I booted from (you can do that..)
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi5.jpg" alt="esxi5" width="900px"></kbd>
 
-I didn't take photos of all the screens because it's a logical installer with no real surprises.
-I didn't initialise the disk as part of the install.
-Eventually the host came up and picked up an IP via DHCP.
+I didn't initialise the disk as part of the install. This is because I wanted to confirm the network was functioning in VNWare before I committed to wiping my laptop.
+Eventually the host came up and picked up an IP via DHCP.. a good sign the network is fine.
 
 ## Configure ESXi
 
