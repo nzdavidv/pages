@@ -61,7 +61,9 @@ Deploy a virtual machine from an OVF or OVA file
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns2.png" alt="GNS2" width="600px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns4.png" alt="GNS4" width="600px"></kbd>
+Guest OS version is Ubuntu Linux (64-bit)
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns4.png" alt="GNS4" width="800px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns3.png" alt="GNS3" width="600px"></kbd>
 
@@ -82,7 +84,15 @@ Now click VM Options, expand advanced, click Edit configuration
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6a.png" alt="GNS6a" width="800px"></kbd>
 
-Click Add parameter, down the bottom of the table click into the cell and add nestedHVEnabled, then in the next column cell true, then click OK and Save
+Click Add parameter, down the bottom of the table click into the cell and add 
+```
+nestedHVEnabled
+```
+In the next column cell add 
+```
+true
+```
+and click OK and Save
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6b.png" alt="GNS6b" width="800px"></kbd>
 
