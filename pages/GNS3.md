@@ -3,6 +3,17 @@ title: "Installing and configuring GNS3 on ESXi"
 date: 2025-07-25
 ---
 
+## Overview
+This blog is about installing the GNS3 ESXi virtual machine appliance and configuring it.
+
+### Recap where things are at
+- Cisco switch fully configured for the lab. management IP 192.168.30.188
+- ESXi laptop is plugged into the trunk port 0/18 and admin network configured to VLAN 99. Management IP 192.168.30.176
+- Test VM is on ACCT VLAN 10 with a fixed IP 10.1.10.101, running a DHCP server
+- Raspberry pi is on the VLAN 10 plugged into switchport 0/17 VLAN 10. It now has an IP 10.1.10.10
+- Debian stora is plugged into port 0/2 on VLAN 99 IP 192.168.30.117
+
+### Download and install the VM from OVA
 First I downloaded and unzip'd the ESXI image from https://gns3.com/software/download-vm
 
 ```
@@ -10,6 +21,31 @@ $ unzip GNS3.VM.VMware.ESXI.2.2.54.zip
 Archive:  GNS3.VM.VMware.ESXI.2.2.54.zip
   inflating: GNS3 VM.ova
 ```
+
+..annnnnnd this is where things went off the rails.
+Rather than take it step by step through to the fail point I'll skip right ahead. 
+In a nutshell trying to import the OVA into VMWare (Deploy a virtual machine from an OVF or OVA file) failed with 
+
+> Failed - Invalid configuration for device '2'.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns0.png" alt="GNS0" width="900px"></kbd>
+
+I tried untar and loading the individual files (vmdk, ovf) but got the same error.
+
+### Getting the OVA to work
+
+```
+ $ tar xvf GNS3_VM.ova
+-rw-r--r-- someone/someone 7686 2025-04-22 00:49 GNS3 VM.ovf
+-rw-r--r-- someone/someone  272 2025-04-22 00:49 GNS3 VM.mf
+-rw-r--r-- someone/someone 1006716416 2025-04-22 00:49 GNS3_VM-disk1.vmdk
+-rw-r--r-- someone/someone    4655616 2025-04-22 00:49 GNS3_VM-disk2.vmdk
+$ cp -p GNS3_VM.ovf GNS3_VM.ovf.orig
+```
+
+The modified GNS3_VM.ovf I used is at 
+- [https://github.com/nzdavidv/pages/blob/main/assets/GNS3_VM.ovf](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/GNS3_VM.ovf)
+
 
 switching to windows to install the client
 https://docs.gns3.com/docs/getting-started/installation/windows
