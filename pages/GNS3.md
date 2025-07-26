@@ -131,6 +131,14 @@ Click the browse routers icon and then new template.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8e.png" alt="GNS8e" width="500px"></kbd>
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns10.png" alt="GNS10" width="500px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns11.png" alt="GNS11" width="500px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns12.png" alt="GNS12" width="500px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns13.png" alt="GNS13" width="500px"></kbd>
+
 
 ## router config
 ```
