@@ -65,13 +65,30 @@ Deploy a virtual machine from an OVF or OVA file
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns3.png" alt="GNS3" width="600px"></kbd>
 
+This takes quite a while to complete.
 
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns5.png" alt="GNS5" width="600px"></kbd>
-
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6.png" alt="GNS6" width="600px"></kbd>
+### Modify the VM
+Click into the VM, shut it down (I used the console and went into the menu and selected the shutdown option) and then click Edit.
+Then add two network adapters of type E1000. The first one is the management network (MGMT-VLAN99) and the second the trunk network (TRUNK).
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns7.png" alt="GNS7" width="600px"></kbd>
+
+Then expand CPU and confirm there is a tick next to Hardware Virtualization - Expose hardware assisted virtualization to the guest OS.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6.png" alt="GNS6" width="900px"></kbd>
+
+Now click VM Options, expand advanced, click Edit configuration
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6a.png" alt="GNS6a" width="800px"></kbd>
+
+Click Add parameter, down the bottom of the table click into the cell and add nestedHVEnabled, then in the next column cell true, then click OK and Save
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6b.png" alt="GNS6b" width="800px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6c.png" alt="GNS6c" width="800px"></kbd>
+
+
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8.png" alt="GNS8" width="600px"></kbd>
 
