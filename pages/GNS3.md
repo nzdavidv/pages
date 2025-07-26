@@ -285,3 +285,6 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet6 fe80::2ecf:67ff:fe3f:2702  prefixlen 64  scopeid 0x20<link>
 ```
 
+to-do - see if I can figure a way to get ACCT VLAN 10 to connect to the internet.
+
+
