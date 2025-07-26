@@ -154,16 +154,22 @@ Click 'add a link', and
 - click on the Router, choosing FastEthernet 0.0 
 - click on the cloud and choose Eth1 (Eth1 is the trunk port passed through, Eth0 was the admin VLAN)
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns16.png" alt="GNS16" width="400px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns16.png" alt="GNS16" width="700px"></kbd>
 
 Right click on the right hand side on R1 and select 'Start'.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns17.png" alt="GNS17" width="400px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns17.png" alt="GNS17" width="500px"></kbd>
 
+Mine now says telnet 192.168.30.137 5000.
 
 ## router config
-```
+Configure putty to telnet 192.168.30.137 5000
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns18.png" alt="GNS18" width="500px"></kbd>
+
+Time to configure the router.
+
+```
 R1#enable
 R1#conf terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
