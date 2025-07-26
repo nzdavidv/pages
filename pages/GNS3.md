@@ -113,11 +113,23 @@ The website works for me but doesn't spark joy.
 At this point I switch to using Windows to install the client.
 - <a>https://docs.gns3.com/docs/getting-started/installation/windows</a>
 
-In the installer I just selected the GNS Desktop, none of the tools etc.
+In the installer I just selected the GNS3 Desktop, none of the tools etc.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8b.png" alt="GNS8b" width="500px"></kbd>
 
-On open of GNS3 
+On open of GNS3 select 'Run appliances on a remote server'
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8c.png" alt="GNS8c" width="500px"></kbd>
+
+Enter in the IP of the GNS3 VM, port 80, gns3 username and gns3 password.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8d.png" alt="GNS8d" width="500px"></kbd>
+
+Now click File, new blank project.
+
+Click the browse routers icon and then new template.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8e.png" alt="GNS8e" width="500px"></kbd>
 
 
 ## router config
