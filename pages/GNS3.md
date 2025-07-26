@@ -199,10 +199,8 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 3725-01(config)#interface fastEthernet 0/0
 3725-01(config-if)#no shut
 3725-01(config-if)#exit
-3725-01(config)#interface fastEthernet 0/0
 *Mar  1 00:14:18.007: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
 *Mar  1 00:14:19.007: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
-3725-01(config)#exit
 3725-01(config)#exit
 3725-01#copy running-config startup-config
 Destination filename [startup-config]?
@@ -215,7 +213,6 @@ FastEthernet0/0            unassigned      YES unset  up                    up
 FastEthernet0/0.10         10.1.10.1       YES manual up                    up
 FastEthernet0/0.99         192.168.30.5    YES manual up                    up
 FastEthernet0/1            unassigned      YES unset  administratively down down
-3725-01#show ip
 ```
 
 ### on stora added route for ACCT VLAN and then testing
