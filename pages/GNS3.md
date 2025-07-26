@@ -251,7 +251,7 @@ david@acctvm1:~$
 logout
 
 ```
-### Connect from stora 192.168.30.117 to raspberry pi
+### Connect from stora 192.168.30.117 to raspberry pi 10.1.10.10
 
 ```
 on Stora
