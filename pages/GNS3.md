@@ -56,6 +56,7 @@ $ diff GNS3_VM.ovf GNS3_VM.ovf.orig
 ### Deploy VM from OVA
 
 Deploy a virtual machine from an OVF or OVA file
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns1.png" alt="GNS1" width="600px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns2.png" alt="GNS2" width="600px"></kbd>
