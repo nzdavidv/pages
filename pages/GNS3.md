@@ -98,17 +98,22 @@ and click OK and Save
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6c.png" alt="GNS6c" width="800px"></kbd>
 
+### Start the GNS3 VM
 
+Ignore the 'SMBus host controller not enabled' on startup.
+If all is well it should come up with an IP address on startup (assuming you've done the same as me and connected the management LAN to your home network wifi router which has a DHCP server)
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8.png" alt="GNS8" width="600px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8.png" alt="GNS8" width="700px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns9.png" alt="GNS9" width="600px"></kbd>
+The website works for me but doesn't spark joy.
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8a.png" alt="GNS8a" width="1000px"></kbd>
 
-switching to windows to install the client
-https://docs.gns3.com/docs/getting-started/installation/windows
+### Configure GNS3
+At this point I switch to using Windows to install the client.
+- <a>https://docs.gns3.com/docs/getting-started/installation/windows</a>
 
-
+In the installer I just selected the client, none of the tools etc.
 
 
 ## router config
