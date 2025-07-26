@@ -113,7 +113,11 @@ The website works for me but doesn't spark joy.
 At this point I switch to using Windows to install the client.
 - <a>https://docs.gns3.com/docs/getting-started/installation/windows</a>
 
-In the installer I just selected the client, none of the tools etc.
+In the installer I just selected the GNS Desktop, none of the tools etc.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8b.png" alt="GNS8b" width="500px"></kbd>
+
+On open of GNS3 
 
 
 ## router config
