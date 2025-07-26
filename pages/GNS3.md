@@ -148,7 +148,17 @@ Then click the browse all devices icon and drag the cloud into the workspace.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns14.png" alt="GNS14" width="800px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns15.png" alt="GNS15" width="500px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns15.png" alt="GNS15" width="400px"></kbd>
+
+Click 'add a link', and 
+- click on the Router, choosing FastEthernet 0.0 
+- click on the cloud and choose Eth1 (Eth1 is the trunk port passed through, Eth0 was the admin VLAN)
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns16.png" alt="GNS16" width="400px"></kbd>
+
+Right click on the right hand side on R1 and select 'Start'.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns17.png" alt="GNS17" width="400px"></kbd>
 
 
 ## router config
