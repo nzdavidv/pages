@@ -28,23 +28,53 @@ In a nutshell trying to import the OVA into VMWare (Deploy a virtual machine fro
 
 > Failed - Invalid configuration for device '2'.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns0.png" alt="GNS0" width="900px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns0.png" alt="GNS0" width="1100px"></kbd>
 
 I tried untar and loading the individual files (vmdk, ovf) but got the same error.
 
-### Getting the OVA to work
+## Getting the OVA to work
 
 ```
+in a tmp directory somewhere:
  $ tar xvf GNS3_VM.ova
 -rw-r--r-- someone/someone 7686 2025-04-22 00:49 GNS3 VM.ovf
 -rw-r--r-- someone/someone  272 2025-04-22 00:49 GNS3 VM.mf
 -rw-r--r-- someone/someone 1006716416 2025-04-22 00:49 GNS3_VM-disk1.vmdk
 -rw-r--r-- someone/someone    4655616 2025-04-22 00:49 GNS3_VM-disk2.vmdk
-$ cp -p GNS3_VM.ovf GNS3_VM.ovf.orig
 ```
 
 The modified GNS3_VM.ovf I used is at 
 - [https://github.com/nzdavidv/pages/blob/main/assets/GNS3_VM.ovf](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/GNS3_VM.ovf)
+
+```
+$ cp -p GNS3_VM.ovf GNS3_VM.ovf.orig
+$ wget https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/GNS3_VM.ovf
+
+..you can have a look to see the differences. I basically chopped a whole bunch out to get it to work.
+$ diff GNS3_VM.ovf GNS3_VM.ovf.orig
+```
+### Deploy VM from OVA
+
+Deploy a virtual machine from an OVF or OVA file
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns1.png" alt="GNS1" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns2.png" alt="GNS2" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns4.png" alt="GNS4" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns3.png" alt="GNS3" width="600px"></kbd>
+
+
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns5.png" alt="GNS5" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6.png" alt="GNS6" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns7.png" alt="GNS7" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8.png" alt="GNS8" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns9.png" alt="GNS9" width="600px"></kbd>
 
 
 switching to windows to install the client
