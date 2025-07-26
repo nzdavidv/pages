@@ -53,7 +53,7 @@ $ wget https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/G
 ..you can have a look to see the differences. I basically chopped a whole bunch out to get it to work.
 $ diff GNS3_VM.ovf GNS3_VM.ovf.orig
 ```
-### Deploy VM from OVA
+### Deploy GNS3 VM from OVA
 
 Deploy a virtual machine from an OVF or OVA file
 
@@ -68,7 +68,7 @@ Deploy a virtual machine from an OVF or OVA file
 This takes quite a while to complete.
 
 
-### Modify the VM
+### Modify the GNS3 VM
 Click into the VM, shut it down (I used the console and went into the menu and selected the shutdown option) and then click Edit.
 Then add two network adapters of type E1000. The first one is the management network (MGMT-VLAN99) and the second the trunk network (TRUNK).
 
