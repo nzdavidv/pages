@@ -106,3 +106,18 @@ Management network first then GNS-ACCT.
 Start the VM and then time to switch to using Windows to configure GNS3
 
 The admin interface came up 192.68.30.139 which is good.
+
+In Windows GNS3 desktop (when I can connected to the correct WiFi network) I dragged the router on the Workspace, and then two clouds.
+I named the first one admin-net and the second acct-net.
+
+I added a link from admin-net (eth0) to the router fa0/0.
+
+I added a link from acct-net (eth1) to the router fa0/1.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns19.png" alt="gns19" width="600px"></kbd>
+
+Then click the start green triangle in the toolbar.
+
+### Configure the virtual router
+
+
