@@ -136,7 +136,7 @@ Building configuration...
 Switch#
 ```
  
-After all that plugged into the main switch and
+After all that plugged port Fa 0/1 into my home WiFi router switch and
 Could telnet to 192.168.30.188
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/cisco2.png" alt="aws-cisco-2" width="500px"></kbd>
