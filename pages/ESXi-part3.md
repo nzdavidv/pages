@@ -58,6 +58,7 @@ Building configuration...
 
 ### Change the VMware management network
 Management network, edit settings, change VLAN ID from 99 to 0
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi21.png" alt="esxi21" width="600px"></kbd>
 
 At this point the connection dropped.
 
@@ -85,12 +86,7 @@ yay it came back.
 
 I created dedicated GNS port groups networks because the security settings are pretty average and I wouldn't want to use them outside of GNS. Note the security settings.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi21.png" alt="esxi21" width="600px"></kbd>
-
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi22.png" alt="esxi22" width="600px"></kbd>
 
-
-
-
-
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi23.png" alt="esxi23" width="600px"></kbd>
 
