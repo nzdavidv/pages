@@ -4,7 +4,7 @@ date: 2025-07-28
 ---
 # Overview
 Continued fun in the lab but instead of using VLAN tagging using two seperate NICs.
-One of them is USB-C ethernet interface.
+One of them is USB-C ethernet adapter, plugged into the laptop running ESXi.
 
 ### Recap where things are at
 - Cisco switch fully configured for the lab. management IP 192.168.30.188
@@ -32,14 +32,15 @@ Under Virtual Switches, Add standard virtual switch. I creatively named it vSwit
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi19.png" alt="esxi19" width="1000px"></kbd>
 
-It could have the standard 'no' security settings.
+It could have the standard 'reject' security settings.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi20.png" alt="esxi20" width="600px"></kbd>
 
 
 ### Setting up the Cisco switch
 
-I plugged it into FastEthernet0/19
+I plugged the ethernet cable from the laptop USB-C ethernet adapter into the Cisco switch - FastEthernet0/19.
+This is me configuring the switch port to VLAN10.
 
 ```
 Switch#conf terminal 
@@ -60,9 +61,9 @@ Building configuration...
 Management network, edit settings, change VLAN ID from 99 to 0
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi21.png" alt="esxi21" width="600px"></kbd>
 
-At this point the connection dropped.
+At this point the connection to the VMWare host web interface dropped.
 
-Now change the trunk port to VLAN 99 admin and internet
+Now I change fastEthernet 0/18 from the trunk port to VLAN 99 (admin and internet)
 ```
 Switch>enable
 Password: 
@@ -99,15 +100,19 @@ I started the VM and initially it couldn't ping the raspberry pi but then it cam
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi25.png" alt="esxi25" width="600px"></kbd>
 
-### Add the new networks to GNS3
+### Add the new networks to GNS3 VM
 
-Management network first then GNS-ACCT.
+In VMWare edit the GNS3 VM, Add network adapter for the new Management network first then Add network adapter GNS-ACCT.
 
-Start the VM and then time to switch to using Windows to configure GNS3
+Remember to make them E1000 adapter types.
+
+Now start the VM and it's time to switch to using Windows to configure GNS3.
 
 The admin interface came up 192.68.30.139 which is good.
 
+### Configure GNS3
 In Windows GNS3 desktop (when I can connected to the correct WiFi network) I dragged the router on the Workspace, and then two clouds.
+
 I named the first one admin-net and the second acct-net.
 
 I added a link from admin-net (eth0) to the router fa0/0.
