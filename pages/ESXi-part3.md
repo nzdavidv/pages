@@ -90,3 +90,9 @@ I created dedicated GNS port groups networks because the security settings are p
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi23.png" alt="esxi23" width="600px"></kbd>
 
+### Add GNS-ACCT to VM ACCT-VM1
+Then Add network adapter,  GNS3-ACCT
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi23.png" alt="esxi23" width="600px"></kbd>
+
+
