@@ -93,6 +93,16 @@ I created dedicated GNS port groups networks because the security settings are p
 ### Add GNS-ACCT to VM ACCT-VM1
 Then Add network adapter,  GNS3-ACCT
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi23.png" alt="esxi23" width="600px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi24.png" alt="esxi24" width="600px"></kbd>
 
+I started the VM and initially it couldn't ping the raspberry pi but then it came right (could be DHCP on the pi needed the VM DHCP service to be up and it took a while).
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi25.png" alt="esxi25" width="600px"></kbd>
+
+### Add the new networks to GNS3
+
+Management network first then GNS-ACCT.
+
+Start the VM and then time to switch to using Windows to configure GNS3
+
+The admin interface came up 192.68.30.139 which is good.
