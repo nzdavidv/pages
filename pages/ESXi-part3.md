@@ -113,11 +113,9 @@ The admin interface came up 192.68.30.139 which is good.
 ### Configure GNS3
 In Windows GNS3 desktop (when I can connected to the correct WiFi network) I dragged the router on the Workspace, and then two clouds.
 
-I named the first one admin-net and the second acct-net.
-
-I added a link from admin-net (eth0) to the router fa0/0.
-
-I added a link from acct-net (eth1) to the router fa0/1.
+ - I named the first one admin-net and the second acct-net.
+ - I added a link from admin-net (eth0) to the router fa0/0.
+ - I added a link from acct-net (eth1) to the router fa0/1.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns19.png" alt="gns19" width="1000px"></kbd>
 
@@ -141,7 +139,6 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 3725-01(config)#interface fastEthernet 0/0
 3725-01(config-if)#ip address 192.168.30.30 255.255.255.0
 3725-01(config-if)#no shut
-3725-01(config-if)#interface fastEthernet 0/0
 *Mar  1 00:06:19.339: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
 *Mar  1 00:06:20.339: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
 3725-01(config-if)#interface fastEthernet 0/1
