@@ -119,7 +119,7 @@ I added a link from admin-net (eth0) to the router fa0/0.
 
 I added a link from acct-net (eth1) to the router fa0/1.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns19.png" alt="gns19" width="600px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns19.png" alt="gns19" width="1000px"></kbd>
 
 Then click the start green triangle in the toolbar.
 
