@@ -36,7 +36,6 @@ It could have the standard 'no' security settings.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi20.png" alt="esxi20" width="600px"></kbd>
 
-I'm going to setup the new port group as the new management & internet network.
 
 ### Setting up the Cisco switch
 
@@ -47,7 +46,7 @@ Switch#conf terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
 Switch(config)#interface FastEthernet0/19
 Switch(config-if)#switchport mode access
-Switch(config-if)#switchport access vlan 99
+Switch(config-if)#switchport access vlan 10
 Switch(config-if)#no shutdown
 Switch(config-if)#exit
 Switch(config)#exit
@@ -58,7 +57,39 @@ Building configuration...
 ```
 
 ### Change the VMware management network
-Management network, edit settings, 
+Management network, edit settings, change VLAN ID from 99 to 0
+
+At this point the connection dropped.
+
+Now change the trunk port to VLAN 99 admin and internet
+```
+Switch>enable
+Password: 
+Switch#conf term
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface fastEthernet 0/18
+Switch(config-if)#switchport access vlan 99
+Switch(config-if)#switchport mode access
+Switch(config-if)#no shut
+Switch(config-if)#exit
+Switch(config)#exit
+Switch#copy running-config startup
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+```
+
+yay it came back.
+
+### Adding new VMWare port groups
+
+I created dedicated GNS port groups networks because the security settings are pretty average and I wouldn't want to use them outside of GNS. Note the security settings.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi21.png" alt="esxi21" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi22.png" alt="esxi22" width="600px"></kbd>
+
+
 
 
 
