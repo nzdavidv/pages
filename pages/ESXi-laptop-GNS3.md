@@ -26,6 +26,11 @@ There are 3 main pieces to this.
 
  - <a href="GNS3.md">Setting up GNS3 virtual machine and then configuring virtual router</a>
 
+4. Modifying the setup to use USB-C ethernet.
+
+ - <a href="ESXi-part3.md">USB-C ethernet in ESXi</a>
+
+
 ## Lab setup
 To-Do: physical diagram and logical diagram.
 
