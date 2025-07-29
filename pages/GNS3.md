@@ -287,6 +287,19 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet6 fe80::2ecf:67ff:fe3f:2702  prefixlen 64  scopeid 0x20<link>
 ```
 
+### Yay! it's all working
+Recap
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-drawio.png" alt="esxi-gns-drawio" width="700px"></kbd>
+- Cisco switch fully configured for the lab. management IP 192.168.30.188
+- ESXi laptop is plugged into the trunk port 0/18 and admin network configured to VLAN 99. Management IP 192.168.30.176
+- Test VM is on ACCT VLAN 10 with a fixed IP 10.1.10.101, running a DHCP server. It has default route 10.1.10.1.
+- Raspberry pi is on the VLAN 10 plugged into switchport 0/17 VLAN 10. It has IP 10.1.10.10 and default route 10.1.10.1.
+- GNS3 VM deployed with 2 interfaces of type E1000. The first is the management network (MGMT-VLAN99) and the second the trunk network (TRUNK).
+- A GNS config deployed with virtual router, the router has 2 dot1Q interfaces. One on VLAN 10 with IP 10.1.10.1 and one on VLAN99 with IP 192.168.30.5.
+- Debian stora is plugged into port 0/2 on VLAN 99 IP 192.168.30.117. It has a static route to get to 10.1.10.0/24 via 192.168.30.5
+
+<img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
+
 to-do - see if I can figure a way to get ACCT VLAN 10 to connect to the internet.
 
 
