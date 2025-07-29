@@ -298,6 +298,7 @@ Recap
 - GNS3 VM deployed with 2 interfaces of type E1000. The first is the management network (MGMT-VLAN99) and the second the trunk network (TRUNK). The GNS3 management IP is 192.168.30.139
 - A GNS config deployed with virtual router, the router has 2 dot1Q interfaces. One on VLAN 10 with IP 10.1.10.1 and one on VLAN99 with IP 192.168.30.5.
 - Debian stora is plugged into port 0/2 on VLAN 99 IP 192.168.30.117. It has a static route to get to 10.1.10.0/24 via 192.168.30.5
+- Testing the router works was successful from 192.168.30.117 to ACCT-VM1 10.1.10.10 and Raspberry pi 10.1.10.10
 
 <img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
 
