@@ -64,7 +64,6 @@ Then add the port groups for the VLANs below. 4095 is all-VLANs.
 | VLAN Name | VLAN |
 |---|---|
 | ACCT-VLAN10 | 10 |
-| SALES-VLAN20 | 20 |
 | TRUNK | 4095 |
 | MGMT-VLAN99| 99|
 
