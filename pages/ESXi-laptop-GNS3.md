@@ -26,10 +26,6 @@ There are 3 main pieces to this.
 
  - <a href="GNS3.md">Setting up GNS3 virtual machine and then configuring virtual router</a>
 
-4. GNS3 simpler - modifying the setup to use USB-C ethernet and two physical NICs rather than VLAN tagging.
-
- - <a href="ESXi-part3.md">USB-C ethernet in ESXi & GNS3-simpler</a>
-
 
 ## Lab setup
 To-Do: physical diagram and logical diagram.
