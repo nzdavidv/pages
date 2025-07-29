@@ -289,6 +289,7 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 ### Yay! it's all working
 Recap
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-drawio.png" alt="esxi-gns-drawio" width="700px"></kbd>
 - Cisco switch fully configured for the lab. management IP 192.168.30.188
 - ESXi laptop is plugged into the trunk port 0/18 and admin network configured to VLAN 99. Management IP 192.168.30.176
