@@ -64,7 +64,7 @@ In there you can upload the ISO.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13b.png" alt="esxi13b" width="600px"></kbd>
 
-## Setup the new network
+## Setup the USB-C attached network
 vSwitch0 should automatically be configured.
 
 Under Virtual Switches, Add standard virtual switch. I creatively named it vSwitch1. 
@@ -83,10 +83,45 @@ I created dedicated GNS port groups networks because the security settings are p
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi23.png" alt="esxi23" width="600px"></kbd>
 
-### Add GNS-ACCT to VM ACCT-VM1
-Then Add network adapter,  GNS3-ACCT
+### Create a guest VM
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi24.png" alt="esxi24" width="600px"></kbd>
+This first guest is ACCT-VM1 on ACCT-VLAN10.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi14.png" alt="esxi14" width="900px"></kbd>
+
+Network adapter is  GNS-ACCT. Change the CD/DVD Drive 1 to Datastore ISO file and select the previously uploaded ISO 
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi27.png" alt="esxi27" width="700px"></kbd>
+
+Configured IP manually to 10.1.10.101
+
+
+Added some key packages
+```
+# apt install openssh-server net-tools isc-dhcp-server
+```
+configure DHCP
+```
+# vi /etc/default/isc-dhcp-server
+INTERFACESv4="ens192"
+
+# vi /etc/dhcp/dhcpd.conf
+option domain-name "nzvink.com";
+option domain-name-servers 8.8.8.8, 8.8.4.4; 
+default-lease-time 600;
+max-lease-time 7200;
+ddns-update-style none;
+authoritative;
+subnet 10.1.10.0 netmask 255.255.255.0 {
+  range 10.1.10.10 10.1.10.100; # IP address range for clients
+  option routers 10.1.10.1; # Default gateway
+  option broadcast-address 10.1.10.255;
+}
+
+I put back /etc/network/interfaces.orig to /etc/network/interfaces so that on restart the host would have an IP on ACCT VLAN 10 network agin, then rebooted
+# shutdown -h now
+
+```
 
 I started the VM and initially it couldn't ping the raspberry pi but then it came right (could be DHCP on the pi needed the VM DHCP service to be up and it took a while).
 
