@@ -4,6 +4,10 @@ date: 2025-07-25
 ---
 # Overview
 This is a multi-part series into running a Cisco router lab using GNS3 on VMware.
+It uses VLAN taggging and a single physical network interface from the laptop, with GNS3 routing between VLAN'd networks.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-drawio.png" alt="esxi-gns-drawio" width="700px"></kbd>
+
 
 ### Lab objective
 To run a virtual Cisco router using GNS3 on a virtual machine for low cost, for no other reason really other than for the challenge itself.
