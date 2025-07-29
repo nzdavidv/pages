@@ -139,6 +139,7 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 3725-01(config)#interface fastEthernet 0/0
 3725-01(config-if)#ip address 192.168.30.30 255.255.255.0
 3725-01(config-if)#no shut
+3725-01(config-if)#exit
 *Mar  1 00:06:19.339: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
 *Mar  1 00:06:20.339: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
 3725-01(config-if)#interface fastEthernet 0/1
@@ -156,8 +157,10 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 Interface                  IP-Address      OK? Method Status                Protocol
 FastEthernet0/0            192.168.30.30   YES manual up                    up
 FastEthernet0/1            10.1.10.1       YES manual up                    up
-3725-01#
-*Mar  1 00:15:50.527: %SYS-5-CONFIG_I: Configured from console by console
+3725-01# copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
 
 3725-01#show ip route
 Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
