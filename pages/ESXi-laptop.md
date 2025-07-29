@@ -71,8 +71,6 @@ Then add the port groups for the VLANs below. 4095 is all-VLANs.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi10.png" alt="esxi10" width="600px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi11.png" alt="esxi11" width="600px"></kbd>
-
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi12.png" alt="esxi12" width="600px"></kbd>
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi13.png" alt="esxi13" width="600px"></kbd>
