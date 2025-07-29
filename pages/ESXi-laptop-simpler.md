@@ -85,23 +85,19 @@ I created dedicated GNS port groups networks because the security settings are p
 
 ### Create a guest VM
 
-This first guest is ACCT-VM1 on ACCT-VLAN10.
+This first guest is ACCT-VM1 on network GNS-MGMT. I will change it after building to GNS-ACCT
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi14.png" alt="esxi14" width="900px"></kbd>
 
 Network adapter is  GNS-ACCT. Change the CD/DVD Drive 1 to Datastore ISO file and select the previously uploaded ISO 
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi27.png" alt="esxi27" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi28.png" alt="esxi28" width="700px"></kbd>
 
-Configured IP manually to 10.1.10.101
+Add openssh-server from the console as part of install.
 
-
-Added some key packages
+Then SSH in and add the rest, and configure DHCP
 ```
-# apt install openssh-server net-tools isc-dhcp-server
-```
-configure DHCP
-```
+# apt install net-tools isc-dhcp-server
 # vi /etc/default/isc-dhcp-server
 INTERFACESv4="ens192"
 
@@ -118,7 +114,24 @@ subnet 10.1.10.0 netmask 255.255.255.0 {
   option broadcast-address 10.1.10.255;
 }
 
-I put back /etc/network/interfaces.orig to /etc/network/interfaces so that on restart the host would have an IP on ACCT VLAN 10 network agin, then rebooted
+# vi /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug ens192
+iface ens192 inet static
+        address 10.1.10.101/24
+        gateway 10.1.10.1
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 10.1.10.1
+
 # shutdown -h now
 
 ```
