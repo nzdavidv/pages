@@ -5,6 +5,8 @@ date: 2025-07-25
 # Overview
 This is a multi-part series into running a Cisco router lab using GNS3 on VMware.
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-simpler1.png" alt="esxi-gns-simpler1" width="700px"></kbd>
+
 ### Lab objective
 To run a virtual Cisco router using GNS3 on a virtual machine for low cost, for no other reason really other than for the challenge itself.
 My wife would say I'm 'nerding'. Sometimes I like techy projects to help keep the nerdy side of my brain happy. 
@@ -15,12 +17,13 @@ In terms of low-cost.. my Cisco switch was a freebee, the ESXi software was a fr
 There are 3 main pieces to this.
 
 1. Setup the ESXi laptop
- 
  - <a href="ESXi-laptop.md">Setting up ESXi on HP Elitebook G5 laptop</a>
+ This part is the same as the 
 
 2. Setup the physical switches
-
- - As this is a very simple lab, there are 2 unmanaged switches. 
+As this is a very simple lab, there are 2 unmanaged switches. 
+ - switch1 has a connection to my home wifi router, a connection to the ethernet port in the ESXi laptop, and a connection to my Netgear Stora running Debian
+ - switch2 has a connection to the USB-C ethernet port attached to the ESXi laptop, and a connection to the raspberry pi
 
 3. GNS3 simpler - modifying the setup to use USB-C ethernet and two physical NICs rather than VLAN tagging.
 
