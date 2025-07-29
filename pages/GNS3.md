@@ -7,6 +7,8 @@ date: 2025-07-25
 This blog is about installing the GNS3 ESXi virtual machine appliance and configuring it.
 
 ### Recap where things are at
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-page3.png" alt="esxi-gns-page3" width="700px"></kbd>
+
 - Cisco switch fully configured for the lab. management IP 192.168.30.188
 - ESXi laptop is plugged into the trunk port 0/18 and admin network configured to VLAN 99. Management IP 192.168.30.176
 - Test VM is on ACCT VLAN 10 with a fixed IP 10.1.10.101, running a DHCP server
