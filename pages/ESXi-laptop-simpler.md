@@ -5,6 +5,19 @@ date: 2025-07-25
 # Overview
 This worked really well I have to say.. installing stock standard VMware ESXi 8.0.3 downloaded from broadcom on an HP Elitebook G5 with 16 GB RAM and 500gb NVMe drive.
 
+## initial setup
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-simpler2.png" alt="esxi-gns-simpler2" width="700px"></kbd>
+The initial setup has:
+- the switch with admin and internet network. Network is the same as my home WiFi network - 192.168.30.0/24
+  - Home WiFi router is plugged in
+  - Debian-Stora plugged in with IP 192.168.30.117
+  - The ESXi laptop is plugged in with its onboard Ethernet port. It has a DHCP reservation for IP 192.168.30.176
+ 
+- the switch with 'ACCT' network. Yet to be defined.
+  - The ESXi laptop is plugged in with its USB-C adapter Ethernet port.
+  - Raspberry Pi is plugged into this switch. Initially it has no IP address. 
+
+# ESXi laptop setup
 ## prepare USB boot drive.
 In Windows with rufus..
 
