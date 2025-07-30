@@ -294,6 +294,7 @@ Expand routers, click Cisco 3725 appliance, install the appliance on the main se
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns12.png" alt="GNS12" width="500px"></kbd>
 
+Click Create a new version.
 I gave mine the name 124-25D and clicked import to browse to c3725-adventerprisek9-mz.124-25d.bin
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns13.png" alt="GNS13" width="500px"></kbd>
@@ -305,9 +306,7 @@ Then click the browse all devices icon and drag the cloud into the workspace.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns15.png" alt="GNS15" width="400px"></kbd>
 
-### Configure GNS3
-In Windows GNS3 desktop (when I can connected to the correct WiFi network) I dragged the router on the Workspace, and then two clouds.
-
+Then add one more Cloud.
  - I named the first one admin-net and the second acct-net.
  - I added a link from admin-net (eth0) to the router fa0/0.
  - I added a link from acct-net (eth1) to the router fa0/1.
@@ -316,8 +315,12 @@ In Windows GNS3 desktop (when I can connected to the correct WiFi network) I dra
 
 Then click the start green triangle in the toolbar.
 
-### Configure the virtual router
+## Configure the virtual router
+### Connect to the virtual router
+Now use putty to telnet to the virtual router with the details from R1 on the right hand side.
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns18.png" alt="gns18" width="700px"></kbd>
 
+### Configure the virtual router 
 ```
 R1#enable
 R1#conf terminal
