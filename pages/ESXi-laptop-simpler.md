@@ -165,7 +165,8 @@ I started the VM and initially it couldn't ping the raspberry pi but then it cam
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi25.png" alt="esxi25" width="600px"></kbd>
 
-### Download and install the VM from OVA
+# GNS3 install
+### Download and install the VM OVA
 First I downloaded and unzip'd the ESXI image from https://gns3.com/software/download-vm
 
 ```
