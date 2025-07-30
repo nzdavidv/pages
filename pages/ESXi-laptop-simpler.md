@@ -7,6 +7,7 @@ This worked really well I have to say.. installing stock standard VMware ESXi 8.
 
 ## initial setup
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-simpler2.png" alt="esxi-gns-simpler2" width="700px"></kbd>
+
 The initial setup has:
 - the switch with admin and internet network. Network is the same as my home WiFi network - 192.168.30.0/24
   - Home WiFi router is plugged in
@@ -30,10 +31,11 @@ I said 'No' to the question..
 Side note.. I have tried setting up ISOs in Ubuntu and while it looks successful it's just nowhere near as reliable as good old rufus on Windows.
 The Ubuntu people may throw shade at will... (or David)
 
-## Boot the laptop machine from the USB drive
+## Boot the laptop from the USB drive
 Here is my booting my laptop from the USB drive and installing ESXi
 Note.. I installed to the same drive that I booted from (you can do that..).
 I didn't take photos of all the screens because it's a logical installer with no real surprises.
+Taking photos of screens makes me die a little inside but I don't think there is any otherway when booting an installer.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi1.jpg" alt="esxi1" width="900px"></kbd>
 
