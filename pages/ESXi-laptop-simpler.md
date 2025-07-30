@@ -92,7 +92,7 @@ It could have the standard 'reject' security settings.
 
 ### Adding new VMWare port groups
 
-I created dedicated GNS port groups networks because the security settings are pretty average and I wouldn't want to use them outside of GNS. Note the security settings.
+I created dedicated GNS port groups. Note the security settings.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi22.png" alt="esxi22" width="600px"></kbd>
 
@@ -100,7 +100,7 @@ I created dedicated GNS port groups networks because the security settings are p
 
 ### Create a guest VM
 
-This first guest is ACCT-VM1 on network GNS-MGMT. I will change it after building to GNS-ACCT
+This first guest is ACCT-VM1 on network GNS-MGMT. After it is built and has the DHCP configured I will change it to GNS-ACCT network.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi14.png" alt="esxi14" width="900px"></kbd>
 
@@ -110,7 +110,7 @@ Network adapter is  GNS-ACCT. Change the CD/DVD Drive 1 to Datastore ISO file an
 
 Add openssh-server from the console as part of install.
 
-Then SSH in and add the rest, and configure DHCP
+Then I can connect via SSH and add the other software, and configure DHCP
 ```
 # apt install net-tools isc-dhcp-server
 # vi /etc/default/isc-dhcp-server
@@ -128,7 +128,9 @@ subnet 10.1.10.0 netmask 255.255.255.0 {
   option routers 10.1.10.1; # Default gateway
   option broadcast-address 10.1.10.255;
 }
-
+```
+Now setup the VM for fixed IP boot on the ACCT network
+```
 # vi /etc/network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -148,14 +150,22 @@ iface ens192 inet static
         dns-nameservers 10.1.10.1
 
 # shutdown -h now
-
 ```
+
+### Change ACCT-VM1 network in VMWare
+Now in VMWare I can change the VM network to GNS-ACCT network
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi29.png" alt="esxi29" width="700px"></kbd>
+
+Then start the server again.
+
+### Basic test that the ACCT network is working
 
 I started the VM and initially it couldn't ping the raspberry pi but then it came right (could be DHCP on the pi needed the VM DHCP service to be up and it took a while).
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi25.png" alt="esxi25" width="600px"></kbd>
 
-### Add the new networks to GNS3 VM
+## Add the new networks to GNS3 VM
 
 In VMWare edit the GNS3 VM, Add network adapter for the new Management network first then Add network adapter GNS-ACCT.
 
