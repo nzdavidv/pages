@@ -290,6 +290,21 @@ Click the browse routers icon and then new template.
 Expand routers, click Cisco 3725 appliance, install the appliance on the main server, next, next
 
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns11.png" alt="GNS11" width="500px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns12.png" alt="GNS12" width="500px"></kbd>
+
+I gave mine the name 124-25D and clicked import to browse to c3725-adventerprisek9-mz.124-25d.bin
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns13.png" alt="GNS13" width="500px"></kbd>
+
+Drag Cisco 3725 124-25D into the big panel (Workspace).
+Then click the browse all devices icon and drag the cloud into the workspace.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns14.png" alt="GNS14" width="800px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns15.png" alt="GNS15" width="400px"></kbd>
+
 ### Configure GNS3
 In Windows GNS3 desktop (when I can connected to the correct WiFi network) I dragged the router on the Workspace, and then two clouds.
 
