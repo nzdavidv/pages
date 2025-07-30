@@ -318,7 +318,7 @@ Then click the start green triangle in the toolbar.
 ## Configure the virtual router
 ### Connect to the virtual router
 Now use putty to telnet to the virtual router with the details from R1 on the right hand side.
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns18.png" alt="gns18" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns22.png" alt="gns22" width="700px"></kbd>
 
 ### Configure the virtual router 
 ```
