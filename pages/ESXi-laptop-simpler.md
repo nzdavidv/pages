@@ -262,17 +262,33 @@ The website works for me but doesn't spark joy.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8a.png" alt="GNS8a" width="1000px"></kbd>
 
+## Install GNS3 desktop
 
+At this point I switch to using Windows to install the client.
+- <a>https://docs.gns3.com/docs/getting-started/installation/windows</a>
 
-## Add the new networks to GNS3 VM
+In the installer I just selected the GNS3 Desktop, none of the tools etc.
 
-In VMWare edit the GNS3 VM, Add network adapter for the new Management network first then Add network adapter GNS-ACCT.
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8b.png" alt="GNS8b" width="500px"></kbd>
 
-Remember to make them E1000 adapter types.
+On open of GNS3 select 'Run appliances on a remote server'
 
-Now start the VM and it's time to switch to using Windows to configure GNS3.
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8c.png" alt="GNS8c" width="500px"></kbd>
 
-The admin interface came up 192.68.30.139 which is good.
+Enter in the IP of the GNS3 VM, port 80, gns3 username and gns3 password.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8d.png" alt="GNS8d" width="500px"></kbd>
+
+Now click File, new blank project.
+
+Click the browse routers icon and then new template.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8e.png" alt="GNS8e" width="500px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns10.png" alt="GNS10" width="500px"></kbd>
+
+Expand routers, click Cisco 3725 appliance, install the appliance on the main server, next, next
+
 
 ### Configure GNS3
 In Windows GNS3 desktop (when I can connected to the correct WiFi network) I dragged the router on the Workspace, and then two clouds.
