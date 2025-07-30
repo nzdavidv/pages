@@ -47,7 +47,7 @@ Taking photos of screens makes me die a little inside but I don't think there is
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi5.jpg" alt="esxi5" width="900px"></kbd>
 
-I didn't initialise the disk as part of the install. This is because I wanted to confirm the network was functioning in VNWare before I committed to wiping my laptop.
+I didn't initialise the disk as part of the install. This is because I wanted to confirm the network was functioning in VMWare before I committed to wiping my laptop.
 Eventually the host came up and picked up an IP via DHCP.. a good sign the network is fine.
 
 ## Configure ESXi
