@@ -110,7 +110,7 @@ Network adapter is  GNS-ACCT. Change the CD/DVD Drive 1 to Datastore ISO file an
 
 Add openssh-server from the console as part of install.
 
-Then I can connect via SSH and add the other software, and configure DHCP
+Then I can connect via SSH and add the other software, configure DHCP, then shutdown the VM
 ```
 # apt install net-tools isc-dhcp-server
 # vi /etc/default/isc-dhcp-server
@@ -164,6 +164,104 @@ Then start the server again.
 I started the VM and initially it couldn't ping the raspberry pi but then it came right (could be DHCP on the pi needed the VM DHCP service to be up and it took a while).
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi25.png" alt="esxi25" width="600px"></kbd>
+
+### Download and install the VM from OVA
+First I downloaded and unzip'd the ESXI image from https://gns3.com/software/download-vm
+
+```
+$ unzip GNS3.VM.VMware.ESXI.2.2.54.zip 
+Archive:  GNS3.VM.VMware.ESXI.2.2.54.zip
+  inflating: GNS3 VM.ova
+```
+
+..annnnnnd this is where things went off the rails.
+Rather than take it step by step through to the fail point I'll skip right ahead. 
+In a nutshell trying to import the OVA into VMWare (Deploy a virtual machine from an OVF or OVA file) failed with 
+
+> Failed - Invalid configuration for device '2'.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns0.png" alt="GNS0" width="1100px"></kbd>
+
+I tried untar and loading the individual files (vmdk, ovf) but got the same error.
+
+## Getting the OVA to work
+
+```
+in a tmp directory somewhere:
+ $ tar xvf GNS3_VM.ova
+-rw-r--r-- someone/someone 7686 2025-04-22 00:49 GNS3 VM.ovf
+-rw-r--r-- someone/someone  272 2025-04-22 00:49 GNS3 VM.mf
+-rw-r--r-- someone/someone 1006716416 2025-04-22 00:49 GNS3_VM-disk1.vmdk
+-rw-r--r-- someone/someone    4655616 2025-04-22 00:49 GNS3_VM-disk2.vmdk
+```
+
+The modified GNS3_VM.ovf I used is at 
+- [https://github.com/nzdavidv/pages/blob/main/assets/GNS3_VM.ovf](https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/GNS3_VM.ovf)
+
+```
+$ cp -p GNS3_VM.ovf GNS3_VM.ovf.orig
+$ wget https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/assets/GNS3_VM.ovf
+
+..you can have a look to see the differences. I basically chopped a whole bunch out to get it to work.
+$ diff GNS3_VM.ovf GNS3_VM.ovf.orig
+```
+### Deploy GNS3 VM from OVA
+
+Deploy a virtual machine from an OVF or OVA file
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns1.png" alt="GNS1" width="600px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns2.png" alt="GNS2" width="600px"></kbd>
+
+Guest OS version is Ubuntu Linux (64-bit)
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns4.png" alt="GNS4" width="800px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns3.png" alt="GNS3" width="600px"></kbd>
+
+This takes quite a while to complete.
+
+
+### Modify the GNS3 VM
+Click into the VM, shut it down (I used the console and went into the menu and selected the shutdown option) and then click Edit.
+Then add two network adapters of type E1000. The first one is the management network (MGMT-VLAN99) and the second the trunk network (TRUNK).
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns7.png" alt="GNS7" width="600px"></kbd>
+
+Then expand CPU and confirm there is a tick next to Hardware Virtualization - Expose hardware assisted virtualization to the guest OS.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6.png" alt="GNS6" width="900px"></kbd>
+
+Now click VM Options, expand advanced, click Edit configuration
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6a.png" alt="GNS6a" width="800px"></kbd>
+
+Click Add parameter, down the bottom of the table click into the cell and add 
+```
+nestedHVEnabled
+```
+In the next column cell add 
+```
+true
+```
+and click OK and Save
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6b.png" alt="GNS6b" width="800px"></kbd>
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6c.png" alt="GNS6c" width="800px"></kbd>
+
+### Start the GNS3 VM
+
+Ignore the 'SMBus host controller not enabled' on startup.
+If all is well it should come up with an IP address on startup (assuming you've done the same as me and connected the management LAN to your home network wifi router which has a DHCP server)
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8.png" alt="GNS8" width="700px"></kbd>
+
+The website works for me but doesn't spark joy.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8a.png" alt="GNS8a" width="1000px"></kbd>
+
+
 
 ## Add the new networks to GNS3 VM
 
