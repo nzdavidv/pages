@@ -208,7 +208,7 @@ $ diff GNS3_VM.ovf GNS3_VM.ovf.orig
 ```
 ### Deploy GNS3 VM from OVA
 
-Deploy a virtual machine from an OVF or OVA file
+Deploy a virtual machine from an OVF or OVA file. The OVA file is the modified one.. nothing else is changed.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns1.png" alt="GNS1" width="600px"></kbd>
 
@@ -225,13 +225,13 @@ This takes quite a while to complete.
 
 ### Modify the GNS3 VM
 Click into the VM, shut it down (I used the console and went into the menu and selected the shutdown option) and then click Edit.
-Then add two network adapters of type E1000. The first one is the management network (MGMT-VLAN99) and the second the trunk network (TRUNK).
+Then add two network adapters of type E1000. The first one is the GNS-mgmt and the second GNS-ACCT.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns7.png" alt="GNS7" width="600px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns20.png" alt="GNS20" width="600px"></kbd>
 
 Then expand CPU and confirm there is a tick next to Hardware Virtualization - Expose hardware assisted virtualization to the guest OS.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6.png" alt="GNS6" width="900px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns6.png" alt="GNS6" width="800px"></kbd>
 
 Now click VM Options, expand advanced, click Edit configuration
 
@@ -256,7 +256,7 @@ and click OK and Save
 Ignore the 'SMBus host controller not enabled' on startup.
 If all is well it should come up with an IP address on startup (assuming you've done the same as me and connected the management LAN to your home network wifi router which has a DHCP server)
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8.png" alt="GNS8" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns21.png" alt="GNS21" width="700px"></kbd>
 
 The website works for me but doesn't spark joy.
 
