@@ -407,6 +407,7 @@ Last login: Sun Jul 27 03:50:42 2025 from 192.168.30.117
 ## Success!
 <img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
 
-
+## Post-notes
+The GNS3 website served out by the GNS3 VM is now pretty useful. You can bring up the saved configurations and start them without the Desktop client.
 
 
