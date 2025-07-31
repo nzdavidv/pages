@@ -47,15 +47,15 @@ Taking photos of screens makes me die a little inside but I don't think there is
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi5.jpg" alt="esxi5" width="900px"></kbd>
 
-I didn't initialise the disk as part of the install. This is because I wanted to confirm the network was functioning in VMWare before I committed to wiping my laptop.
+I didn't initialise the disk as part of the install. This is because I wanted to confirm the network was functioning in ESXi before I committed to wiping my laptop.
 Eventually the host came up and picked up an IP via DHCP.. a good sign the network is fine.
 
 ## Configure ESXi
 Once it was up and running I could connect to the web interface.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi3.png" alt="esxi3" width="900px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi3.png" alt="esxi3" width="1000px"></kbd>
 
-### configure storage
+### Configure storage
 In storage on the left and then devices, click on the storage, Actions, clear partition table.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi4.png" alt="esxi4" width="900px"></kbd>
@@ -86,31 +86,36 @@ Under Virtual Switches, Add standard virtual switch. I creatively named it vSwit
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi19.png" alt="esxi19" width="1000px"></kbd>
 
-It could have the standard 'reject' security settings.
+Setup with the standard 'reject' security settings.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi20.png" alt="esxi20" width="600px"></kbd>
 
-### Adding new VMWare port groups
+### Adding new ESXi port groups
 
-I created dedicated GNS port groups. Note the security settings.
+I created dedicated GNS port groups. Note the security settings, required for GNS3.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi22.png" alt="esxi22" width="600px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi22.png" alt="esxi22" width="700px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi23.png" alt="esxi23" width="600px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi23.png" alt="esxi23" width="700px"></kbd>
 
-### Create a guest VM
+## Create a guest VM
 
 This first guest is ACCT-VM1 on network GNS-MGMT. After it is built and has the DHCP configured I will change it to GNS-ACCT network.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi14.png" alt="esxi14" width="900px"></kbd>
 
-Network adapter is  GNS-ACCT. Change the CD/DVD Drive 1 to Datastore ISO file and select the previously uploaded ISO 
+Network adapter is  GNS-mgmt. Change the CD/DVD Drive 1 to Datastore ISO file and select the previously uploaded ISO 
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi28.png" alt="esxi28" width="700px"></kbd>
 
-Add openssh-server from the console as part of install.
+### Setup new VM ACCT-VM1
+Start the new VM ACCT-VM1.
+
+After started, from the console as part of the OS install add openssh-server.
 
 Then I can connect via SSH and add the other software, configure DHCP, then shutdown the VM
+
+Setup DHCP:
 ```
 # apt install net-tools isc-dhcp-server
 # vi /etc/default/isc-dhcp-server
@@ -129,7 +134,7 @@ subnet 10.1.10.0 netmask 255.255.255.0 {
   option broadcast-address 10.1.10.255;
 }
 ```
-Now setup the VM for fixed IP boot on the ACCT network
+Now setup the VM for fixed IP boot on the ACCT network and shutdown
 ```
 # vi /etc/network/interfaces
 # This file describes the network interfaces available on your system
@@ -152,8 +157,8 @@ iface ens192 inet static
 # shutdown -h now
 ```
 
-### Change ACCT-VM1 network in VMWare
-Now in VMWare I can change the VM network to GNS-ACCT network
+### Change ACCT-VM1 network in ESXi
+Now in ESXi I can change the VM network to GNS-ACCT network
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi29.png" alt="esxi29" width="700px"></kbd>
 
@@ -177,7 +182,7 @@ Archive:  GNS3.VM.VMware.ESXI.2.2.54.zip
 
 ..annnnnnd this is where things went off the rails.
 Rather than take it step by step through to the fail point I'll skip right ahead. 
-In a nutshell trying to import the OVA into VMWare (Deploy a virtual machine from an OVF or OVA file) failed with 
+In a nutshell trying to import the OVA into ESXi (Deploy a virtual machine from an OVF or OVA file) failed with 
 
 > Failed - Invalid configuration for device '2'.
 
