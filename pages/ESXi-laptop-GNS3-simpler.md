@@ -49,4 +49,6 @@ But that's the end result. To get there wasn't quite that simple.
 - The ACCT-VM virtual machine needed changing VLANs to admin and internet network briefly to get some apt packages installed.
 - GNS3 ESXi appliance needed some trial and error to get working in ESXi 8.
 
+Next steps:
+<a href="ESXi-laptop-simpler.md">Setting up ESXi on HP Elitebook G5 laptop</a>
   
