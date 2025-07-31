@@ -217,7 +217,8 @@ FastEthernet0/0.99         192.168.30.5    YES manual up                    up
 FastEthernet0/1            unassigned      YES unset  administratively down down
 ```
 
-### on stora added route for ACCT VLAN and then testing
+## Testing
+### On Debian-stora added route for ACCT VLAN
 
 ```
 on Stora
