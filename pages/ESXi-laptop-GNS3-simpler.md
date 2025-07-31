@@ -33,7 +33,7 @@ As this is a very simple lab, there are 2 unmanaged switches.
 - my daily laptop (which is dual boot Ubuntu and Windows but to do the journey only need Windows) 
 
 The lab environment consists of:
-- the switch with admin and internet network. Network is the same as my home WiFi network - 192.168.30.0/24
+- the switch with admin and internet network. Network is the same as my home WiFi network - 192.168.30.0/24. All the devices on this network have IPs from the home router DHCP service.
   - Home WiFi router is plugged in
   - Debian-Stora plugged in with IP 192.168.30.117
   - The ESXi laptop is plugged in with its onboard Ethernet port. It has a DHCP reservation for IP 192.168.30.176
