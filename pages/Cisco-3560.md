@@ -141,7 +141,7 @@ Could telnet to 192.168.30.188
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/cisco2.png" alt="aws-cisco-2" width="500px"></kbd>
 
-## configure switch ports
+## Configure Cisco switch ports
 
 Next I setup a port for stora [port 0/2 - VLAN 99]
 ```
