@@ -29,7 +29,7 @@ I said 'No' to the question..
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi0a.png" alt="esxi0a" width="500px"></kbd>
 
 Side note.. I have tried setting up ISOs in Ubuntu and while it looks successful it's just nowhere near as reliable as good old rufus on Windows.
-The Ubuntu people may throw shade at will... (or David)
+The Ubuntu people may throw shade but I like simple and reliable
 
 ## Boot the laptop from the USB drive
 Here is my booting my laptop from the USB drive and installing ESXi
