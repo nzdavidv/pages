@@ -164,7 +164,7 @@ Right click on the right hand side on R1 and select 'Start'.
 
 Mine now says telnet 192.168.30.137 5000.
 
-## router config
+## GNS virtual router config
 Configure putty to telnet 192.168.30.137 5000
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns18.png" alt="GNS18" width="500px"></kbd>
