@@ -48,7 +48,7 @@ deb http://deb.debian.org/debian-security bookworm-security main
 ```
 
 ## VMware tools install on ACCT-VM1
-Note.. in retrospect this step isn't required.
+Note.. in retrospect this entire step (VMware tools install) isn't required.
 
 In VMware installed VMware tools on guest debian VM (had to eject CDROM first). yay can SSH in at least to the OS.
 
