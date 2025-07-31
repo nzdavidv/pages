@@ -384,8 +384,9 @@ C       10.1.10.0 is directly connected, FastEthernet0/1
 
 ```
 
-## testing
-Add the route to my stora and test
+## Testing
+Add the route to my stora and test.
+Note this isn't added persistently, will disappear on restart.
 
 ```
 root@stora:~# ip route add 10.1.10.0/255.255.255.0  via 192.168.30.30 dev eth0
@@ -410,6 +411,6 @@ Last login: Sun Jul 27 03:50:42 2025 from 192.168.30.117
 <img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
 
 ## Post-notes
-The GNS3 website served out by the GNS3 VM is now pretty useful. You can bring up the saved configurations and start them without the Desktop client.
+The GNS3 website served out by the GNS3 VM (http://192.168.30.139) is now pretty useful. You can bring up the saved configurations and start them without the Desktop client.
 
 
