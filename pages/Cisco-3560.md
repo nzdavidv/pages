@@ -193,7 +193,7 @@ Building configuration...
 [OK]
 ```
 
-## plugging devices into the switch
+## Plugging devices into the switch
 - Plugged stora into 0/2 (and can connect to it)
 - Plugged raspberry pi into 0/17 (and can't connect to it)
 
