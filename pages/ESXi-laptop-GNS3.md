@@ -32,7 +32,6 @@ There are 3 main pieces to this.
 
 
 ## Lab setup
-To-Do: physical diagram and logical diagram.
 
 ### Physical equipment
 
