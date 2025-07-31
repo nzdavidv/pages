@@ -50,7 +50,7 @@ The Cisco switch physical connections:
 - Home WiFi router connected to port 0/1. Access port VLAN 99.
 - Debian-Stora 192.168.30.117 connected to port 0/2. Access port. VLAN 99
 - Raspberry Pi 10.1.10.10 connected to port 0/17. Access port. VLAN 10
-- The laptop (running VMware ESXi natively) connected to port 0/18. Trunk port allowing VLANs 99, 10, 20. (haven't used 20 yet).
+- The laptop (running VMware ESXi natively) connected to port 0/18. Trunk port allowing VLANs 99 & 10
 
 and then...
 - The Cisco switch management IP assigned to VLAN 99 - IP 192.168.30.188. (physically using port 0/1 - access port 99).
