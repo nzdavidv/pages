@@ -9,11 +9,11 @@ Some continued config of VMWare running natively on my laptop following earlier 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-page2.png" alt="esxi-gns-page2" width="700px"></kbd>
 
 - ESXi is installed on my laptop <a href="ESXi-laptop.md">ESXi laptop</a> but it is plugged into my home router switch not the Cisco. There is a VM guest on ACCT VLAN 10.
-- The Cisco switch now has ports configured <a href="Cisco-3560.md">Cisco switch config</a>, and one of them is a trunk port carrying VLANs 10,20,99
+- The Cisco switch now has ports configured <a href="Cisco-3560.md">Cisco switch config</a>, and one of them is a trunk port carrying VLANs 10,99
 - Raspberry pi and Debian-stora plugged into the Cisco switch
 
 
-## make some changes in ESXi host networking 
+## Make some changes in ESXi host networking 
 Now I need to change management VLAN in VMWare to 99 before unplugging the ESXi laptop from the home WiFI router and into the Cisco switch trunk port 0/18.
 
 
