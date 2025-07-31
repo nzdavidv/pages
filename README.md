@@ -6,6 +6,6 @@
 
 <a href="pages/AWS-presignURL.md">AWS PreSigned URL (S3) Lambda and API G/W</a>
 
-<a href="pages/ESXi-laptop-GNS3-simpler.md">Installing VMWare on a laptop and running virtual Cisco router using GNS3</a>
+<a href="pages/ESXi-laptop-GNS3-simpler.md">VMware ESXi laptop, GNS3 VM, simple setup</a>
 
-<a href="pages/ESXi-laptop-GNS3.md">VMWare laptop and GNS3 virtual Cisco router revisited with VLANs</a>
+<a href="pages/ESXi-laptop-GNS3.md">VMware ESXi laptop, GNS3 VM, Cisco switch with VLANs</a>
