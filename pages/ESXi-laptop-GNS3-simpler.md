@@ -39,15 +39,15 @@ The lab environment consists of:
   - The ESXi laptop is plugged in with its onboard Ethernet port. It has a DHCP reservation for IP 192.168.30.176
  
 - the switch with 'ACCT' network (short for accounting I guess, I used the label from an old lab I did years ago). Network is 10.1.10.0/24
-  - The ESXi laptop is plugged in with its USB-C adapter Ethernet port.
+  - The ESXi laptop is plugged in with its USB-C adapter Ethernet port
   - Raspberry Pi is plugged into this switch. Initially it has no IP address but eventually it gets one from DHCP (on the test VM) 10.1.10.10 
 
 and then...
 - Virtual Machine ACCT-VM running Debian assigned (in VMWare) to ACCT port group (which uses the USB-C adapter) - IP 10.1.10.101. 
 
 But that's the end result. To get there wasn't quite that simple. 
-- The ACCT-VM virtual machine needed changing VLANs to admin and internet network briefly to get some apt packages installed.
-- GNS3 ESXi appliance needed some trial and error to get working in ESXi 8.
+- The ACCT-VM virtual machine needed changing VLANs to admin and internet network briefly to get some apt packages installed
+- GNS3 ESXi appliance needed some trial and error to get working in ESXi 8
 
 Next steps:
 <a href="ESXi-laptop-simpler.md">Setting up ESXi on HP Elitebook G5 laptop</a>
