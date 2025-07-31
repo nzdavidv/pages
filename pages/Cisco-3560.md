@@ -175,7 +175,7 @@ Building configuration...
 [OK]
 ```
 
-Then the trunk port [ port 0/18 - VLANs 10,20,99 ]
+Then the trunk port [ port 0/18 - VLANs 10,99 ]
 ```
 Switch>enable
 Switch#conf terminal
@@ -183,7 +183,7 @@ Enter configuration commands, one per line.  End with CNTL/Z.
 Switch(config)#interface fastEthernet 0/18
 Switch(config-if)#switchport trunk encapsulation dot1q
 Switch(config-if)#switchport mode trunk               
-Switch(config-if)#switchport trunk allowed vlan 10,20,99
+Switch(config-if)#switchport trunk allowed vlan 10,99
 Switch(config-if)#no shutdown
 Switch(config-if)#exit
 Switch(config)#exit
