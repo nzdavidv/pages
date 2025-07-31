@@ -280,7 +280,9 @@ On open of GNS3 select 'Run appliances on a remote server'
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8c.png" alt="GNS8c" width="500px"></kbd>
 
-Enter in the IP of the GNS3 VM, port 80, gns3 username and gns3 password.
+Enter in the IP of the GNS3 VM, port 80, gns3 username and gns3 password. 
+
+(Note: the IP shown here was wrong, should be 192.168.30.139)
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/gns8d.png" alt="GNS8d" width="500px"></kbd>
 
