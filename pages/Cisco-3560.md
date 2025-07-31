@@ -197,7 +197,7 @@ Building configuration...
 - Plugged stora into 0/2 (and can connect to it)
 - Plugged raspberry pi into 0/17 (and can't connect to it)
 
-### recap where I am at
+### Recap where things are at
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-gns-page2.png" alt="esxi-gns-page2" width="700px"></kbd>
 
 - installed ESXi onto the laptop.
