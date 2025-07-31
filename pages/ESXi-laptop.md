@@ -40,7 +40,7 @@ Once it was up and running I could connect to the web interface.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi3.png" alt="esxi3" width="900px"></kbd>
 
-### configure storage
+### Configure storage
 In storage on the left and then devices, click on the storage, Actions, clear partition table.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi4.png" alt="esxi4" width="900px"></kbd>
