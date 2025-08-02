@@ -129,3 +129,69 @@ Click JSON, paste the content below and click Review policy
     ]
 }
 ```
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/raspi-dd-pic2.png" alt="raspi-dd-pic2.png" width="800px"></kbd> 
+
+Give it a name and click Create policy
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/raspi-dd-pic2b.png" alt="raspi-dd-pic2b.png" width="800px"></kbd> 
+
+## IAM user setup
+IAM, Users, add users, give it a Name - I called mine DynamoDB-raspi.
+Credential type is Access Key, Next, add user to the group created earlier, next, review, create user
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-6.png" alt="dd-iot-6.png" width="800px"></kbd>
+
+Next click on the user, Security Credentials, scroll down to 'Access keys' and click 'Create access key'.
+Use case is 'CLI', tick the acknowledgement down the bottom and then create. Make sure to copy the access key and secret somewhere safe.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/raspi-dd-pic7.png" alt="raspi-dd-pic7.png" width="800px"></kbd>
+
+# Setup Linux machine
+## Useradd and AWS base setup
+
+I added a user, and then followed the instructions at <a>https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html</a>
+```
+# apt-get install unzip curl
+For my Ubuntu laptop:
+# curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+For my Raspberry Pi:
+# curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
+..the rest is the same for both:
+# unzip awscliv2.zip
+# ./aws/install
+# su - www
+$ aws configure
+AWS Access Key ID [None]: .....
+AWS Secret Access Key [None]: ....
+Default region name [None]: us-east-1
+Default output format [None]: json
+```
+
+### Basic AWS DynamoDB test
+```
+$  aws dynamodb scan --table-name devnames
+```
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-8.png" alt="dd-iot-8.png" width="500px"></kbd>
+
+Looking good.
+
+### Create 'send to AWS' script
+The code here <a>https://github.com/nzdavidv/api-s3-website/blob/main/send-temps-to-aws.sh</a> is a very basic shell script to send temp data to AWS.
+The idea is that it can be called from a variety of other scripts.. either the igrill python script for my food thermometer (uses https://github.com/bendikwa/igrill and a shell script to query MQTT / mosquitto) or from the cheap-and-cheerful bluetooth thermometers I have and corresponding python code from https://github.com/JsBergbau/MiTemperature2.
+I'm happy to share any of the add-on scripts I wrote to join the python code from the websites mentioned to the script.
+
+# Setup AWS API gateway and Lambda
+## Lambda function
+The Lambda turned into a bit of a monster.. the idea is when it is called with a GET with no parameters it returns a summary page, and the summary page contains some javascript to create and submit a form.
+The form sends data to the same Lambda but via POST method. When the Lambda is called via the POST method it returns a graph depending on the parameters it was called with.
+I'm not a developer by any stretch. Fair to say I hate python.. but here it is.. <a>https://github.com/nzdavidv/api-s3-website/blob/main/dd-html.py</a> 
+
+Anyhoo.. setting up the Lambda:
+- Create function, give it a name, runtime is python
+- Copy-paste code from Github into the Code section, Deploy
+- In Configuration, General config and change the memory to 256mb and timeout to 4 seconds
+- In Configuration, Permissions click the role name to open the IAM role permissions page
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-9.png" alt="dd-iot-9.png" width="500px"></kbd>
