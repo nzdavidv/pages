@@ -106,6 +106,26 @@ IAM, user groups, Create group, give it a name (I chose 'dynamodbgroup'), search
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/raspi-dd-pic4.png" alt="raspi-dd-pic4.png" width="400px"></kbd>
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/raspi-dd-pic5.png" alt="raspi-dd-pic5.png" width="600px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/raspi-dd-pic5.png" alt="raspi-dd-pic5.png" width="800px"></kbd>
 
+Click on the group, Permissions, Add permissions, Add inline policy
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/raspi-dd-pic6.png" alt="raspi-dd-pic6.png" width="800px"></kbd>
+
+Click JSON, paste the content below and click Review policy
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem"
+        ],
+        "Resource": "*"
+      }
+    ]
+}
+```
