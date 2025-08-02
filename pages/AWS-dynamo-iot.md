@@ -195,3 +195,31 @@ Anyhoo.. setting up the Lambda:
 - In Configuration, Permissions click the role name to open the IAM role permissions page
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-9.png" alt="dd-iot-9.png" width="500px"></kbd>
+
+- Add permissions, attach policy 'AmazonDynamoDBReadOnlyAccess'
+- Optional but you should be able to test the Lambda (with any data) and it return a 200 and some html.
+
+## API Gateway
+- Create API, HTTP API, Build
+- Click Add integration, Lambda, select the Lambda function just created, give it a name
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-10.png" alt="dd-iot-10.png" width="500px"></kbd>
+
+- The Method can be ANY, because it accepts POST and GET
+- Default stage name and auto-deploy
+- Optional.. can add a custom domain name
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-11.png" alt="dd-iot-11.png" width="500px"></kbd>
+
+## Tweak and test
+
+The Lambda code references to which would need changing
+- Line 62 ref's my API gateway .. form.action = "https://ifcf44wt0j.execute-api.us-east-1.amazonaws.com";
+- Line 323 has a reference to a style sheet on my website.
+testing testing..
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-13.png" alt="dd-iot-13.png" width="500px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-14.png" alt="dd-iot-14.png" width="500px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-15.png" alt="dd-iot-15.png" width="500px"></kbd>
+
+### 
