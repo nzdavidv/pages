@@ -218,6 +218,136 @@ The Lambda code references to which would need changing
 - Line 323 has a reference to a style sheet on my website.
 testing testing..
 
+### how I use it in real life
+I have shell script that run via crontab
+
+www@raspidev:~/git/raspi-www-bin$ crontab -l|grep temps
+0,20,40 0,1,2,3,4,5,22,23 * * * /home/www/temps.sh 1>/home/www/cronouttemps 2>&1
+0,10,20,30,40,50 6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 * * * /home/www/temps.sh 1>/home/www/cronouttemps 2>&1
+
+This runs a python script which I got from <a>https://github.com/JsBergbau/MiTemperature2</a>
+
+There was a bunch of setup I did prior to this to get it working, not detailed here.
+
+```
+www@raspidev:~/git/raspi-www-bin$ cat temps.sh 
+#!/bin/bash
+
+cd /home/www/mitemp2/
+source bin/activate
+
+#check processes not still running..
+pidcount=`ps -fu www|grep "LYWSD03MMC.py"|wc -l`
+if [ $pidcount -gt 0 ]; then
+ for pid in `ps -fu www|grep "LYWSD03MMC.py" |awk '{print $2}'` ; do
+  kill $pid
+ done
+fi
+echo "pidcount $pidcount"
+
+for sensor in  A4:C1:38:CF:53:B0 A4:C1:38:DF:F1:7E A4:C1:38:05:D6:64
+ do
+ ./MiTemperature2/LYWSD03MMC.py -d ${sensor} -r -b -c 1 --callback sendToMySQL.sh
+done
+```
+The callback script sendToMySQL.sh is pretty simple. It writes it to a local database on the raspberry pi and then sends it to AWS.
+
+The IOTSQLUSER and IOTSQLPASSWD variables are picked up from the environment file ~www/.env
+
+```
+#!/bin/bash
+
+# $2 sensormac
+# $3 temp
+# $4 humidity
+# $5 voltage
+
+. ~www/.env
+
+datenow=`date "+%Y%m%d %H:%M"`
+  datesh=`echo "$datenow"|awk '{print $1}'`
+  timesh=`echo "$datenow"|awk '{print $2}'`
+
+INSERT="INSERT INTO homeiot.temps (sensormac, temp, humidity, voltage, ping_date, ping_time)"
+echo "${INSERT}" > sqldata.txt
+echo "VALUES ('$2', '$3', '$4', '$5', '${datesh}', '${timesh}');" >>  sqldata.txt
+mysql --user=${IOTSQLUSER} --password=${IOTSQLPASSWD} --host=localhost homeiot < sqldata.txt
+
+/home/www/send-temps-to-aws.sh $2 $3 $4 $5
+
+rm sqldata.txt
+
+exit 0
+```
+
+Finally the send-temps-to-aws.sh script:
+```
+#!/bin/bash
+
+basedir=/home/www
+TMPDIR=$basedir/tmp
+if [ ! -d $TMPDIR ]; then mkdir $TMPDIR ; fi
+AWSFILE=$TMPDIR/aws-infile2.json
+
+macaddr=$1
+temp=$2
+humidity=$3
+battery=$4
+
+if [ "$macaddr" == "" ] || [ "$temp" == "" ] || [ "$humidity" = "" ] || [ "$battery" == "" ]; then
+ echo "usage: $0 mac temp humidity battery"
+ exit 1
+fi
+
+
+ datenow=`date "+%Y%m%d %H:%M"`
+ datestr=`date "+%d-%m-%Y"`
+ timestr=`date "+%H:%M:%S"`
+ unixdate=`date "+%s"`
+ datesh=`echo "$datenow"|awk '{print $1}'`
+ timesh=`echo "$datenow"|awk '{print $2}'`
+
+#example JSON:
+
+#{
+#    "datestr": {
+#      "S": "03-09-2022"
+#    },
+#    "macdatetime": {
+#      "S": "70:91:8F:9A:D2:63-1662138901"
+#    },
+#    "datetime": {
+#      "N": "1662138901"
+#    },
+#    "temp": {
+#      "N": "72"
+#    },
+#    "humidity": {
+#      "N": "0"
+#    },
+#    "battery": {
+#      "N": "80"
+#    },
+#    "macaddr": {
+#      "S": "70:91:8F:9A:D2:63"
+#    }
+#}
+
+
+ echo -e "{\n\t\"datestr\": {\"S\": \"${datestr}\"}," > $AWSFILE
+ echo -e "\t\"timestr\": {\"S\": \"${timestr}\"}," >> $AWSFILE
+ echo -e "\t\"macdatetime\": {\"S\": \"${macaddr}-${unixdate}\"}," >> $AWSFILE
+ echo -e "\t\"datetime\": {\"N\": \"${unixdate}\"}," >> $AWSFILE
+ echo -e "\t\"temp\": {\"N\": \"${temp}\"}," >> $AWSFILE
+ echo -e "\t\"humidity\": {\"N\": \"${humidity}\"}," >> $AWSFILE
+ echo -e "\t\"battery\": {\"N\": \"${battery}\"}," >> $AWSFILE
+ echo -e "\t\"macaddr\": {\"S\": \"${macaddr}\"}\n}" >> $AWSFILE
+
+ aws dynamodb put-item --table-name temps --item file://${AWSFILE}
+```
+
+### testing
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-13.png" alt="dd-iot-13.png" width="500px"></kbd>
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-14.png" alt="dd-iot-14.png" width="500px"></kbd>
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/dd-iot-15.png" alt="dd-iot-15.png" width="500px"></kbd>
