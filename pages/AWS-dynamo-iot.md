@@ -229,8 +229,8 @@ This runs a python script which I got from <a>https://github.com/JsBergbau/MiTem
 
 There was a bunch of setup I did prior to this to get it working, not detailed here.
 
+temps.sh below:
 ```
-www@raspidev:~/git/raspi-www-bin$ cat temps.sh 
 #!/bin/bash
 
 cd /home/www/mitemp2/
@@ -254,6 +254,7 @@ The callback script sendToMySQL.sh is pretty simple. It writes it to a local dat
 
 The IOTSQLUSER and IOTSQLPASSWD variables are picked up from the environment file ~www/.env
 
+sendToMySQL.sh:
 ```
 #!/bin/bash
 
