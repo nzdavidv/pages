@@ -218,7 +218,7 @@ The Lambda code references to which would need changing
 - Line 323 has a reference to a style sheet on my website.
 testing testing..
 
-### How I use it in real life
+## Post-blog - How I use it in real life
 
 There are two uses.. one is for my Weber BBQ meat temp probe with code from igrill - <a>https://github.com/bendikwa/igrill</a>
 
