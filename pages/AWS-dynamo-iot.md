@@ -218,18 +218,27 @@ The Lambda code references to which would need changing
 - Line 323 has a reference to a style sheet on my website.
 testing testing..
 
-### how I use it in real life
-I have shell script that run via crontab
+### How I use it in real life
 
+There are two uses.. one is for my Weber BBQ meat temp probe with code from igrill - <a>https://github.com/bendikwa/igrill</a>
+
+..Not detailed that here but happy to share.
+
+
+The other is for the Xiaomi Mi Home Temperature & Humidity Monitor 2
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/mi2.jpg" alt="mi2.jpg" width="300px"></kbd>
+
+There was a bunch of setup I did prior to this to get it working, also not detailed here (but happy to share).
+The code is from <a>https://github.com/JsBergbau/MiTemperature2</a>
+
+What I will show is how I augment the MiTemperature2 code.
+
+I have shell script that run via crontab
 www@raspidev:~/git/raspi-www-bin$ crontab -l|grep temps
 0,20,40 0,1,2,3,4,5,22,23 * * * /home/www/temps.sh 1>/home/www/cronouttemps 2>&1
 0,10,20,30,40,50 6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 * * * /home/www/temps.sh 1>/home/www/cronouttemps 2>&1
 
-This runs a python script which I got from <a>https://github.com/JsBergbau/MiTemperature2</a>
-
-There was a bunch of setup I did prior to this to get it working, not detailed here.
-
-temps.sh below:
+This runs temps.sh, as below:
 ```
 #!/bin/bash
 
