@@ -236,10 +236,11 @@ What I will show is how I augment the MiTemperature2 code.
 
 I have shell script that run via crontab. Crontab as below
 
-
+```
 www@raspidev:~/git/raspi-www-bin$ crontab -l|grep temps
 0,20,40 0,1,2,3,4,5,22,23 * * * /home/www/temps.sh 1>/home/www/cronouttemps 2>&1
 0,10,20,30,40,50 6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 * * * /home/www/temps.sh 1>/home/www/cronouttemps 2>&1
+```
 
 This runs temps.sh, as below:
 ```
