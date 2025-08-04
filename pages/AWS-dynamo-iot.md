@@ -226,6 +226,7 @@ There are two uses.. one is for my Weber BBQ meat temp probe with code from igri
 
 
 The other is for the Xiaomi Mi Home Temperature & Humidity Monitor 2
+
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/mi2.jpg" alt="mi2.jpg" width="300px"></kbd>
 
 There was a bunch of setup I did prior to this to get it working, also not detailed here (but happy to share).
