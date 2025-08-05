@@ -63,3 +63,16 @@ Under SSL/TLS Overview, the encryption mode needs to be set to Full.
 ### Final testing
 It's alive and works..
 
+## Post-note
+Pounding my head on the desk as I made a change to the Python (fixed the .css file handler I had made a mistake with earlier) and it wasn't working.
+Nothing in Cloudwatch logs at all. I was hitting the URL and getting something returned (null file with a 200 because of my error) but not showing anything in the logs.
+
+What am I missing..?
+
+Anyway after a bit I hit the original API gateway (not the custom domain name) and it returned the style.css.
+
+Huh? how can it work via the xx.execute-api.us-east-1.amazonaws.com but fail via the custom domain name?!
+
+Then it hit me.. Cloudflare was caching the failure. Dammit.
+
+Cloudflare cache for 2 hours I think on the free plan so eventually it should come right. Will check again tomorrow.
