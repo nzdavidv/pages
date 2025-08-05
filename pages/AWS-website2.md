@@ -69,7 +69,7 @@ Nothing in Cloudwatch logs at all. I was hitting the URL and getting something r
 
 What am I missing..?
 
-Anyway after a bit I hit the original API gateway (not the custom domain name) and it returned the style.css.
+Anyway after a bit I hit the original API gateway (not the custom domain name) and it returned the style.css perfectly as expected (yay, fixed my bug).
 
 Huh? how can it work via the xx.execute-api.us-east-1.amazonaws.com but fail via the custom domain name?!
 
