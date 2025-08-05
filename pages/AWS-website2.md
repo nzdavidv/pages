@@ -65,7 +65,7 @@ It's alive and works..
 
 ## Post-note
 Pounding my head on the desk as I made a change to the Python (fixed the .css file handler I had made a mistake with earlier) and it wasn't working.
-Nothing in Cloudwatch logs at all. I was hitting the URL and getting something returned (null file with a 200 because of my error) but not showing anything in the logs.
+Nothing in Cloudwatch logs at all. I was hitting the URL and getting something returned (null file with a 200 because of my error - but it should now be fixed) but not showing anything in the Cloudwatch logs.
 
 What am I missing..?
 
