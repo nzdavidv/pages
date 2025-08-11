@@ -22,4 +22,8 @@ Steps:
 5. Installing Mac OS on the VM
 6. Install VMware Tools
 
+# Download Mac OS
+I bought a $200 MacBook Air 7,2 running some ancient version of the OS.
+I tried my usual trick of reloading it by booting with Command-R and network reload but it didn't work so I had to go another way.
 
+I downloaded the latest OS the MacBook was technically capable of running in the 
