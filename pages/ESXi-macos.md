@@ -31,7 +31,7 @@ I downloaded the latest OS the MacBook was technically capable of running in the
 I used the link <a>https://apps.apple.com/us/app/macos-monterey/id1576738294?mt=12</a> and this opened in the App store, I couldn't download it but it did pop up for install under system updates.
 I clicked install and waited for it to download.
 
-I **DIDN'T** click download when done. 
+I **DIDN'T** click upgrade now or install when done. 
 
 ## 2. Creating a bootable macOS ISO
 The following in Terminal makes the ISO.  
