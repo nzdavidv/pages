@@ -217,8 +217,22 @@ Click Datastore browser and then Upload in the datastore browser window.
 
 Upload darwin.iso.
 
+Then edit the VM config and change the CD/DVD datastore ISO to darwin.iso and remember to click connect.
+
 ## 7. Upgrade to Sonoma
 
 I tried updating to the latest OS but it was unusable for me so I went for Sonoma instead.
 
 <a>https://apps.apple.com/us/app/macos-sonoma/id6450717509?mt=12</a>
+
+To connect to the VM I used TigerVNC viewer on my Ubuntu machine and in Mac OS in sharing, remote management, vnc viewers may control the screen with a password and set a password.
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/macosvm3.png" alt="macosvm3" width="800px"></kbd>
+
+## post-notes
+- Painful and slow. Two stars out of 5. would not recommend.
+- Sometimes the mouse disappears in TigerVNC which is annoying.
+- the app store works
+- resizing to 1440 x 900 fitted well on my screen
+- enabling remote SSH into the MacOS was good
+- I looked at pass-through video but don't think you can with the laptop having a single video adapter. I have another laptop I could maybe use but it has Ryzen procs so probably won't bother. 
