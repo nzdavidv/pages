@@ -24,7 +24,7 @@ Steps:
 
 ## 1. Download Mac OS
 I bought a $200 MacBook Air 7,2 running some ancient version of the OS.
-I tried my usual trick of reloading it by booting with Command-R and network reload but it didn't work so I had to go another way.
+I tried my usual trick of reloading it by booting with Command-R and network reload it before doing anything else but it didn't work (couldn't find the OS to download) so I had to go another way. (The other way being allowing it on the network to download the new OS).
 
 I downloaded the latest OS the MacBook was technically capable of running in the App store - Monterey.
 
