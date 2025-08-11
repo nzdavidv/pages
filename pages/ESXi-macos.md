@@ -227,7 +227,7 @@ I tried updating to the latest OS but it was unusable for me so I went for Sonom
 
 To connect to the VM I used TigerVNC viewer on my Ubuntu machine and in Mac OS in sharing, remote management, vnc viewers may control the screen with a password and set a password.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/macosvm3.png" alt="macosvm3" width="800px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/macosvm3.png" alt="macosvm3" width="500px"></kbd>
 
 ## post-notes
 - Painful and slow. Two stars out of 5. would not recommend.
