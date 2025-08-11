@@ -14,11 +14,13 @@ But I guess if you needed an Apple VM for managing apple devices or some reason 
 
 ### The 15 thousand step journey
 This entire post is a refresh /  update (and short version) of the really well written post <a>https://www.nakivo.com/blog/run-mac-os-on-vmware-esxi/</a>
+I'm fairly experienced at ESXi, MacOS, etc so the notes are brief clues for similarly experienced admins rather than screenshot by screenshot.
+
 Steps:
 1. Download macOS
 2. Creating a bootable macOS ISO
 3. Preparing ESXi Host
-4. Creating and Configuring new macOS VM
+4. Creating and Configuring new macOS VM in ESXi
 5. Installing Mac OS on the VM
 6. Install VMware Tools
 7. Upgrade to Sonoma
@@ -141,7 +143,7 @@ Success - please now restart the server!
 ```
 Then restarted the ESXi server.
 
-## 4. Creating and Configuring new macOS VM
+## 4. Creating and Configuring new macOS VM in ESXi
 I originally installed it with 2 VCPU and 6GB RAM but later increased to 4VCPU and 8GB RAM.
 - Compatibility: ESXi 7.0 U2 virtual machine
 - Guest OS family: Mac OS
@@ -188,3 +190,35 @@ ethernet0.virtualDev = "vmxnet3"
 
 ```
 
+## 5. Installing Mac OS on the VM
+
+After the macOS installer has loaded, you should see the installation wizard:
+
+You need to select Disk Utility and partition the drive before going to install.
+
+I chose Mac OS Extended (Journaled) and GUID I think.
+
+Then the usual install Mac OS. The only deviation from normal is when you get to:
+
+'Sign in with your Apple ID'. Click Set Up Later. 
+
+I've run into problems with accepting the Terms and Conditions even on a regular macbook installing the OS and this gets around it.
+
+## 6. Install VMware Tools
+Installing VMware tools takes the experience from the worst day ever to just annoying / almost tolerable.
+
+..you must install VMware tools. I couldn't find a newer version than darwin.iso at <a>https://packages-prod.broadcom.com/tools/frozen/darwin/</a>
+
+Download it and upload it to the datastore same as before.
+
+Go to Storage > Datastores and select the needed datastore. 
+
+Click Datastore browser and then Upload in the datastore browser window.
+
+Upload darwin.iso.
+
+## 7. Upgrade to Sonoma
+
+I tried updating to the latest OS but it was unusable for me so I went for Sonoma instead.
+
+<a>https://apps.apple.com/us/app/macos-sonoma/id6450717509?mt=12</a>
