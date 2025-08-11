@@ -9,4 +9,4 @@ It's not super painfully slow but it's slow enough to be annoying. It doesn't sp
 
 But I guess if you needed an Apple VM for managing apple devices or some reason then yep it works.
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/maxosvm1.png" alt="macosvm" width="800px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/macosvm1.png" alt="macosvm" width="800px"></kbd>
