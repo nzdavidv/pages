@@ -28,7 +28,6 @@ I tried my usual trick of reloading it by booting with Command-R and network rel
 
 I downloaded the latest OS the MacBook was technically capable of running in the App store - Monterey.
 
-Actually it wasn't quite that simple.
 I used the link <a>https://apps.apple.com/us/app/macos-monterey/id1576738294?mt=12</a> and this opened in the App store, I couldn't download it but it did pop up for install under system updates.
 I clicked install and waited for it to download.
 
