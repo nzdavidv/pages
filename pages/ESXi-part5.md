@@ -41,3 +41,5 @@ done.
 ### all too easy!
 
 As a test I moved a 16GB VM onto it and it wasn't too slow for me.
+
+After that I started the test Debian VM and it worked ok.  It was a little slower to start than before but after that no real difference.
