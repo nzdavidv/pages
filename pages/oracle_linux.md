@@ -102,12 +102,23 @@ installation should now be secure.
 Thanks for using MariaDB!
 
 #  mysql -u root -p
-MariaDB [(none)]> CREATE USER 'mwsql'@'localhost' IDENTIFIED BY 'Gr3#skjIf';
-
+MariaDB [(none)]>
+CREATE USER 'mwsql'@'localhost' IDENTIFIED BY 'password-in-password-store';
+CREATE DATABASE my_wiki;
+GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 
 
 ```
+### get mediawiki files
+```
+# cd /var/www/html
+# wget https://releases.wikimedia.org/mediawiki/1.44/mediawiki-1.44.0.tar.gz
+# gunzip mediawiki-1.44.0.tar.gz  
+# tar xvf mediawiki-1.44.0.tar
+# chown -R apache:apache mediawiki-1.44.0/
 
+
+```
 
 ```
 chown -R apache:apache *
