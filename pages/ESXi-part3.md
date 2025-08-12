@@ -203,3 +203,7 @@ Last login: Sun Jul 27 03:50:42 2025 from 192.168.30.117
 
 ## Success!
 <img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
+
+### post-notes
+- in <a>https://github.com/nzdavidv/pages/blob/main/pages/ESXi-part4.md</a> I first try adding a USB drive and then decide to partition the laptop hard drive so I can use it as a laptop as well as run VMware
+- in <a>https://github.com/nzdavidv/pages/blob/main/pages/ESXi-part5.md</a> I add an NFS share into ESXi which is running off my Raspiberry Pi with an SSD attached.
