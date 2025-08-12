@@ -3,9 +3,11 @@
 ok, this probably sounds crazy but.. I needed more storage and thought I could use NFS.
 
 I tried NFS to my old NetGear stora running Debian but it was so slow it was unusable.
-Just rank.
 
-So then, and ok this is unorthodox but I used my Raspberry Pi (Raspberry Pi 5 Model B Rev 1.0) with an SSD attached by USB.
+Just rank. I don't know why it was so bad but it was.
+
+
+So then, and ok.. this is unorthodox but I used my Raspberry Pi (Raspberry Pi 5 Model B Rev 1.0) with an SSD attached by USB.
 
 It's not awful.
 
