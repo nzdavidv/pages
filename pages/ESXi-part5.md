@@ -34,9 +34,10 @@ On the Raspberry Pi
 - mount NFS datastore
 - add the name, IP, and the NFS share path, v4
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-nfs1.png" alt="esxi1" width="500px"></kbd>
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-nfs2.png" alt="esxi2" width="500px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-nfs1.png" alt="esxi1" width="700px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi-nfs2.png" alt="esxi2" width="700px"></kbd>
 
-done. all too easy.
+done. 
+### all too easy!
 
 As a test I moved a 16GB VM onto it and it wasn't too slow for me.
