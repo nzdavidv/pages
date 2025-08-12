@@ -25,6 +25,8 @@ On the Raspberry Pi
 
 --confirming it can to v4
 # cat /proc/fs/nfsd/versions
++3 +4 +4.1 +4.2
+
 ```
 
 ### configuring in ESXi
