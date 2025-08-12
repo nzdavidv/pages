@@ -24,8 +24,8 @@ Now going to install MediaWiki hopefully, loosely following:
 # firewall-cmd --add-service=http --permanent
 # firewall-cmd --reload
 
--- install php mysql module
-# dnf install php-mysqli
+-- install php modules
+# dnf install php-mysqli php-intl
 ```
 
 ### database
@@ -116,6 +116,7 @@ GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 # gunzip mediawiki-1.44.0.tar.gz  
 # tar xvf mediawiki-1.44.0.tar
 # chown -R apache:apache mediawiki-1.44.0/
+# ln -s mediawiki-1.44.0/ mediawiki
 
 
 ```
