@@ -79,8 +79,28 @@ GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 # tar xvf mediawiki-1.44.0.tar
 # chown -R apache:apache mediawiki-1.44.0/
 # ln -s mediawiki-1.44.0/ mediawiki
+```
 
+### restoring from raspidev
+copied backup files over to ~www/restore 
+```
+# cd /var/www
+# tar xvf ~www/restore/var-www-html-raspidev.tar 
+# cd /var/www/html/mediawiki-1.43.0/images/
+# mv * ../../mediawiki-1.44.0/images/
+# cd /var/www
+# tar xvf ~www/restore/var-www-html-raspidev.tar 
 
+# cd /var/www/html/
+# vi mediawiki-1.44.0/LocalSettings.php
+$wgEnableUploads = true;
+
+# cd /var/www
+# chown -R apache:apache html
+# cd ~www/restore/
+--couldn't deal with the collation
+# sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' my_wiki-raspidev.sql 
+# mysql -p < my_wiki-raspidev.sql my_wiki
 ```
 
 ```
