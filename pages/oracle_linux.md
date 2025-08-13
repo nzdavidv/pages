@@ -103,9 +103,14 @@ $wgEnableUploads = true;
 # mysql -p < my_wiki-raspidev.sql my_wiki
 
 --the restore overwrote my symlink
-root@oralinux01:/var/www/html# rm mediawiki
+# cd /var/www/html
+# rm mediawiki
 rm: remove symbolic link 'mediawiki'? y
-root@oralinux01:/var/www/html# ln -s mediawiki-1.44.0/ mediawiki
+# ln -s mediawiki-1.44.0/ mediawiki
+# mv mediawiki-1.43.0/ old_medwiki
+# systemctl restart httpd
+# systemctl restart mariadb
+
 ```
 
 ```
