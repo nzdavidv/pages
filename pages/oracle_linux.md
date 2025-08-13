@@ -113,8 +113,24 @@ rm: remove symbolic link 'mediawiki'? y
 # cp -p old_medwiki/resources/assets/mw-logo-135.jpg mediawiki/resources/assets/
 # systemctl restart httpd
 # systemctl restart mariadb
+```
+
+### enabling uploads in mediawiki
+```
+# cp -p /etc/php.ini /etc/php.ini-2025-08-13
+# vi /etc/php.ini
+upload_tmp_dir = /var/www/html/upload-tmp-dir 
+# mkdir /var/www/html/upload-tmp-dir ; chown apache:apache /var/www/html/upload-tmp-dir
+# chown apache:apache /var/www/html/mediawiki/images/ 
+# systemctl restart httpd
+# restorecon -R -v /var/www/html/mediawiki-1.44.0/images
+
+--removing some of the noise from /var/log/messages
+root@oralinux01:/var/log# setsebool -P httpd_can_network_connect 1
+root@oralinux01:/var/log# setsebool -P httpd_graceful_shutdown 1
 
 ```
+
 
 ```
 chown -R apache:apache *
