@@ -93,6 +93,8 @@ copied backup files over to ~www/restore
 
 # cd /var/www/html/
 # vi mediawiki-1.44.0/LocalSettings.php
+'1x' => "$wgResourceBasePath/resources/assets/mw-logo-135.jpg",
+'icon' => "$wgResourceBasePath/resources/assets/mw-logo-135.jpg",
 $wgEnableUploads = true;
 
 # cd /var/www
@@ -108,6 +110,7 @@ $wgEnableUploads = true;
 rm: remove symbolic link 'mediawiki'? y
 # ln -s mediawiki-1.44.0/ mediawiki
 # mv mediawiki-1.43.0/ old_medwiki
+# cp -p old_medwiki/resources/assets/mw-logo-135.jpg mediawiki/resources/assets/
 # systemctl restart httpd
 # systemctl restart mariadb
 
