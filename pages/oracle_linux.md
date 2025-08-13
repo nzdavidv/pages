@@ -123,20 +123,11 @@ upload_tmp_dir = /var/www/html/upload-tmp-dir
 # mkdir /var/www/html/upload-tmp-dir ; chown apache:apache /var/www/html/upload-tmp-dir
 # chown apache:apache /var/www/html/mediawiki/images/ 
 # systemctl restart httpd
-# restorecon -R -v /var/www/html/mediawiki-1.44.0/images
+# chcon -R -t httpd_sys_rw_content_t /var/www/html/mediawiki-1.44.0/images
 
 --removing some of the noise from /var/log/messages
-root@oralinux01:/var/log# setsebool -P httpd_can_network_connect 1
-root@oralinux01:/var/log# setsebool -P httpd_graceful_shutdown 1
+# setsebool -P httpd_can_network_connect 1
+# setsebool -P httpd_graceful_shutdown 1
 
 ```
 
-
-```
-chown -R apache:apache *
-   # if you have folder to store uploaded file (optional)
-   sudo chcon -R -t httpd_sys_rw_content_t docsuploaded
-   find /var/www/html -type d -exec chmod 755 {} \;
-   find /var/www/html -type f -exec chmod 644 {} \;
-   systemctl restart httpd
-```
