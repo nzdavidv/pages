@@ -129,5 +129,43 @@ upload_tmp_dir = /var/www/html/upload-tmp-dir
 # setsebool -P httpd_can_network_connect 1
 # setsebool -P httpd_graceful_shutdown 1
 
+--keep trying
+# semanage fcontext -a -t httpd_tmp_t "/var/www/html/upload-tmp-dir(/.*)?"
+
+root@oralinux01:/var/www/html/mediawiki# ls -Z includes/GlobalFunctions.php
+unconfined_u:object_r:httpd_sys_content_t:s0 includes/GlobalFunctions.php
+root@oralinux01:/var/www/html/mediawiki# chcon -t httpd_sys_script_exec_t includes/GlobalFunctions.php
+# semanage fcontext -a -t httpd_sys_script_exec_t /var/www/html/mediawiki-1.44.0/includes/GlobalFunctions.php
+
+# chcon -R -t httpd_user_rw_content_t images
+# semanage fcontext -a -t httpd_user_rw_content_t "/var/www/html/mediawiki-1.44.0/images(/.*)?"
+# restorecon -vR /var/www/html/mediawiki-1.44.0/
 ```
 
+### selinux basics
+```
+root@oralinux01:/var/www/html# sestatus
+
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      33
+
+# ps axZ
+# netstat -tnlpZ
+# semanage port -l
+# id -Z
+
+--trying to catch all the errors.
+change SELinux to permissive
+# setenforce 0
+
+then do the app upload file..
+
+```
