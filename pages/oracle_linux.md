@@ -1,6 +1,7 @@
 ## Oracle Linux lab
 
-10 mins in and massively impressed with oracle Linux 10.
+Impressed with oracle Linux 10.
+SELinux isn't fun but once you get the hang of it maybe is ok.
 
 to explore later..
 <a>https://docs.oracle.com/en/learn/oracle-linux-install-rpi/#introduction</a>
