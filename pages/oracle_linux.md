@@ -34,7 +34,7 @@ Now going to install MediaWiki hopefully, loosely following:
 # systemctl start mariadb
 # systemctl enable mariadb
 
-root@oralinux01:/var/www/html# mysql_secure_installation
+# mysql_secure_installation
 
 Enter current password for root (enter for none): [enter]
 OK, successfully used password, moving on...
@@ -71,49 +71,43 @@ GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 
 
 ```
-### get mediawiki files
+### get mediawiki files and database backup 
 ```
 # cd /var/www/html
 # wget https://releases.wikimedia.org/mediawiki/1.44/mediawiki-1.44.0.tar.gz
-# gunzip mediawiki-1.44.0.tar.gz  
-# tar xvf mediawiki-1.44.0.tar
+# gunzip mediawiki-1.44.0.tar.gz   ; tar xvf mediawiki-1.44.0.tar
 # chown -R apache:apache mediawiki-1.44.0/
 # ln -s mediawiki-1.44.0/ mediawiki
 ```
 
 ### restoring from raspidev
-copied backup files over to ~www/restore 
 ```
-# cd /var/www
-# tar xvf ~www/restore/var-www-html-raspidev.tar 
-# cd /var/www/html/mediawiki-1.43.0/images/
-# mv * ../../mediawiki-1.44.0/images/
-# cd /var/www
-# tar xvf ~www/restore/var-www-html-raspidev.tar 
+--on raspi tar up mediawiki images--
+root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
+# scp images.tar david@192.168.30.126:/tmp
+--also copy over config file
+# scp LocalSettings.php david@192.168.30.126:/tmp
+--database dump
+# mysqldump --user=root -p --host=localhost my_wiki > /tmp/my_wiki.sql
+# scp my_wiki.sql david@192.168.30.126:
 
-# cd /var/www/html/
-# vi mediawiki-1.44.0/LocalSettings.php
-'1x' => "$wgResourceBasePath/resources/assets/mw-logo-135.jpg",
-'icon' => "$wgResourceBasePath/resources/assets/mw-logo-135.jpg",
-$wgEnableUploads = true;
+--on oralinux01 
+# cd /var/www/html/mediawiki/
+# tar xvf /tmp/images.tar
+# cp /tmp/LocalSettings.php .
+# vi LocalSettings.php
+--update $wgDBpassword
+--update $wgServer
 
 # cd /var/www
 # chown -R apache:apache html
-# cd ~www/restore/
+# cd ~david
 --couldn't deal with the collation
-# sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' my_wiki-raspidev.sql 
-# mysql -p < my_wiki-raspidev.sql my_wiki
-
---the restore overwrote my symlink
-# cd /var/www/html
-# rm mediawiki
-rm: remove symbolic link 'mediawiki'? y
-# ln -s mediawiki-1.44.0/ mediawiki
-# mv mediawiki-1.43.0/ old_medwiki
-# cp -p old_medwiki/resources/assets/mw-logo-135.jpg mediawiki/resources/assets/
-# systemctl restart httpd
+# sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' my_wiki.sql 
+# mysql -p < my_wiki.sql my_wiki
 # systemctl restart mariadb
-```
+# systemctl restart httpd
+
 
 ### enabling uploads in mediawiki
 ```
