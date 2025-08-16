@@ -143,13 +143,6 @@ upload_tmp_dir = /var/www/html/upload-tmp-dir
 
 ```
 
-Not needed
-```
---removing some of the noise from /var/log/messages
-# setsebool -P httpd_can_network_connect 1
-# setsebool -P httpd_graceful_shutdown 1
-```
-
 ### selinux basics
 ```
 root@oralinux01:/var/www/html# sestatus
@@ -173,6 +166,10 @@ Max kernel policy version:      33
 --trying to catch all the errors.
 change SELinux to permissive
 # setenforce 0
+
+--removing some of the noise from /var/log/messages
+# setsebool -P httpd_can_network_connect 1
+# setsebool -P httpd_graceful_shutdown 1
 
 ```
 
