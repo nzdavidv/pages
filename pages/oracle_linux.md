@@ -180,7 +180,7 @@ then do the app upload file..
 
 Post note..
 
-Do I re-install the raspberry pi with oracle linux
+Do I re-install the raspberry pi with oracle linux?
 
 to explore later..
 <a>https://docs.oracle.com/en/learn/oracle-linux-install-rpi/#introduction</a>
