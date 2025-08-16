@@ -1,10 +1,11 @@
 ## Oracle Linux (VM) & mediawiki testing
 
-Impressed with oracle Linux 10.
+MediaWiki is what I use for my notes at home, running on a Raspberry Pi, and I was curious about Oracle Linux.. whether it is stable and robust, more secure.
 
-SELinux isn't fun but once you get the hang of it maybe is ok.
-
+So I gave it a test install and was initially impressed with oracle Linux 10. I liked the web admin function.
 I installed it as a VM on ESXi with 4GB RAM and 2x VCPUs and it really hums.
+
+SELinux isn't as much fun but maybe is ok once you get the hang of it. I watched a RedHat video for it <a>https://www.youtube.com/watch?v=_WOKRaM-HI4</a> and warmed up slightly. 
 
 Now going to install MediaWiki hopefully, loosely following:
 - <a>https://dev.to/nhisyamj/installing-apache-php-and-mysql-on-oracle-linux-8-3j7m</a>
