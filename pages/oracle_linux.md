@@ -180,4 +180,5 @@ change SELinux to permissive
 
 then do the app upload file..
 
-```
+### Looking good!
+<img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
