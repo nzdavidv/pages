@@ -69,8 +69,6 @@ MariaDB [(none)]>
 CREATE USER 'mwsql'@'localhost' IDENTIFIED BY 'password-in-password-store';
 CREATE DATABASE my_wiki;
 GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
-
-
 ```
 ### get mediawiki files and database backup 
 ```
@@ -109,7 +107,7 @@ root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
 # mysql -p < my_wiki.sql my_wiki
 # systemctl restart mariadb
 # systemctl restart httpd
-
+```
 
 ### enabling uploads in mediawiki
 ```
