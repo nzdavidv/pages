@@ -85,7 +85,7 @@ GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 ```
 --on raspi tar up mediawiki images--
 root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
-# scp images.tar david@192.168.30.126:/tmp
+# scp images.tar /var/www/html/mediawiki/resources/assets/mw-logo-135.jpg david@192.168.30.126:/tmp
 --also copy over config file
 # scp LocalSettings.php david@192.168.30.126:/tmp
 --database dump
@@ -95,13 +95,14 @@ root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
 --on oralinux01 
 # cd /var/www/html/mediawiki/
 # tar xvf /tmp/images.tar
+# cp /tmp/mw-logo-135.jpg /var/www/html/mediawiki/resources/assets/
 # cp /tmp/LocalSettings.php .
 # vi LocalSettings.php
 --update $wgDBpassword
 --update $wgServer
 
 # cd /var/www
-# chown -R apache:apache html
+# chown -R apache:apache /var/www/html
 # cd ~david
 --couldn't deal with the collation
 # sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' my_wiki.sql 
@@ -112,29 +113,29 @@ root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
 
 ### enabling uploads in mediawiki
 ```
-# cp -p /etc/php.ini /etc/php.ini-2025-08-13
+# cp -p /etc/php.ini /etc/php.ini-2025-08-16
 # vi /etc/php.ini
 upload_tmp_dir = /var/www/html/upload-tmp-dir 
 # mkdir /var/www/html/upload-tmp-dir ; chown apache:apache /var/www/html/upload-tmp-dir
-# chown apache:apache /var/www/html/mediawiki/images/ 
 # systemctl restart httpd
-# chcon -R -t httpd_sys_rw_content_t /var/www/html/mediawiki-1.44.0/images
 
---removing some of the noise from /var/log/messages
-# setsebool -P httpd_can_network_connect 1
-# setsebool -P httpd_graceful_shutdown 1
 
---keep trying
-# semanage fcontext -a -t httpd_tmp_t "/var/www/html/upload-tmp-dir(/.*)?"
+
 
 root@oralinux01:/var/www/html/mediawiki# ls -Z includes/GlobalFunctions.php
 unconfined_u:object_r:httpd_sys_content_t:s0 includes/GlobalFunctions.php
 root@oralinux01:/var/www/html/mediawiki# chcon -t httpd_sys_script_exec_t includes/GlobalFunctions.php
 # semanage fcontext -a -t httpd_sys_script_exec_t /var/www/html/mediawiki-1.44.0/includes/GlobalFunctions.php
-
-# chcon -R -t httpd_user_rw_content_t images
+# semanage fcontext -a -t httpd_tmp_t "/var/www/html/upload-tmp-dir(/.*)?"
 # semanage fcontext -a -t httpd_user_rw_content_t "/var/www/html/mediawiki-1.44.0/images(/.*)?"
 # restorecon -vR /var/www/html/mediawiki-1.44.0/
+```
+
+Not needed
+```
+--removing some of the noise from /var/log/messages
+# setsebool -P httpd_can_network_connect 1
+# setsebool -P httpd_graceful_shutdown 1
 ```
 
 ### selinux basics
