@@ -46,7 +46,29 @@ After that yep could login with root and oracle and add my user account.
 
 Now I can SSH in.
 ```
+david@david-Modern-14-C12M:~/Downloads$ ssh david@raspidev.nzvink.com
+The authenticity of host 'raspidev.nzvink.com (192.168.10.100)' can't be established.
+ED25519 key fingerprint is SHA256:hZ6KvEVLNiU7u5SCcep71hhuJeqxtt/kU+Fz3RJ+1Uo.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'raspidev.nzvink.com' (ED25519) to the list of known hosts.
+david@raspidev.nzvink.com's password: 
+Last login: Sat Aug 16 03:15:33 2025 from 192.168.10.101
+```
+### resize the root filesystem
+```
+[david@rpi ~]$ su -
+Password: 
+Last login: Sat Aug 16 03:15:38 UTC 2025 on pts/0
+Last failed login: Sat Aug 16 03:21:26 UTC 2025 on pts/1
+[root@rpi ~]# mount|grep root
+/dev/mmcblk0p3 on / type btrfs (rw,relatime,seclabel,ssd,discard=async,space_cache=v2,subvolid=257,subvol=/root)
+[root@rpi ~]# growpart /dev/mmcblk0 3
+CHANGED: partition=3 start=788480 old: size=6815744 end=7604223 new: size=61545439 end=62333918
+[root@rpi ~]# btrfs filesystem resize max /
+Resize device id 1 (/dev/mmcblk0p3) from 3.25GiB to max
 # yum update
 
+```
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-13.png" alt="aws-www-13"  width="800px"></kbd>
 ```
