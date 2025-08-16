@@ -1,6 +1,7 @@
 ## Oracle Linux lab
 
 Impressed with oracle Linux 10.
+
 SELinux isn't fun but once you get the hang of it maybe is ok.
 
 to explore later..
