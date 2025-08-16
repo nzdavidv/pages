@@ -78,7 +78,7 @@ CREATE USER 'mwsql'@'localhost' IDENTIFIED BY 'password-in-password-store';
 CREATE DATABASE my_wiki;
 GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 ```
-### get mediawiki files and database backup from raspberry pi
+### get mediawiki files 
 ```
 # cd /var/www/html
 # wget https://releases.wikimedia.org/mediawiki/1.44/mediawiki-1.44.0.tar.gz
@@ -87,7 +87,7 @@ GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 # ln -s mediawiki-1.44.0/ mediawiki
 ```
 
-### restoring mediawiki content from raspberry pi
+### transfer and load mediawiki content from raspberry pi
 ```
 --on raspi tar up mediawiki images--
 root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
