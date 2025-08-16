@@ -3,6 +3,7 @@
 MediaWiki is what I use for my notes at home, running on a Raspberry Pi, and I was curious about Oracle Linux.. whether it is stable and robust, more secure.
 
 So I gave it a test install and was initially impressed with oracle Linux 10. I liked the web admin function.
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/esxi0.png" alt="oralinux01.png" width="900px"></kbd>
 I installed it as a VM on ESXi with 4GB RAM and 2x VCPUs and it really hums.
 
 SELinux isn't as much fun but maybe is ok once you get the hang of it. I watched a RedHat video for it <a>https://www.youtube.com/watch?v=_WOKRaM-HI4</a> and warmed up slightly. 
