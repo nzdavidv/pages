@@ -1,13 +1,10 @@
-## Oracle Linux lab
+## Oracle Linux (VM) & mediawiki testing
 
 Impressed with oracle Linux 10.
 
 SELinux isn't fun but once you get the hang of it maybe is ok.
 
-to explore later..
-<a>https://docs.oracle.com/en/learn/oracle-linux-install-rpi/#introduction</a>
-
-I installed it as a VM on ESXi with 4GB RAM and 2x VCPUs and it hums.
+I installed it as a VM on ESXi with 4GB RAM and 2x VCPUs and it really hums.
 
 Now going to install MediaWiki hopefully, loosely following:
 - <a>https://dev.to/nhisyamj/installing-apache-php-and-mysql-on-oracle-linux-8-3j7m</a>
@@ -182,3 +179,10 @@ then do the app upload file..
 
 ### Looking good!
 <img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
+
+Post note..
+
+Do I re-install the raspberry pi with oracle linux
+
+to explore later..
+<a>https://docs.oracle.com/en/learn/oracle-linux-install-rpi/#introduction</a>
