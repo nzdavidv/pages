@@ -7,3 +7,4 @@
  - <a href="pages/ESXi-laptop-GNS3.md">VMware ESXi laptop, GNS3 VM, Cisco switch with VLANs</a>
  - <a href="pages/AWS-dynamo-iot.md">AWS Lambda DynamoDB IoT website</a>
  - <a href="pages/ESXi-macos.md">VMware ESXi laptop, Mac OS VM</a>
+ - <a href="pages/oracle_linux.md">Running Oracle Linux VM as a test with MediaWiki</a>
