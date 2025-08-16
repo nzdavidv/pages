@@ -178,8 +178,10 @@ change SELinux to permissive
 
 then do the app upload file..
 
-### Looking good!
+### all looking good!
 <img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
+
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/oralinux02.png" alt="oralinux02.png" width="500px"></kbd>
 
 Post note..
 
