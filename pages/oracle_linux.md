@@ -12,24 +12,31 @@ Now going to install MediaWiki hopefully, loosely following:
 - <a>https://dev.to/nhisyamj/installing-apache-php-and-mysql-on-oracle-linux-8-3j7m</a>
 - <a>https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki</a>
 
+The plan is to:
+- install oracle linux 10
+- install webserver and maria db
+- install mediawiki
+- copy mediawiki content and DB over from Raspberry pi.
 
-### install packages
+
+### install required packages
 ```
+# yum update
 # yum install httpd php  php-gd php-xml mariadb-server php-mbstring php-json
+-- install php modules
+# dnf install php-mysqli php-intl
+
 ```
-### get webserver running
+### enable webserver
 ```
 # systemctl enable httpd
 
 --config firewall
 # firewall-cmd --add-service=http --permanent
 # firewall-cmd --reload
-
--- install php modules
-# dnf install php-mysqli php-intl
 ```
 
-### database
+### install and config database
 
 ```
 # systemctl start mariadb
@@ -70,7 +77,7 @@ CREATE USER 'mwsql'@'localhost' IDENTIFIED BY 'password-in-password-store';
 CREATE DATABASE my_wiki;
 GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 ```
-### get mediawiki files and database backup 
+### get mediawiki files and database backup from raspberry pi
 ```
 # cd /var/www/html
 # wget https://releases.wikimedia.org/mediawiki/1.44/mediawiki-1.44.0.tar.gz
@@ -79,18 +86,18 @@ GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 # ln -s mediawiki-1.44.0/ mediawiki
 ```
 
-### restoring from raspidev
+### restoring mediawiki content from raspberry pi
 ```
 --on raspi tar up mediawiki images--
 root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
 # scp images.tar /var/www/html/mediawiki/resources/assets/mw-logo-135.jpg david@192.168.30.126:/tmp
---also copy over config file
+--copy over config file
 # scp LocalSettings.php david@192.168.30.126:/tmp
---database dump
+--copy database dump
 # mysqldump --user=root -p --host=localhost my_wiki > /tmp/my_wiki.sql
 # scp my_wiki.sql david@192.168.30.126:
 
---on oralinux01 
+--on oralinux01 put the files in place
 # cd /var/www/html/mediawiki/
 # tar xvf /tmp/images.tar
 # cp /tmp/mw-logo-135.jpg /var/www/html/mediawiki/resources/assets/
@@ -102,9 +109,11 @@ root@raspi:/var/www/html/mediawiki# tar cvf images.tar images
 # cd /var/www
 # chown -R apache:apache /var/www/html
 # cd ~david
---couldn't deal with the collation
+--oralinux01 mariadb couldn't deal with the collation from the raspberry pi (older version)
 # sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' my_wiki.sql 
 # mysql -p < my_wiki.sql my_wiki
+
+--restart DB and webserver
 # systemctl restart mariadb
 # systemctl restart httpd
 ```
