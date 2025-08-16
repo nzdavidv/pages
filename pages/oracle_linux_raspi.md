@@ -13,6 +13,7 @@ Fortunately I had a spare SD I could use to give me a backout plan if this all g
 
 For some reason the download from oracle didn't go well but I could download the wget file.
 ```
+[ on my laptop using ubuntu ]
 $ chmod 755 wget.sh 
 $ ./wget.sh
 
