@@ -5,6 +5,9 @@ date: 2025-08-16
 # Overview
 Downloading and installing oracle linux on raspberry pi (raspi for short).
 
+- Oracle Linux 9
+- Raspberry Pi 4 Model B Rev 1.2
+
 It doesn't work on Raspiperry Pi v5 but my older one is fine.
 
 Following <a>https://docs.oracle.com/en/learn/oracle-linux-install-rpi</a>
@@ -74,7 +77,7 @@ Resize device id 1 (/dev/mmcblk0p3) from 3.25GiB to max
 ### Install core software
 ```
 # yum update
-# yum install httpd php  php-gd php-xml mariadb-server php-mbstring php-json wget tar
+# yum install httpd php  php-gd php-xml mariadb-server php-mbstring php-json wget tar lshw
 
 -- install php modules
 # dnf install php-mysqli php-intl
@@ -82,7 +85,7 @@ Resize device id 1 (/dev/mmcblk0p3) from 3.25GiB to max
 ### enable webserver
 ```
 # systemctl enable httpd
---firewall?
+--firewall? apparently not
 ```
 
 ### install and config database
@@ -171,6 +174,16 @@ GRANT ALL PRIVILEGES ON my_wiki.* TO 'mwsql'@'localhost' WITH GRANT OPTION;
 # systemctl restart httpd
 ```
 
+### reinstall php
+turns out the PHP that shipped with ora linux 9 is too old.
+```
+# dnf install epel-release -y
+# yum remove php
+# dnf module list php
+# dnf install @php:8.3
+# systemctl restart httpd
+```
+
 ### enabling uploads in mediawiki
 ```
 # cp -p /etc/php.ini /etc/php.ini-2025-08-16
@@ -196,4 +209,4 @@ upload_tmp_dir = /var/www/html/upload-tmp-dir
 
 
 
-<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-13.png" alt="aws-www-13"  width="800px"></kbd>
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/upload-win.png" alt="upload-win"  width="800px"></kbd>
