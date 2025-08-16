@@ -32,11 +32,15 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 $ umount /media/david/6163-3638 
 $ sudo su -
-# xzcat rpi-ol9.6-image-20250531.img.xz > /dev/mmcblk0p1
+# xzcat rpi-ol9.6-image-20250531.img.xz > /dev/mmcblk0
+
+--initially did the load to /dev/mmcblk0p1 and this failed.
 ```
 
 ## fire it up 
 Turning on raspi..
+
+no dice.
 
 <kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/aws-www-13.png" alt="aws-www-13"  width="800px"></kbd>
 ```
