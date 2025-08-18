@@ -77,7 +77,7 @@ Resize device id 1 (/dev/mmcblk0p3) from 3.25GiB to max
 ### Install core software
 ```
 # yum update
-# yum install httpd php  php-gd php-xml mariadb-server php-mbstring php-json wget tar lshw sudo bind-utils
+# yum install httpd php  php-gd php-xml mariadb-server php-mbstring php-json wget tar lshw sudo bind-utils hostname
 
 -- install php modules
 # dnf install php-mysqli php-intl
