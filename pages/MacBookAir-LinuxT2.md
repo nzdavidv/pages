@@ -19,9 +19,11 @@ I completely wiped out MacOS.
 What a nightmare. WiFi was broken, sound was broken, I kludged together some parts but it was it was awful.
 FAIL.
 
-I tried the iso.sh script from https://wiki.t2linux.org/ on Linux a few times but for whatever reason it just didn't work. 
+I tried the iso.sh script from https://wiki.t2linux.org/ on Linux a few times but for whatever reason it just didn't work. The script ran fine but the ISO wouldn't boot properly.
 
 After the initial Ubuntu boot 'Try or install Ubuntu' it would error.
+
+I tried Ubuntu 24 and Ubuntu 25.. both seemed to work but failed to boot.
 
 I struggled forward and eventually got WiFi kind-of working (was flakey), trackpad going, but audio was a fail (headphones wouldn't work).
 
@@ -32,7 +34,9 @@ It was a bit of a hassle to get back to Mac OS.
 I waded through https://wiki.t2linux.org/ and downloaded firmware.sh, 
 then downloaded https://raw.githubusercontent.com/kholia/OSX-KVM/master/fetch-macOS-v2.py
 
+
 python3 ./fetch-macOS-v2.py
+
 8. Sequoia (15)
 
 I wrote this to ISO, booted from it, wiped the disk and started again with MacOS.
@@ -57,3 +61,41 @@ Apple's Secure Boot implementation does not allow booting anything other than ma
 * Once in Startup Security Utility:
 set Secure Boot to No Security
 set Allow Boot Media to Allow booting from external or removable media Now you are able to boot from a Linux install ISO.
+
+### resize the hard drive
+I followed the instructions and partitioned off 30GB as a small test, keeping Mac OS.
+I made the partition exFAT.
+
+### copy firmware.sh to the EFI partition
+I mounted the EFI partition and downloaded firmware.sh and copied it to the EFI partition.
+
+### Run iso.sh
+
+It worked fine from MacOS with Ubuntu 24. I used the 'dd' method to write to my USB-C hard drive.
+
+Note.. I had trouble with Ubuntu 25 still, but Ubuntu 24 was good!
+
+At the disk screen (advanced) I installed to nvme0n1p3 with boot loader on nvme0n1 
+
+For some reason it did a very minimal install, but the trackpad worked out of the box!
+
+### wifi fix
+```
+--to mount the EFI partition
+# mkdir /mnt/EFI
+# mount /dev/nvme0n1p1 /mnt/EFI
+
+# cp /mnt/EFI/firmware.sh ~root
+# ./firmware.sh 
+--selected install from MacOS
+```
+
+### general ubuntu goodness
+```
+# apt update
+# apt upgrade
+# apt install vim
+
+# snap install firefox
+# snap install snap-store
+```
