@@ -99,3 +99,23 @@ For some reason it did a very minimal install, but the trackpad worked out of th
 # snap install firefox
 # snap install snap-store
 ```
+
+### notes from a week down the track
+The good:
+* To go back to MacOS is easy - hold down left option key on boot and select the correct drive.
+* I got a Facebook messenger call the other day and to my MASSIVE surprise the webcam and audio just worked.
+* Printing just worked (to my network attached printer).
+* So nice having Ubuntu. So fast. Copy and paste is back to normal (bah - mac OS!). 
+
+The not-so-good:
+* Typing with your palm on the trackpad and the cursor can move / jump to where you didn't want it.
+* sometimes on wake-up it will have eaten all the battery, other times the wifi will have forgotten it exists. I run this script (I called go-wifi.sh)
+
+```
+$ cat go-wifi.sh 
+sudo modprobe -r hci_bcm4377
+sudo modprobe -r brcmfmac_wcc
+sudo modprobe -r brcmfmac
+sudo modprobe brcmfmac
+```
+
