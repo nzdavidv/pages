@@ -8,4 +8,4 @@
  - <a href="pages/AWS-dynamo-iot.md">AWS Lambda DynamoDB IoT website</a>
  - <a href="pages/ESXi-macos.md">VMware ESXi laptop, Mac OS VM</a>
  - <a href="pages/oracle_linux.md">Running Oracle Linux VM as a test with MediaWiki</a>
- - <a hreg="pages/blob/main/pages/MacBookAir-LinuxT2.md">Ubuntu on MacBook Air 9,1 (2020 Intel)</a>
+ - <a href="pages/blob/main/pages/MacBookAir-LinuxT2.md">Ubuntu on MacBook Air 9,1 (2020 Intel)</a>
