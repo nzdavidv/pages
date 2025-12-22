@@ -94,6 +94,7 @@ At the disk screen (advanced) I installed to nvme0n1p3 with boot loader on nvme0
 For some reason it did a very minimal install, but the trackpad worked out of the box!
 
 ```
+% ./iso.sh
 Downloading Part 1 for Ubuntu 24.04 LTS - Noble Numbat
 
 ######################################################################################################################## 100.0%
@@ -113,10 +114,10 @@ ISO saved to Downloads
 
 ### writing iso to disk
 put in 32GB USB-C drive
-
+```
 % sudo diskutil umountdisk /dev/rdisk2 
 % sudo dd if=/Users/david/Downloads/ubuntu-24.04-6.17.9-t2-noble.iso of=/dev/rdisk2 bs=1m
-
+```
 
 ### wifi fix
 ```
