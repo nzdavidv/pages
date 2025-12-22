@@ -134,8 +134,18 @@ install on nvme0n1p3 (ext4 mount point /) and boot loader on nvme0n1
 # mount /dev/nvme0n1p1 /mnt/EFI
 
 # cp /mnt/EFI/firmware.sh ~root
-# ./firmware.sh 
---selected install from MacOS
+# ~root/firmware.sh 
+Detected Linux
+
+How do you want to copy the firmware to Linux?
+
+1. Retrieve the firmware from the EFI partition.
+2. Retrieve the firmware directly from macOS.
+3. Download a macOS Recovery Image from Apple and extract the firmware from there.
+
+Note: If you are choosing Option 1, then make sure you have run the same script on macOS before and chose Option 1 (Copy the firmware to the EFI partition and run the same script on Linux to retrieve it) there.
+2
+
 ```
 
 ### general ubuntu goodness
@@ -144,8 +154,9 @@ install on nvme0n1p3 (ext4 mount point /) and boot loader on nvme0n1
 # apt upgrade
 # apt install vim
 
-# snap install firefox
-# snap install snap-store
+# snap install firefox snap-store
+
+#apt install net-tools keepass2 gnome-tweaks curl putty-tools libimage-exiftool-perl  gnome-screenshot pavucontrol imagemagick ssh
 ```
 
 ### notes from a week down the track
