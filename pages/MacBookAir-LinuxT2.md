@@ -127,6 +127,8 @@ On the installation type screen choose 'Something else'
 
 install on nvme0n1p3 (ext4 mount point /) and boot loader on nvme0n1
 
+<kbd><img src= "https://raw.githubusercontent.com/nzdavidv/pages/refs/heads/main/images/t2linux-install.png"  alt="t2linux" width="800px"></kbd>
+
 ### wifi fix
 ```
 --to mount the EFI partition
