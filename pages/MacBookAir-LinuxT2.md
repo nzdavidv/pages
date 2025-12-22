@@ -69,6 +69,15 @@ I made the partition exFAT.
 ### copy firmware.sh to the EFI partition
 I mounted the EFI partition and downloaded firmware.sh and copied it to the EFI partition.
 
+firmware.sh is from the https://wiki.t2linux.org/guides/wifi-bluetooth/ WiFi and Bluetooth page.
+
+'''
+% sudo diskutil mount /dev/disk0s1                                                 
+Password:
+Volume EFI on /dev/disk0s1 mounted
+% cp Downloads/firmware.sh /Volumes/EFI
+'''
+
 ### Run iso.sh
 
 It worked fine from MacOS with Ubuntu 24. I used the 'dd' method to write to my USB-C hard drive.
