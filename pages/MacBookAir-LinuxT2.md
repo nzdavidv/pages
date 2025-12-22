@@ -119,6 +119,14 @@ put in 32GB USB-C drive
 % sudo dd if=/Users/david/Downloads/ubuntu-24.04-6.17.9-t2-noble.iso of=/dev/rdisk2 bs=1m
 ```
 
+### boot from the USB disk
+Hold down left option and power on - it was the right-most USB EFI (three showed for some reason).
+Then install or try ubuntu.
+
+On the installation type screen choose 'Something else' 
+
+install on nvme0n1p3 (ext4 mount point /) and boot loader on nvme0n1
+
 ### wifi fix
 ```
 --to mount the EFI partition
