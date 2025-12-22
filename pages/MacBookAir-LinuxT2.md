@@ -71,14 +71,19 @@ I mounted the EFI partition and downloaded firmware.sh and copied it to the EFI 
 
 firmware.sh is from the https://wiki.t2linux.org/guides/wifi-bluetooth/ WiFi and Bluetooth page.
 
-'''
+```
 % sudo diskutil mount /dev/disk0s1                                                 
 Password:
 Volume EFI on /dev/disk0s1 mounted
 % cp Downloads/firmware.sh /Volumes/EFI
-'''
+% sudo diskutil umount /dev/disk0s1
+```
 
 ### Run iso.sh
+
+Downloaded iso.sh from latest t2linux ubuntu.
+
+https://github.com/t2linux/T2-Ubuntu/releases/tag/v6.17.9-1
 
 It worked fine from MacOS with Ubuntu 24. I used the 'dd' method to write to my USB-C hard drive.
 
@@ -87,6 +92,31 @@ Note.. I had trouble with Ubuntu 25 still, but Ubuntu 24 was good!
 At the disk screen (advanced) I installed to nvme0n1p3 with boot loader on nvme0n1 
 
 For some reason it did a very minimal install, but the trackpad worked out of the box!
+
+```
+Downloading Part 1 for Ubuntu 24.04 LTS - Noble Numbat
+
+######################################################################################################################## 100.0%
+
+Downloading Part 2 for Ubuntu 24.04 LTS - Noble Numbat
+
+######################################################################################################################## 100.0%
+
+Downloading Part 3 for Ubuntu 24.04 LTS - Noble Numbat
+
+######################################################################################################################## 100.0%
+
+Verifying sha256 checksums
+
+ISO saved to Downloads
+```
+
+### writing iso to disk
+put in 32GB USB-C drive
+
+% sudo diskutil umountdisk /dev/rdisk2 
+% sudo dd if=/Users/david/Downloads/ubuntu-24.04-6.17.9-t2-noble.iso of=/dev/rdisk2 bs=1m
+
 
 ### wifi fix
 ```
